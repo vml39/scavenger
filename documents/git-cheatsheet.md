@@ -14,6 +14,8 @@
 `git pull` to fetch and merge changes
 
 ## Branching
+`git branch` shows all the branches 
+
 `git checkout -b <branch_name>` to create a branch (automatically switches to it)
 
 `git checkout <branch_name>` to switch to a branch
