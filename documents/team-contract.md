@@ -10,11 +10,14 @@ You will need to learn to work in groups and resolve conflicts on your own. Thes
 
 1. Team name or project name. Plus full name and NetID of each of your team members.
 
+Team name: blue-tiger
+
+Michele Chen mac545
 
 
 2. To what goals do we all commit?
 
-
+We all are splitting the responsibilities evenly, and making sure everyone is working on multiple areas. Also we are all committed to facing any roadblocks to accomplish our goals, and will not sacrificing our designs just for an easier route. 
 
 3. What are our “ground rules”? (Don't make an exhaustive list—stick with just a few.)
 
