@@ -13,6 +13,9 @@ You will need to learn to work in groups and resolve conflicts on your own. Thes
 Team name: blue-tiger
 
 Michele Chen mac545
+Adrian Zheng yz388
+Srishti Belwariar sb2355
+Jacob Chovanec jnc83
 Vivian Li vml39
 
 2. To what goals do we all commit?
