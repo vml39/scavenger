@@ -10,11 +10,17 @@ You will need to learn to work in groups and resolve conflicts on your own. Thes
 
 1. Team name or project name. Plus full name and NetID of each of your team members.
 
+Team name: blue-tiger
 
+Michele Chen mac545
+Adrian Zheng yz388
+Srishti Belwariar sb2355
+Jacob Chovanec jnc83
+Vivian Li vml39
 
 2. To what goals do we all commit?
 
-
+We all are splitting the responsibilities evenly, and making sure everyone is working on multiple areas. Also we are all committed to facing any roadblocks to accomplish our goals, and will not sacrificing our designs just for an easier route. 
 
 3. What are our “ground rules”? (Don't make an exhaustive list—stick with just a few.)
 
@@ -24,13 +30,16 @@ You will need to learn to work in groups and resolve conflicts on your own. Thes
 
 
 
-5. How will we communicate and work with our client?
+5. How will we communicate and work with our users?
 
-
+We decided to revisit this point later. It's hard to say at this moment because we don't currently know who are users will be.
 
 6. What roles will we create? Include a description of exactly what each role is responsible for.
 
-
+- Designers & developers: Since we agreed that each person should have experience in both designing and developing the app, we decided that for each feature, team members would be assigned either the designer or developer role so that no one is doing only one task. 
+- Communication liaison: Once we know who our client or our target users are, we will designate a communication liaison responsible for keeping in contact with our client/users. 
+- Meeting facilitator: A different person each week will be in charge of setting the agenda for the group meeting and will keep the group on track.
+- Branch integration: One person will be in charge of integrating the feature branches into the master branch for each milestone.
 
 7. How will we hold ourselves and one another accountable? What (exactly) will we say to a team member who appears not to be contributing equally? To a team member who fails to deliver what was promised?
 - technically, scrum boards, code reviews, task items.  Using gits tools and scrum's project manager
