@@ -46,9 +46,16 @@ We decided to revisit this point later. It's hard to say at this moment because 
 - formalize it as much as possible
 - if someone is late or misses a deadline, address that as a team
 
+- When a team member is not contributing equally or failing to deliver, we will make sure that we sit down and have a discussion as a team.  
+- If there is a valid reason for failing to meet the contribution expectations it is fine, but we just need to communicate to each team member that if there is a reason that they cannot meet the expectations at a particular point, to let the team know as soon as possible. 
+- If there isn't a valid reason we will need to go back over the contribution expectations for this project as a team.
+
 
 8. What do we do when we disagree? What approach to conflict to we all agree to uphold?
-
+- have team discussions in which everyone that has a thought on the matter is heard
+- see if we can come up with some sort of compromise from that open discussion
+- if not compromise can be reached, we would go with the decision that has support from the majority of group members
+- keep things professional and courteous.  There's no need to make disagreements personal or aggressive. 
 
 
 9. What are our procedures for re-visiting this contract?
