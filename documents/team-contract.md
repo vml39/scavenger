@@ -41,10 +41,10 @@ You will need to learn to work in groups and resolve conflicts on your own. Thes
 
 
 9. What are our procedures for re-visiting this contract?
+  Any team member can propose changes to the existing contract; however, the changes can only be proved in the presence of all team members.
 
 
-
-10. What else do we want to include in this contract? (Think about a *fun* clause... not everything is always about work! Sometimes you need to celebrate your accomplishments!)
-
+10. How to keep our work coherent (design and programming) ?
+  The team should have a branding guideline for the final product being made. The guidetime should contain the standardized design language such as theme colors and font choices. The team should also use the same lint for coding format.
 
 
