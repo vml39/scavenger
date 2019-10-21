@@ -33,7 +33,9 @@ You will need to learn to work in groups and resolve conflicts on your own. Thes
 
 
 7. How will we hold ourselves and one another accountable? What (exactly) will we say to a team member who appears not to be contributing equally? To a team member who fails to deliver what was promised?
-
+- technically, scrum boards, code reviews, task items.  Using gits tools and scrum's project manager
+- formalize it as much as possible
+- if someone is late or misses a deadline, address that as a team
 
 
 8. What do we do when we disagree? What approach to conflict to we all agree to uphold?
