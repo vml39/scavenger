@@ -9,9 +9,7 @@ You will need to learn to work in groups and resolve conflicts on your own. Thes
 **Your group contract/working agreement should include these elements. Feel free to add other terms, too.**
 
 1. Team name or project name. Plus full name and NetID of each of your team members.
-
 Team name: blue-tiger
-
 Michele Chen mac545
 Adrian Zheng yz388
 Srishti Belwariar sb2355
@@ -19,23 +17,22 @@ Jacob Chovanec jnc83
 Vivian Li vml39
 
 2. To what goals do we all commit?
-
 We all are splitting the responsibilities evenly, and making sure everyone is working on multiple areas. Also we are all committed to facing any roadblocks to accomplish our goals, and will not sacrificing our designs just for an easier route. 
 
 3. What are our “ground rules”? (Don't make an exhaustive list—stick with just a few.)
-
-
+- Stay on time for meetings
+- Meet deadlines and communicate any painpoints
+- Address conflicts or any confusions early
+- If you are not aware of how to go about solving a problem, make sure to share this with the groupso the entire team can brainstorm ideas or help out.
 
 4. By what means and how frequently will we meet or communicate?
-
-
+- We've set up a groupme to coordinate remote communication
+- We have scheduled weekly meetings on Tuesday evenings (as of now) aside from studio time
 
 5. How will we communicate and work with our users?
-
 We decided to revisit this point later. It's hard to say at this moment because we don't currently know who are users will be.
 
 6. What roles will we create? Include a description of exactly what each role is responsible for.
-
 - Designers & developers: Since we agreed that each person should have experience in both designing and developing the app, we decided that for each feature, team members would be assigned either the designer or developer role so that no one is doing only one task. 
 - Communication liaison: Once we know who our client or our target users are, we will designate a communication liaison responsible for keeping in contact with our client/users. 
 - Meeting facilitator: A different person each week will be in charge of setting the agenda for the group meeting and will keep the group on track.
@@ -45,11 +42,9 @@ We decided to revisit this point later. It's hard to say at this moment because 
 - technically, scrum boards, code reviews, task items.  Using gits tools and scrum's project manager
 - formalize it as much as possible
 - if someone is late or misses a deadline, address that as a team
-
 - When a team member is not contributing equally or failing to deliver, we will make sure that we sit down and have a discussion as a team.  
 - If there is a valid reason for failing to meet the contribution expectations it is fine, but we just need to communicate to each team member that if there is a reason that they cannot meet the expectations at a particular point, to let the team know as soon as possible. 
 - If there isn't a valid reason we will need to go back over the contribution expectations for this project as a team.
-
 
 8. What do we do when we disagree? What approach to conflict to we all agree to uphold?
 - have team discussions in which everyone that has a thought on the matter is heard
@@ -57,10 +52,8 @@ We decided to revisit this point later. It's hard to say at this moment because 
 - if not compromise can be reached, we would go with the decision that has support from the majority of group members
 - keep things professional and courteous.  There's no need to make disagreements personal or aggressive. 
 
-
 9. What are our procedures for re-visiting this contract?
 - Any team member can propose changes to the contract. However, the changes can only be applied with approval of all team members.
-
 
 10. How do we keep the project coherent in terms of design and programming style?
 - The team should create a branding guideline that specifies the design language we use for this project such as a devoted color palette and font choices.
