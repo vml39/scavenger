@@ -17,3 +17,6 @@
 10. What type of items did you purchase at your last visit?
 11. How do you usually shop at the farmer’s market? (Do you have a list?)
 12. Do you have an issue finding what you want at the market? 
+13. Is there anything that would improve your experience?
+14. Is there anything else you'd like to add? 
+
