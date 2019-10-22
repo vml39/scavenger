@@ -59,10 +59,12 @@ We decided to revisit this point later. It's hard to say at this moment because 
 
 
 9. What are our procedures for re-visiting this contract?
+- Any team member can propose changes to the contract. However, the changes can only be applied with approval of all team members.
 
 
-
-10. What else do we want to include in this contract? (Think about a *fun* clause... not everything is always about work! Sometimes you need to celebrate your accomplishments!)
+10. How do we keep the project coherent in terms of design and programming style?
+- The team should create a branding guideline that specifies the design language we use for this project such as a devoted color palette and font choices.
+- The team members should use the same lint when format the codes.
 
 
 
