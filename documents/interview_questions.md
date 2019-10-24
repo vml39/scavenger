@@ -34,3 +34,4 @@ We're creating a web app to improve your experience at the farmer's market. We w
 2. What is your favorite thing about the market? What’s something you don’t like about the market?
 3. Do you ever buy anything from the other vendors at the market? 
 4. Do you have any strategies for attracting customers?
+5. Do you have a preference of cash or credit transactions? 
