@@ -60,4 +60,23 @@ Kiersten Rhodes
 - Also like the live music and the fact that you can sit on the dock and eat your food – chain of events --> place to get your food and eat your food and enjoy, then can get stuff to go
 - Something annoying about the market is that there's no map as to which vendors are where, instead they're just mixed in together (i.e. the fruit/craft vendors in diff locations); if there was a map of where different stalls were located that you could grab at the entrance, that would be very helpful 
 - Find out about community events through email, friends, facebook events, occasionally postings on campus but not very reliable
-- Facebook is not that intuitive on mobile anymore; Instagram might be the most intuitive on the phone (Snapchat is least)
+- Facebook is not that intuitive on mobile anymore; Instagram might be the most intuitive on the phone (SnapChat is least)
+
+Farmers Market Patron #1:
+- Artistic director of the art space
+- Only come with friends from out of town, not often
+- Social activity rather than shopping
+- Last bought pumpkin donuts and coffee, didn't buy anything today
+- Likes how the location is beautiful, covered, gorgeous 
+- Hard time finding a garbage can, parking, live music
+
+Farmers Market Patron #2
+- 31, research assistant at Cornell
+- Came to the market to get breakfast and veggies
+- Does grocery shopping here, friends with some vendors and go to others randomly as well
+- Knows to come Saturday morning to get chocolate croissant (runs out after 10:30)
+- Favorite thing is coming here as early as possible and sitting on the dock and enjoying breakfast
+- Least favorite is how crowded it is
+- Always get croissants first, then walk around and always get apples from Black Diamond, depends on which vendors are there
+- Looks for specific vendors
+- Wish the market would shift towards being more eco-friendly; wants it to be more waste free, end single use disposables, get silverware and plates instead 
