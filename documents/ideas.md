@@ -1,0 +1,4 @@
+- referral system (to facilitate word of mouth)
+- vendor contact info
+- vendor location
+- inventory
