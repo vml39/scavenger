@@ -1,4 +1,5 @@
-Farmers market patron
+This farmers market patron is a research assistant at Cornell. He is a regular at the market and has more of a concrete purpose when going to the market every week. He is familiar with the market, its vendors, and their inventory.
+
 - 31, research assistant at Cornell
 - Came to the market to get breakfast and veggies
 - Does grocery shopping here, friends with some vendors and go to others randomly as well

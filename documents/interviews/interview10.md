@@ -1,4 +1,4 @@
-Kiersten Rhodes: Kiersten is a senior at Cornell studying government and history. She owns a car and goes to the farmers market a few times a year, usually with friends from school or family and friends from out of town. When she's at the market, she intends on just wandering around and enjoying the atmosphere of the market.
+Kiersten is a senior at Cornell studying government and history. She owns a car and goes to the farmers market a few times a year, usually with friends from school or family and friends from out of town. When she's at the market, she intends on just wandering around and enjoying the atmosphere of the market.
 
 Kiersten Rhodes
 - 21, student
