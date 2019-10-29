@@ -1,5 +1,9 @@
 # Interview Questions
 
+## Summary
+
+She is a cornell senior who has only been to the farmer's market once. She is mostly annoyed by the fact that the farmer's market doesn't always accept credit cards because she doesn't usually carry any cash with her. She also complained that she lacked tranportation tools to commute to the farmer's market so she can't really go very often and can only go with friends who drive.
+
 ## Getting to know the user
 
 1. What’s your age/occupation?

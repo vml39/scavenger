@@ -1,5 +1,9 @@
 # Interview Questions
 
+## Summary
+
+He is a cornell senior student who has been to the farmer's market multiple times. He goes to the market mainly to hang out with the friends of him who are also going. He rarely buy goods from the market, and when he buys them, they are usually food. He complained that he doesn't carry cash with him so he has to borrow cash from his friends if he wants to buy anything and venmo back them after, which limited him from buying things he wants. He also thinks the farmer's market is a little bit far for him expecially because there is no bus that can take him directly there and he doesn't even know how to drive.
+
 ## Getting to know the user
 
 1. What’s your age/occupation?
