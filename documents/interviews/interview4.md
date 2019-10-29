@@ -1,5 +1,6 @@
 # Interview
 
+Summary: User is a freshman who has very little motivation to go the farmers market due to the high costs and lack of easy transportation options.  They also expressed that they don't have much time to explore the market due to student responsibilities.
 
 ## Getting to know the user
 
