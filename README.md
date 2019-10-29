@@ -21,6 +21,6 @@ All non-app related artifacts must be listed here to be graded. If it's not list
   - [Interview12](documents/interviews/interview12.md)
 - [Needs and Goals](documents/needs_goals.md)
 - [Value Propositions](documents/value_propositions.md)
-- [Persona](persona.md)
+- [Persona](documents/persona.md)
   - Image in documents/persona.jpg
 - [Scenarios](documents/scenarios.md)
