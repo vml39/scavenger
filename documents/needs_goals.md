@@ -21,13 +21,13 @@ The following are goals users expressed and what they need to achieve these goal
 
 ## Process (including affinity diagram):
 While reviewing interview notes together, the team jotted down key details of the interviews, ranging from information regarding the interviewee's background to the activities they did on their previous visits to the market to the painpoints they experienced.  After collecting these concise snippets of information, the team started forming categories of ideas on the board, which included categories like user background, suggestions, payment methods preferred, budgeting practices, transportation, etc.  The following images show the board once the team placed all the appropriate notes in their specific categories.
-![](affinity_diagram/before_diagram_1.PNG)
-![](affinity_diagram/before_diagram_2.PNG)
-![](affinity_diagram/before_diagram_3.PNG)
-![](affinity_diagram/before_diagram_4.PNG)
+![](affinity_diagram/before_diagram_1.png)
+![](affinity_diagram/before_diagram_2.png)
+![](affinity_diagram/before_diagram_3.png)
+![](affinity_diagram/before_diagram_4.png)
 
 After getting all the notes on the board, the group reshuffled and organized the notes within each category to understand the frequency of different types of responses.  The team saw patterns in reponses and what factors could have influenced them.  For example, many of the interviewees carried cash to the market, but it would not be entirely valid to say that they all prefer cash; this observation can be due to the fact that most vendors only take cash and so customers are forced to bring cash.
-![](affinity_diagram/after_diagram_1.PNG)
-![](affinity_diagram/after_diagram_2.PNG)
-![](affinity_diagram/after_diagram_3.PNG)
-![](affinity_diagram/after_diagram_4.PNG)
+![](affinity_diagram/after_diagram_1.png)
+![](affinity_diagram/after_diagram_2.png)
+![](affinity_diagram/after_diagram_3.png)
+![](affinity_diagram/after_diagram_4.png)
