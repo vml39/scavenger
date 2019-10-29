@@ -1,4 +1,5 @@
 # Interview Questions
+Summary:  The interviewee would like to become more involved and visit the market more often but feels because she doesn't have a strong relation with the vendors over the year, she isn't able to be a regular patron.  She would also like to have access to information like products and vendor contact information to motivate residents to check out the place.
 
 ## Getting to know the user
 
