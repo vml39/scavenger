@@ -22,15 +22,16 @@ Details about Ben:
 
 Ben's needs:
 
-- to be able to make connections with vendors at the market
-- be able to purchase produce/goods from the from vendors
+- be able to conveniently purchase produce/goods from the from vendors
 - eat healthy, high quality foods
+- know what kind of goods he can purchase from which vendors.
 - not go too far out of his daily routine to get what he needs
 - be able to get what he needs when it's convenient for him
+- to be able to make connections with vendors at the market
 
 Ben's obstacles:
 - doesn't know how to contact vendors @ the market
-- feels awkward about randomly asking a vendor for contact info
+- feels awkward about randomly asking a vendor what they have
 - isn't always available to make it to the market
 - shopping at big grocery stores is much more convenient
 
