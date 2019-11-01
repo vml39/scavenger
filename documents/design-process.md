@@ -14,3 +14,5 @@ We ~~~~~~~~~~~
 - etc.
 
 ~~ link behaviors markdown file here ~~
+
+TALK ABOUT HOW WE MET ON FRIDAY (11/1) AND RETHOUGHT OUR NOTES PAGE

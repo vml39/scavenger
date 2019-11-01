@@ -6,10 +6,10 @@ Part 1: Inventory
 - grocery list apps - AnyList
 - Google keep notes, for writing down notes about things
 - Amazon, for updating inventory (vendors update their inventory)
+- urban outfitters (mobile navigation through their inventory)
 
 
 Part 2: Vendor relations
 - Google search (provides contact info like phone #, website, & address)
 - phone book (lists people and numbers)
 - business cards (have business and/or personal info like #, email, etc.)
-- 
