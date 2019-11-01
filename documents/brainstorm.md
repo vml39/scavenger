@@ -10,6 +10,7 @@ Organizing content:
 ## Brainstorming Design
 
 user looks at this for a short period of time when going to the market
+what is the purpose of the app? 
 
 Navigation:
 - bottom --> intuitive on a phone
@@ -33,10 +34,13 @@ Displaying inventory:
 - tags
 - by item? 
 - item shows vendor
+- general categories but implement search to give user's more control
+- being able to upload image? 
 
 Personal account page:
 - take a note from inventory and add to shopping list 
 - make notes, diff kinds of notes (choose a subject, add info) 
+- how to associate vendors/inventory with notes?
 
 Gamification:
 - trivia 
