@@ -1,5 +1,3 @@
-PERSUASIVE DESIGN PROCESS
-
 
 Small Behaviors to Influence:
 
