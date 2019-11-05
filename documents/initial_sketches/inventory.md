@@ -1,0 +1,3 @@
+Inventory: 
+
+![inventory](inventory.png)
