@@ -5,7 +5,7 @@ User: Senior AEP Major, patron of Farmer's Market
     - just looked around for a little bit but then gave up
 2. You really want carrots and you want to see which vendors will sell them.
     - he was up in the air on whether he should go to inventory or vendors
-    - his initial thought was to go to the venodrs page.  Once he navigated there, he realized that it was not the right way
+    - his initial thought was to go to the vendors page.  Once he navigated there, he realized that it was not the right way
     - then he navigated to the inventory page
     - once on the inventory page, he completed the rest of the task with ease
 3. Make a note that you need to be at Indian Creek Farm next week at 10 am. 
