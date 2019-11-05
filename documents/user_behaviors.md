@@ -20,3 +20,9 @@ Relative Examples to Consider:
 - levels of "kind of shopper" at the market (newbie, familiar, regular, insane, etc.)
 
 
+HOW OUR DESIGN SOLVES THIS BEHAVIOR:
+
+The primary behavior we decided to target was behavior #3, "Give people a better idea of what is at the farmer's market before they go as a method of pre-planning."  Here's how our design influences this behavior:
+- First, we gave people the resources to find out what is at the farmers market.  With our design, they know what vendors will be there and what they will be selling.  All that information they need is easily accessible with our design.
+- Next, our design allows users to know what is going on at the market, and can provide them with a way to keep track of information so that they can realize it is helpful to know what is going on there.  The notes page  allows our users to jot down relevant information that they can refer to later, so they will realize that going to the farmer's market with information or personal notes will provide a much better time.  This will allow them to improve their experience at the market.
+- Finally, in the future, we plan on adding specials and other exciting information about the market (that rotates on a weekly basis) on the home page. This special information will provide users with the motivation to find out what different vendors have, because if users know that this "special" may only be around for this weekend, they'd be encouraged to find out what/where it is so that they don't miss out!
