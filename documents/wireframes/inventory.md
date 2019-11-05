@@ -1,0 +1,2 @@
+Inventory:
+![InventoryCategoriesWireframe](inventory.png)
