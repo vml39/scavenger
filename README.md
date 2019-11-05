@@ -36,7 +36,7 @@ All non-app related artifacts must be listed here to be graded. If it's not list
   - [Home Page](documents/initial_sketches/home.md)
   - [Inventory](documents/initial_sketches/inventory.md)
   - [Vendors](documents/initial_sketches/vendors.md)
-  - [Notes](documents/intial_sketches/notes.md)
+  - [Notes](documents/initial_sketches/notes.md)
   - [Update Inventory](documents/initial_sketches/updateinventory.md)
 - Prototypes
   - [Home Page](documents/paper_prototype/home.md)
