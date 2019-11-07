@@ -55,5 +55,8 @@ Things to modify:
     - levels --> choice is up to the user but give options
     - offer different options to complete a task
     - level up animation 
+  
+  ![initial sketch of gamification](initial_sketches/gamification.jpg)
+
   - every week, you have new goals as well
   - think of Starbucks app
