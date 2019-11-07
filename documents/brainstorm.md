@@ -1,6 +1,6 @@
 # Brainstorm & Features
 
-## Site content:
+## Site content (v1):
 
 Organizing content:
 ![content](brainstorm/content.jpg)
@@ -38,3 +38,12 @@ We wanted to make the gamification aspect an extension of the user accounts. Our
 
 ### Vendor account:
 Since the vendors are not our target audience, we questioned where to put the login and how visible we wanted this feature to be. Originally, there would just be an update button on the inventory page, but since we didn't want the users to be exposed to this side of the app as well, we decided that the vendor account would only be accessible through a link not included in the navigation. This would direct the user to log in, then would take them to a form pre-populated with their previous responses with their name, inventory, payment type, and location. The vendor would be able to update this information. We also wondered if we should allow the vendors to upload their own images for their produce but decided in order to keep with our inventory layout, we'd use stock images instead. 
+
+## Site content (v2)
+
+Organizing content: 
+![content](brainstorm/contentv2.jpg)
+
+Cardsort variations:
+![v2](brainstorm/cardsortv2.jpg)
+![v3](brainstorm/cardsortv3.jpg)
