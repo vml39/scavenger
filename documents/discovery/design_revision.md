@@ -1,19 +1,20 @@
 Things to modify:
   - MS2
-    - Identify only one problem (vendors)
-    - Value propositions
+    - Identify only one problem (vendors) – Vivian
+    - Value propositions – Srishti
       - Identify costs/barriers to adopting the app
       - Identify alternatives
-    - Scenarios (be more specific)
-    - Persona (more specific)
+    - Scenarios (be more specific) – Michele
+    - Persona (more specific) – Jacob
   - MS3
-    - Persuasive Design
+    - Persuasive Design – Jacob
       - Identify factors that would prevent target behavior
-    - Sketches
-    - Paper Prototypes
-    - User Testing
-    - Wireframes
-    - Rationale
+    - Solution Space – Jacob
+    - Sketches – in class
+    - Paper Prototypes – during meeting
+    - User Testing – tbd
+    - Wireframes – during meeting
+    - Rationale – Vivian
 
 1. How do we make this app less disjoint?
 2. How do we make the app less like a website and more like the app?
