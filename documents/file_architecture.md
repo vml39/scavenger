@@ -23,6 +23,8 @@ root
     |
     +-- Badge.vue
     |
+    +-- FavVendor.vue
+    |
     +-- Vendor.vue
     |
     +-- VendorInfo.vue
