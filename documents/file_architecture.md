@@ -17,27 +17,23 @@ root
   |
   +-- components/
     |
-    +-- Category.vue
+    +-- Nav.vue
     |
-    +-- InventoryItem.vue
+    +-- Modal.vue
     |
-    +-- Item.vue
+    +-- Badge.vue
     |
     +-- Vendor.vue
     |
-    +-- Note.vue
+    +-- VendorInfo.vue
   |
   +-- views/
     |
-    +-- Home.vue
+    +-- Map.vue
     |
-    +-- Inventory.vue
+    +-- Profile.vue
     |
     +-- Vendors.vue
-    |
-    +-- Notes.vue
-    |
-    +-- UpdateInventory.vue
   |
   +-- App.vue
   |
@@ -46,4 +42,4 @@ root
   +-- router.js
 ```
 
-With the file architecture, we wanted to distinguish between what is a component and what is a view in the app. Each view corresponded with each of the five pages that we designed. The repeating parts of each page were then modularized into components. For example, the inventory view allows the user to select a category, which shows a view of all inventory items in the category, and when hey click on an item, they see the specific item view listing the vendors that sell this item. We can thus repeatedly use these components without having to rewrite code.
+With the file architecture, we wanted to distinguish between what is a component and what is a view in the app. Each view corresponded with each of the three pages that we designed. The repeating parts of each page were then modularized into components. For example, the vendor view shows all of the vendors (repeating components) and vendor modals on click (another component that can be repeated using different props). We can thus recycle these components without having to rewrite code.
