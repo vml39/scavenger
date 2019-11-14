@@ -16,11 +16,6 @@ export default new Router({
       component: Map
     },
     {
-      path: '/profile',
-      name: 'profile',
-      component: Profile
-    },
-    {
       path: '/vendors',
       name: 'vendors',
       component: Vendors
