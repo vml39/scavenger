@@ -1,10 +1,12 @@
 <template>
   <div class="vendors">
     <h2>Vendor Directory</h2>
-    <!-- search bar -->
     <autocomplete :search="search" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
-    <!-- vendor info components -->
-
+    <ul>
+      <li :key="vendor" v-for="vendor in tags">
+        {{ vendor }} <!-- render each vendor component here -->
+      </li>
+    </ul>
   </div>
 </template>
 
