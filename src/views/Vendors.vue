@@ -24,6 +24,7 @@ export default {
   },
   data () {
     return {
+      vendors: []
     }
   },
   methods: {
@@ -32,4 +33,8 @@ export default {
 </script>
 
 <style>
+  .search {
+    width: 90%;
+    margin: 0 auto;
+  }
 </style>
