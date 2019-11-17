@@ -18,6 +18,10 @@ export default new Router({
       path: '/vendors',
       name: 'vendors',
       component: Vendors
+    },
+    {
+      path: '*',
+      component: Map
     }
   ]
 })
