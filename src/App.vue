@@ -8,7 +8,9 @@
         <div class="nav-button">Vendors</div>
       </router-link>
     </div>
-    <router-view/>
+    <div id="main-container">
+      <router-view/>
+    </div>
   </div>
 </template>
 
