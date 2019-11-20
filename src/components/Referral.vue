@@ -1,10 +1,10 @@
 <template>
-  <div class="socialmedia">
-    <h1>{{ theme }}</h1>
+  <div class="Referral">
+    <h2>Refer a vendor to a friend!</h2>
     <p>Refer a favorite vendor to a friend!</p>
-    <label> Vedor Name: </label>
+    <label> Vendor Name: </label>
     <input>
-    <label> Friend's Number </label>
+    <label> Friend's Number: </label>
     <input>
     <button>Send<button> <!-- onclick would close the modal and send a text -->
   </div>
@@ -14,7 +14,7 @@
 export default {
   name: 'SocialMediaTag',
   props: {
-    theme: String
+    
   }, 
   data: {
     themes: {
@@ -36,7 +36,5 @@ export default {
 </script>
 
 <style scoped>
-  li {
-
-  }
+ 
 </style>
