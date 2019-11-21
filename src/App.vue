@@ -4,9 +4,27 @@
       <router-link to="/">Map</router-link> |
       <router-link to="/vendors">Vendors</router-link>
     </div>
-    <router-view/>
+    <SocialMediaTag theme="fall" />
   </div>
 </template>
+
+<script>
+import SocialMediaTag from '@/components/SocialMediaTag.vue'
+
+export default {
+  name: "App",
+  components: {
+    SocialMediaTag,
+  },
+  data () {
+    return {
+      vendors: []
+    }
+  },
+  methods: {
+  }
+}
+</script>
 
 <style>
 #app {

@@ -7,7 +7,7 @@
         #{{ tag }}
       </li>
     </ul>
-    <button>Done<button> <!-- onclick would close the modal -->
+    <button>Done</button> <!-- onclick would close the modal -->
   </div>
 </template>
 
@@ -17,16 +17,18 @@ export default {
   props: {
     theme: String
   }, 
-  data: {
-    themes: {
+  data: function () {
+    return {
+      themes: {
       "fall": ["fall", "thanksgiving", "pumpkinspice", "cider", "appleseason"],
       "thanksgiving": ["turkey", "farmtotable", "pumpkin", "squash", "localfood"]
-    },
-    tags: []
+      },
+      tags: []
+    }
   },
   methods: {
     getTags (theme) {
-      this.tags = themes[theme];
+      this.tags = this.themes[theme];
     }
   },
   mounted: function () {
@@ -37,7 +39,12 @@ export default {
 </script>
 
 <style scoped>
+  ul {
+    padding-left: 0;
+  }
+  
   li {
-
+    list-style: none;
+    padding-left: 0;
   }
 </style>
