@@ -23,15 +23,18 @@
                     <label> Vendor Name: </label>
                     <input>
                     <label> Friend's Email: </label>
-                    <input>
+                    <input id= "friendsEmail">
                 </slot>
             </div>
 
             <div class="modal-footer">
                 <slot name="footer">
-                <button class="modal-default-button" @click="$emit('close')">
-                    Send
-                </button>
+                  <button class="modal-default-button">
+                    <a href="mailto:{{email}}">Send email</a>
+                  </button>
+                  <button class="modal-default-button" @click="$emit('close')">
+                      Done
+                  </button>
                 </slot>
             </div>
             </div>
@@ -59,21 +62,22 @@
 </template>
 
 <script>
+data
 // register modal component
-Vue.component('modal', {
-  template: '#modal-template'
-})
+// Vue.component('modal', {
+//   template: '#modal-template'
+// })
 
-// start app
-new Vue({
-  el: '#app',
-  data: {
-    showModal: false
-  }
-})
-export default {
+// // start app
+// new Vue({
+//   el: '#app',
+//   data: {
+//     showModal: false
+//   }
+// })
+// export default {
   
-}
+// }
 </script>
 
 <style scoped>
