@@ -13,7 +13,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #363636;
 }
 
 #main-container {
@@ -29,7 +29,8 @@ body {
   width: 100%;
   box-sizing: border-box;
   padding: 0;
-  background: #42b983;
+  background: white;
+  z-index: 1000;
 
   a {
     display: flex;
@@ -43,12 +44,15 @@ body {
     .nav-button {
       width: 100%;
       text-align: center;
-      color: white;
       transition: all 0.3s;
     }
 
     &:active {
       background: transparent;
+    }
+
+    &:visited {
+      color: #363636;
     }
 
     &.router-link-exact-active .nav-button{
