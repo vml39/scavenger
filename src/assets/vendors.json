@@ -1,0 +1,67 @@
+{
+  "vendors": [
+    {
+      "name": "Apple Farms",
+      "phone": "1234567890",
+      "email": "applefarms@ithaca.com",
+      "site": "https://applefarms.com",
+      "payment": ["cash"]
+    },
+    {
+      "name": "Abe Farms",
+      "phone": "1234567890",
+      "email": "abefarms@ithaca.com",
+      "site": "https://abefarms.com",
+      "payment": ["cash", "credit"]
+    },
+    {
+      "name": "Beecher's Cheese",
+      "phone": "1234567890",
+      "email": "beecherscheese@ithaca.com",
+      "site": "https://beecherscheese.com",
+      "payment": ["credit"]
+    },
+    {
+      "name": "Bethany's Botanical Garden",
+      "phone": "1234567890",
+      "email": "bethanysbotanicalgarden@ithaca.com",
+      "site": "https://bethanysbotanicalgarden.com",
+      "payment": ["cash"]
+    },
+    {
+      "name": "Daisy Farm",
+      "phone": "1234567890",
+      "email": "daisyfarm@ithaca.com",
+      "site": "https://daisyfarm.com",
+      "payment": ["cash", "credit"]
+    },
+    {
+      "name": "Elena Eatery",
+      "phone": "1234567890",
+      "email": "elenaeatery@ithaca.com",
+      "site": "https://elenaeatery.com",
+      "payment": ["cash", "credit"]
+    },
+    {
+      "name": "Georgian Winery",
+      "phone": "1234567890",
+      "email": "georgianwinery@ithaca.com",
+      "site": "https://georgianwinery.com",
+      "payment": ["cash", "credit"]
+    },
+    {
+      "name": "Indian Creek Farm",
+      "phone": "1234567890",
+      "email": "indiancreekfarm@ithaca.com",
+      "site": "https://indiancreekfarm.com",
+      "payment": ["credit"]
+    },
+    {
+      "name": "Renee's Bakery",
+      "phone": "1234567890",
+      "email": "reneesbakery@ithaca.com",
+      "site": "https://reneesbakery.com",
+      "payment": ["cash"]
+    }
+  ]
+}
