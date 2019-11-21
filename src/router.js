@@ -18,6 +18,11 @@ export default new Router({
       path: '/vendors',
       name: 'vendors',
       component: Vendors
+    },
+    {
+      path: '/popup',
+      name: 'popup',
+      component: () => import('./views/PopUp.vue')
     }
   ]
 })
