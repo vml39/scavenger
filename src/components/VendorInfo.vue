@@ -1,7 +1,7 @@
 <template>
-  <div class="vendorinfo">
+  <div class="vendorinfo" v-if="opened && this.openModal">
     <button @click="close">x</button>
-    <img class="logo" src="/img/vendorlogo.jpg" alt="vendor logo" />
+    <img class="logo" :src="logo" alt="vendor logo" />
     <h1>{{ name }}</h1>
     <p>Payment options: <img class="payment" v-if="cash" src="/img/cashicon.jpg" alt="cash" /><img class="payment" v-if="credit" src="/img/crediticon.jpg" alt="credit" /></p>
     <p>Phone number: {{ phone }}</p>
@@ -14,6 +14,8 @@
 export default {
   name: 'VendorInfo',
   props: {
+    opened: Boolean,
+    logo: String,
     name: String,
     phone: String,
     email: String,
@@ -23,12 +25,18 @@ export default {
   },
   data: function () {
     return {
+      openModal: false,
       hasSite: true
     }
   },
   methods: {
     close () {
-      // send vendor info false to the vendors page
+      this.openModal = false;
+    }
+  },
+  watch: {
+    opened: function () {
+      this.openModal = true;
     }
   }
 }
@@ -40,8 +48,16 @@ export default {
     background-color: lightgray;
   }
 
+  button {
+    position: absolute;
+    right: 0;
+  }
+
   .logo {
-    width: 40%;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
     margin: 10px auto 5px auto;
     border-radius: 50%;
   }
