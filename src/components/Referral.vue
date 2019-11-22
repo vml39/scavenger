@@ -1,5 +1,5 @@
 <template>
-  <div class="Referral">
+   <div class="Referral">
     <!-- <h2>Refer a vendor to a friend!</h2>
     <p>Refer a favorite vendor to a friend!</p>
     <label> Vendor Name: </label>
@@ -19,20 +19,20 @@
             </div>
 
             <div class="modal-body">
-                <slot name="body">
+               
                     <label> Vendor Name: </label>
                     <input>
                     <label> Friend's Email: </label>
                     <input id= "friendsEmail">
-                </slot>
+                
             </div>
 
             <div class="modal-footer">
                 <slot name="footer">
-                  <button class="modal-default-button">
-                    <a href="mailto:{{email}}">Send email</a>
+                  <button class="button" id="sendButton" @click="store">
+                    <a :href="'mailto:' + this.email + '?subject=Ithaca%20Farmers%20Market%20Vendor%20Referral&body=Hey!%20I%20just%20visited%20out%20[VENDOR%20NAME]%20and%20they%20are%20awesome!%20Check%20them%20out%20next%20time%20you%20go%20to%20the%20market!'">Send referral email</a>
                   </button>
-                  <button class="modal-default-button" @click="$emit('close')">
+                  <button class="button" id="doneButton" @click="$emit('close')">
                       Done
                   </button>
                 </slot>
@@ -56,13 +56,34 @@
     </div> -->
   </div>
 
-
 <!-- app -->
 
 </template>
 
 <script>
-data
+    export default {
+        data () {
+                return {
+                    email: '',
+                }
+        },
+        methods: {
+            store() {
+                var email = document.getElementById("friendsEmail");
+            },
+            close() {
+                this.$emit('close');
+                this.email = "";
+                
+            }
+        }
+    };
+
+
+
+
+
+
 // register modal component
 // Vue.component('modal', {
 //   template: '#modal-template'
@@ -80,7 +101,39 @@ data
 </script>
 
 <style scoped>
-  .modal-mask {
+  #app {
+  text-align: left;
+}
+
+.button {
+  margin-left: 10px;
+  border-radius: 3px;
+  padding: 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#sendButton {
+  background-color: White; /* Green */
+  border: 0px solid #2C3E50 ;
+  color: #2C3E50;
+  margin-left: 38px;
+}
+
+#sendButton a {
+  color: #2C3E50;
+}
+
+#doneButton {
+  background-color: #2C3E50; /* Green */
+  border: 1px solid white ;
+  color: white;
+}
+
+
+.modal-mask {
   position: fixed;
   /* z-index: 9998; */
   top: 0;
@@ -107,6 +160,7 @@ data
 }
 .modal-header h3 {
   margin-top: 0;
+  text-align: center;
   
 }
 .modal-body {
@@ -122,6 +176,7 @@ data
 }
 input {
   margin-bottom: 10px;
+  width: 240px;
 }
 /*
  * The following styles are auto-applied to elements with
