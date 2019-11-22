@@ -193,7 +193,7 @@ export default {
   .vendorinfo {
     width: 80%;
     position: absolute;
-    top: 10%;
+    top: 20%;
     left: 10%;
     z-index: 5;
   }

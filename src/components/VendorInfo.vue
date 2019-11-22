@@ -1,12 +1,16 @@
 <template>
   <div class="vendorinfo" v-if="opened && this.openModal">
-    <button @click="close">x</button>
-    <img class="logo" :src="logo" alt="vendor logo" />
-    <h1>{{ name }}</h1>
-    <p>Payment options: <img class="payment" v-if="cash" src="/img/cashicon.jpg" alt="cash" /><img class="payment" v-if="credit" src="/img/crediticon.jpg" alt="credit" /></p>
-    <p>Phone number: {{ phone }}</p>
-    <p>Email: {{ email }}</p>
-    <p v-if="hasSite">Website: {{ site }}</p>
+    <button @click="close">&times;</button>
+    <div class="vendorinfomodal">
+      <div class="imgContainer">
+        <img class="logo" :src="logo" alt="vendor logo" />
+      </div>
+      <h1>{{ name }}</h1>
+      <p>Payment options: <img class="payment" v-if="cash" src="/img/cashicon.jpg" alt="cash" /><img class="payment" v-if="credit" src="/img/crediticon.jpg" alt="credit" /></p>
+      <p>Phone number: {{ phone }}</p>
+      <p>Email: {{ email }}</p>
+      <p v-if="hasSite">Website: {{ site }}</p>
+    </div>
   </div>
 </template>
 
@@ -25,7 +29,7 @@ export default {
   },
   data: function () {
     return {
-      openModal: false,
+      openModal: true,
       hasSite: true
     }
   },
@@ -45,21 +49,32 @@ export default {
 <style scoped>
   .vendorinfo {
     margin-top: 10px;
-    background-color: lightgray;
+    background-color: rgb(245, 245, 245);
   }
 
   button {
     position: absolute;
     right: 0;
+    font-size: 1.5em;
   }
 
-  .logo {
+  .vendorinfomodal {
+    padding: 30px 20px 20px 20px;
+  }
+
+  .imgContainer {
     width: 100px;
     height: 100px;
     position: relative;
     overflow: hidden;
-    margin: 10px auto 5px auto;
     border-radius: 50%;
+    margin: 0 auto 10px auto;
+  }
+
+  img {
+    display: inline;
+    height: 100%;
+    width: auto;
   }
 
   h1 {
