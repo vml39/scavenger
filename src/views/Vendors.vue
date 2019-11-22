@@ -1,14 +1,16 @@
 <template>
   <div class="vendors">
-    <h2 v-if="!vendorInfoShow">Vendor Directory</h2>
-    <div class="search" v-if="!vendorInfoShow">
+    <h2>Vendor Directory</h2>
+    <div class="search">
       <autocomplete :search="search" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
     </div>
-    <VendorInfo class="vendorinfo" v-if="vendorInfoShow" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" />
-    <ul v-if="!vendorInfoShow">
-      <li :key="vendor" v-for="vendor in vendors">
+    <VendorInfo class="vendorinfo" :opened="true" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" />
+    <ul>
+      <li :key="vendor" v-for="vendor in vendors" @click="updateVendor(vendor)">
         <div>
-          <img src="/img/vendorlogo.jpg" alt="vendor logo" />
+          <div class="imgContainer">
+            <img :src="vendor.logo" alt="vendor logo" />
+          </div>
           <h3>{{ vendor.name }}</h3>
         </div>
       </li>
@@ -30,14 +32,14 @@ export default {
   },
   data: function () {
     return {
-      vendorInfoShow: false,
       vendorInfo: {
         name: "Apple Farms",
         phone: "1234567890",
         email: "applefarms@ithaca.com",
         site: "https://applefarms.com",
         cash: true,
-        credit: false
+        credit: false,
+        logo: "/img/applefarms.jpg",
       },
      vendors: [
         {
@@ -46,63 +48,89 @@ export default {
           email: "applefarms@ithaca.com",
           site: "https://applefarms.com",
           cash: true,
-          credit: false
+          credit: false,
+          logo: "/img/applefarms.jpg",
+          // Source: https://www.thrillist.com/lifestyle/new-york/best-apple-picking-near-nyc
         },
         {
           name: "Abe Farms",
           phone: "1234567890",
           email: "abefarms@ithaca.com",
           site: "https://abefarms.com",
-          payment: ["cash", "credit"]
+          cash: true,
+          credit: true,
+          logo: "/img/abefarms.jpg",
+          // Source: https://www.massaudubon.org/get-outdoors/wildlife-sanctuaries/drumlin-farm
         },
         {
           name: "Beecher's Cheese",
           phone: "1234567890",
           email: "beecherscheese@ithaca.com",
           site: "https://beecherscheese.com",
-          payment: ["credit"]
+          cash: false,
+          credit: true,
+          logo: "/img/beecherscheese.jpg"
+          // Source: https://www.farmanddairy.com/top-stories/8-tips-to-start-a-dairy-farm/423679.html
         },
         {
           name: "Bethany's Botanical Garden",
           phone: "1234567890",
           email: "bethanysbotanicalgarden@ithaca.com",
           site: "https://bethanysbotanicalgarden.com",
-          payment: ["cash"]
+          cash: true,
+          credit: false,
+          logo: "img/bethanysbotanicalgarden.jpg"
+          // Source: https://www.atlasobscura.com/articles/worlds-most-beautiful-botanical-gardens
         },
         {
           name: "Daisy Farm",
           phone: "1234567890",
           email: "daisyfarm@ithaca.com",
           site: "https://daisyfarm.com",
-          payment: ["cash", "credit"]
+          cash: true,
+          credit: true,
+          logo: "/img/daisyfarm.jpg"
+          // Source: https://www.countryliving.com/gardening/a22109231/outdoor-daisy-flower-care/
         },
         {
           name: "Elena Eatery",
           phone: "1234567890",
           email: "elenaeatery@ithaca.com",
           site: "https://elenaeatery.com",
-          payment: ["cash", "credit"]
+          cash: true,
+          credit: true,
+          logo: "img/elenaeatery.png"
+          // Source: https://emojipedia.org/fork-and-knife/
         },
         {
           name: "Georgian Winery",
           phone: "1234567890",
           email: "georgianwinery@ithaca.com",
           site: "https://georgianwinery.com",
-          payment: ["cash", "credit"]
+          cash: true,
+          credit: true,
+          logo: "img/georgianwinery.jpg"
+          // Source: https://singletreewinery.com/abbotsfords-singletree-winery-opens-a-second-location-in-the-okanagan/
         },
         {
           name: "Indian Creek Farm",
           phone: "1234567890",
           email: "indiancreekfarm@ithaca.com",
           site: "https://indiancreekfarm.com",
-          payment: ["credit"]
+          cash: false,
+          credit: true, 
+          logo: "img/indiancreekfarm.jpg"
+          // Source: https://www.visitithaca.com/attractions/indian-creek-farm
         },
         {
           name: "Renee's Bakery",
           phone: "1234567890",
           email: "reneesbakery@ithaca.com",
           site: "https://reneesbakery.com",
-          payment: ["cash"]
+          cash: true,
+          credit: false,
+          logo: "img/reneesbakery.jpg"
+          // Source: https://dansfoods.com/departments/bakery
         }
       ] 
     }
@@ -111,6 +139,12 @@ export default {
     search () {
       console.log("searching...");
     },
+    updateVendor (vendor) {
+      console.log("clicked");
+      console.log(vendor.name);
+      this.vendorInfo = vendor;
+      
+    }
   }
 }
 </script>
@@ -137,10 +171,23 @@ export default {
     margin: 0 auto;
   }
 
-  img {
-    width: 100%;
+  .imgContainer {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
     border-radius: 50%;
-    border: 1px solid gray;
+  }
+
+  img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+  }
+
+  h3 {
+    margin-top: 5px;
   }
 
   .vendorinfo {
@@ -148,5 +195,6 @@ export default {
     position: absolute;
     top: 10%;
     left: 10%;
+    z-index: 5;
   }
 </style>
