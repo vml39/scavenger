@@ -31,11 +31,9 @@
             <sui-button class="closeoutbutton" circular basic floated="right" icon="close" @click="close" />
           </div>
           <section class="modal-body">
-            <slot name="body">
                 <QRcode v-if="selectedModal == 'QRcode'" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal" />
                 <SocialMediaTag v-if="selectedModal == 'SocialMediaTag'" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal" theme="fall" />
                 <sui-button color="green" @click="closeandcollectpoints" content="Complete Task!" />
-            </slot>
           </section>
           </div>
         </div>
