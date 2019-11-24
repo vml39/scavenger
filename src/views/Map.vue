@@ -58,13 +58,12 @@
 			</div>    
     </div>
 	<div id="actions-container">
-      <div class="action-button" @click="openModal">Scan</div>
-      <div class="action-button" @click="openSocialModal">Share</div>
+      <div class="action-button" @click="openModal('QRcode')">Scan</div>
+      <div class="action-button" @click="openModal('SocialMediaTag')">Share</div>
       <div class="action-button" v-on:click="add()">Refer</div>
     </div>
+	<Modal v-show="modalOpen" v-bind:selectedModal="selectedModal" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal"/>
 
-		<QRcode v-show="modalOpen" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal"/>
-		<SocialMediaTag v-show="modalOpenSocial" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeSocialModal" theme="fall" />
     <!-- <div class="popup" v-show="scanMode"></div>
     <div class="popup" v-show="shareMode"></div>
     <div class="popup" v-show="referMode"></div> -->
@@ -72,14 +71,12 @@
 </template>
 
 <script>
-	import QRcode from '@/components/QrCode.vue';
-	import SocialMediaTag from '@/components/SocialMediaTag.vue';
+	import Modal from '@/components/Modal.vue';
 
 	export default {
 		name: 'map',
 		components: {
-			QRcode,
-			SocialMediaTag,
+			Modal,
 		},
 		data() {
 			return {
@@ -96,27 +93,23 @@
 			colorIndices: [0, 1, 2],
 			
 			modalOpen: false,
-			modalOpenSocial: false,
+			selectedModal: null,
 			vendors: [],
 			}
 		},
 		methods: {
-			openSocialModal(){
-				this.modalOpenSocial = true;
-			},
-			closeSocialModal(){
-				this.modalOpenSocial = false;
-			},
-			openModal() {
-			this.modalOpen = true;
+			openModal(modalSelected) {
+				this.modalOpen = true;
+				this.selectedModal = modalSelected;
 			},
 			closeModal() {
-			this.modalOpen = false;
+				this.modalOpen = false;
+				this.selectedModal = null;
 			},
 			closeModalAndCollectPoint() {
-			this.modalOpen = false;
-			this.modalOpenSocial = false;
-			this.add();
+				this.modalOpen = false;
+				this.selectedModal = null;
+				this.add();
 			},
 			add() {
 				this.tokens ++
