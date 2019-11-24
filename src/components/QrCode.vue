@@ -7,27 +7,24 @@
             QrcodeStream,
         },
         data () {
-            return {
+          return {
             result: '',
             error: '',
             vendorresponse: '',
             checkedin: false,
-            }
+          }
         },
         methods: {
-        close() {
-            this.$emit('close');
-            this.result = "";
-            this.error = "";
-            this.checkedin = false;
-            
-        },
-        closeandcollectpoints () {
-            this.$emit('closeandcollectpoints');
-            this.result = "";
-            this.error = "";
-            this.checkedin = false;
-        },
+        // close() {
+        //     this.result = "";
+        //     this.error = "";
+        //     this.checkedin = false;
+        // },
+        // closeandcollectpoints () {
+        //     this.result = "";
+        //     this.error = "";
+        //     this.checkedin = false;
+        // },
         onDecode (result) {
             this.result = result
             // if result exists in visited table, then print out:
@@ -63,29 +60,16 @@
 </script>
 
 <template land="html">
-    <transition name="slide-fade">
-      <div class="modal-cover">
-        <div class="modal">
-          <div class="sixteen wide computer sixteen wide tablet sixteen wide mobile right aligned column">
-            <sui-button class="closeoutbutton" circular basic floated="right" icon="close" @click="close" />
-          </div>
-          <section class="modal-body">
-            <slot name="body">
-            <h1 id="popupheader">Check in at a Vendor Booth</h1>
-                <p id="popupinstructions">
-                    Scan the QR code at a vendor booth to record you've visited this vendor.
-                </p>
-                <p class="error">{{ error }}</p>
-                <qrcode-stream id="readerwindow" @decode="onDecode" @init="onInit" />
-
-                <p class="decode-result"> <b>{{ result }}</b> </p>
-                <p class="vendorresponse">{{vendorresponse}}</p>
-                <sui-button color="green" @click="closeandcollectpoints" content="Check In and Level Up!" />
-            </slot>
-          </section>
-          </div>
-        </div>
-    </transition>
+  <div class="qrcode_modal">
+      <h1 id="popupheader">Check in at a Vendor Booth</h1>
+      <p id="popupinstructions">
+          Scan the QR code at a vendor booth to record you've visited this vendor.
+      </p>
+      <p class="error">{{ error }}</p>
+      <qrcode-stream id="readerwindow" @decode="onDecode" @init="onInit" />
+      <p class="decode-result"> <b>{{ result }}</b> </p>
+      <p class="vendorresponse">{{vendorresponse}}</p>
+  </div>
 </template>
 
 
