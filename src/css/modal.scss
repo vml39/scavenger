@@ -1,0 +1,64 @@
+.modal-cover {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.56);
+    display: flex;
+    justify-content: center;
+  }
+
+  .modal {
+    background: #FFFFFF;
+    box-shadow: 5px 5px 30px 2px;
+    width: 90%;
+    height: 80vh;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0;
+    top: 7vh;
+  }
+
+  .modal-header{
+    padding: 15px;
+    display: flex;
+    text-align: right;
+  }
+
+  .modal-body {
+    position: relative;
+    padding: 20px 20px;
+    text-align: center;
+  }
+
+  .btn-green {
+    color: white;
+    background: #4AAE9B;
+    border: 1px solid #4AAE9B;
+    border-radius: 2px;
+  }
+
+  .error {
+    font-weight: bold;
+    color: red;
+  }
+
+  #readerwindow {
+      width: 100%;
+      height: 40vh;
+  }
+
+  .slide-fade-enter-active, .slide-fade-leave-active {
+    transition: all .2s ease-in-out;
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+  {
+    opacity: 0;
+  }
+
+  .closeoutbutton {
+    position: relative;
+    top: 5px;
+    right: 5px;
+  }
