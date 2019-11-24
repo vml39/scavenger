@@ -1,23 +1,17 @@
 <script>
-    import { 
-                QrcodeStream, 
-                // QrcodeDropZone,
-                // QrcodeCapture 
-            } 
-    from 'vue-qrcode-reader'
+    import { QrcodeStream } from 'vue-qrcode-reader'
     
     export default {
         name: 'QRcode',
         components: {
             QrcodeStream,
-            // QrcodeDropZone,
-            // QrcodeCapture
         },
         data () {
             return {
             result: '',
             error: '',
             vendorresponse: '',
+            checkedin: false,
             }
         },
         methods: {
@@ -25,7 +19,14 @@
             this.$emit('close');
             this.result = "";
             this.error = "";
+            this.checkedin = false;
             
+        },
+        closeandcollectpoints () {
+            this.$emit('closeandcollectpoints');
+            this.result = "";
+            this.error = "";
+            this.checkedin = false;
         },
         onDecode (result) {
             this.result = result
@@ -33,6 +34,9 @@
             // this.vendorresponse= "Looks like we've already been here before."
             // else
             //this.vendorresponse= "<b>Congrats on visiting a new vendor!</b>"
+            //this.checkedin=true
+            // then show the check in and level up button
+
         },
         async onInit (promise) {
             try {
@@ -58,87 +62,33 @@
   };
 </script>
 
-<template>
-  <div class="modal-backdrop">
-    <div class="modal">
-      <section class="modal-body">
-        <slot name="body">
+<template land="html">
+    <transition name="slide-fade">
+      <div class="modal-cover">
+        <div class="modal">
+          <div class="sixteen wide computer sixteen wide tablet sixteen wide mobile right aligned column">
+            <sui-button class="closeoutbutton" circular basic floated="right" icon="close" @click="close" />
+          </div>
+          <section class="modal-body">
+            <slot name="body">
             <h1 id="popupheader">Check in at a Vendor Booth</h1>
-            <p id="popupinstructions">
-                Scan the QR code at a vendor booth to record you've visited this vendor.
-            </p>
-            <p class="error">{{ error }}</p>
-            <p class="decode-result"> <b>{{ result }}</b> </p>
-            <p class="vendorresponse">{{vendorresponse}}</p>
+                <p id="popupinstructions">
+                    Scan the QR code at a vendor booth to record you've visited this vendor.
+                </p>
+                <p class="error">{{ error }}</p>
+                <qrcode-stream id="readerwindow" @decode="onDecode" @init="onInit" />
 
-            <qrcode-stream id="readerwindow" @decode="onDecode" @init="onInit" />
-
-            <button type="button" class="btn-green" @click="close"> Close me!</button>
-        </slot>
-       </section>
-    </div>
-  </div>
+                <p class="decode-result"> <b>{{ result }}</b> </p>
+                <p class="vendorresponse">{{vendorresponse}}</p>
+                <sui-button color="green" @click="closeandcollectpoints" content="Check In and Level Up!" />
+            </slot>
+          </section>
+          </div>
+        </div>
+    </transition>
 </template>
 
-<style>
-  .modal-backdrop {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(86, 155, 8, 0.623);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
-  .modal {
-    background: #FFFFFF;
-    box-shadow: 5px 5px 30px 2px;
-    width: 90%;
-    height: 80vh;
-    overflow-x: auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .modal-header,
-  .modal-footer {
-    padding: 15px;
-    display: flex;
-    text-align: right;
-  }
-
-  .modal-header {
-    border-bottom: 1px solid #eeeeee;
-    color: #4AAE9B;
-    justify-content: space-between;
-}
-
-  .modal-footer {
-    border-top: 1px solid #eeeeee;
-    justify-content: flex-end;
-  }
-
-  .modal-body {
-    position: relative;
-    padding: 20px 20px;
-    text-align: center;
-  }
-
-  .btn-green {
-    color: white;
-    background: #4AAE9B;
-    border: 1px solid #4AAE9B;
-    border-radius: 2px;
-  }
-  .error {
-    font-weight: bold;
-    color: red;
-  }
-  #readerwindow {
-      width: 100%;
-      height: 40vh;
-  }
+<style lang="scss">
+  @import "../css/modal.scss"
 </style>
