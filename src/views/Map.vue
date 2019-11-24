@@ -57,13 +57,14 @@
 				</div>
 			</div>    
     </div>
-		<div id="actions-container">
+	<div id="actions-container">
       <div class="action-button" @click="openModal">Scan</div>
-      <div class="action-button"  v-on:click="add()">Share</div>
-      <div class="action-button"  v-on:click="add()">Refer</div>
+      <div class="action-button" @click="openSocialModal">Share</div>
+      <div class="action-button" v-on:click="add()">Refer</div>
     </div>
 
-      <QRcode v-show="modalOpen" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal"/>
+		<QRcode v-show="modalOpen" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal"/>
+		<SocialMediaTag v-show="modalOpenSocial" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeSocialModal" theme="fall" />
     <!-- <div class="popup" v-show="scanMode"></div>
     <div class="popup" v-show="shareMode"></div>
     <div class="popup" v-show="referMode"></div> -->
@@ -72,10 +73,13 @@
 
 <script>
 	import QRcode from '@/components/QrCode.vue';
+	import SocialMediaTag from '@/components/SocialMediaTag.vue';
+
 	export default {
 		name: 'map',
 		components: {
 			QRcode,
+			SocialMediaTag,
 		},
 		data() {
 			return {
@@ -92,10 +96,17 @@
 			colorIndices: [0, 1, 2],
 			
 			modalOpen: false,
-			open: false,
+			modalOpenSocial: false,
+			vendors: [],
 			}
 		},
 		methods: {
+			openSocialModal(){
+				this.modalOpenSocial = true;
+			},
+			closeSocialModal(){
+				this.modalOpenSocial = false;
+			},
 			openModal() {
 			this.modalOpen = true;
 			},
@@ -104,6 +115,7 @@
 			},
 			closeModalAndCollectPoint() {
 			this.modalOpen = false;
+			this.modalOpenSocial = false;
 			this.add();
 			},
 			add() {

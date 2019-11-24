@@ -1,3 +1,4 @@
+
 .modal-cover {
     position: fixed;
     top: 0;
@@ -11,13 +12,16 @@
     background: #FFFFFF;
     box-shadow: 5px 5px 30px 2px;
     width: 90%;
-    height: 80vh;
+    height: fit-content;
+    max-height: 80vh;
     overflow-x: auto;
     display: flex;
     flex-direction: column;
+    padding: 3%;
     position: relative;
     margin: 0;
-    top: 7vh;
+    top: -5vh;
+    align-self: center;
   }
 
   .modal-header{
