@@ -1,12 +1,16 @@
 <template>
-  <div class="vendorinfo">
-    <button @click="close">x</button>
-    <img class="logo" src="/img/vendorlogo.jpg" alt="vendor logo" />
-    <h1>{{ name }}</h1>
-    <p>Payment options: <img class="payment" v-if="cash" src="/img/cashicon.jpg" alt="cash" /><img class="payment" v-if="credit" src="/img/crediticon.jpg" alt="credit" /></p>
-    <p>Phone number: {{ phone }}</p>
-    <p>Email: {{ email }}</p>
-    <p v-if="hasSite">Website: {{ site }}</p>
+  <div class="vendorinfo" v-if="opened && this.openModal">
+    <button @click="close">&times;</button>
+    <div class="vendorinfomodal">
+      <div class="imgContainer">
+        <img class="logo" :src="logo" alt="vendor logo" />
+      </div>
+      <h1>{{ name }}</h1>
+      <p>Payment options: <img class="payment" v-if="cash" src="/img/cashicon.jpg" alt="cash" /><img class="payment" v-if="credit" src="/img/crediticon.jpg" alt="credit" /></p>
+      <p>Phone number: {{ phone }}</p>
+      <p>Email: {{ email }}</p>
+      <p v-if="hasSite">Website: {{ site }}</p>
+    </div>
   </div>
 </template>
 
@@ -14,6 +18,8 @@
 export default {
   name: 'VendorInfo',
   props: {
+    opened: Boolean,
+    logo: String,
     name: String,
     phone: String,
     email: String,
@@ -23,12 +29,18 @@ export default {
   },
   data: function () {
     return {
+      openModal: true,
       hasSite: true
     }
   },
   methods: {
     close () {
-      // send vendor info false to the vendors page
+      this.openModal = false;
+    }
+  },
+  watch: {
+    opened: function () {
+      this.openModal = true;
     }
   }
 }
@@ -37,13 +49,32 @@ export default {
 <style scoped>
   .vendorinfo {
     margin-top: 10px;
-    background-color: lightgray;
+    background-color: rgb(245, 245, 245);
   }
 
-  .logo {
-    width: 40%;
-    margin: 10px auto 5px auto;
+  button {
+    position: absolute;
+    right: 0;
+    font-size: 1.5em;
+  }
+
+  .vendorinfomodal {
+    padding: 30px 20px 20px 20px;
+  }
+
+  .imgContainer {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
     border-radius: 50%;
+    margin: 0 auto 10px auto;
+  }
+
+  img {
+    display: inline;
+    height: 100%;
+    width: auto;
   }
 
   h1 {
