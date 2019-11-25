@@ -5,7 +5,8 @@
       "phone": "1234567890",
       "email": "applefarms@ithaca.com",
       "site": "https://applefarms.com",
-      "payment": ["cash"]
+      "payment": ["cash"],
+      "logo": "/img/applefarms.jpg"
     },
     {
       "name": "Abe Farms",
