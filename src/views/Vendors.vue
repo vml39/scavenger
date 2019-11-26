@@ -1,6 +1,6 @@
 <template>
   <div class="vendors">
-    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" />
+    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" />
       <h2>Vendor Directory</h2>
       <div class="search">
         <autocomplete :search="search" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
@@ -55,6 +55,7 @@ export default {
         cash: true,
         credit: false,
         logo: "/img/applefarms.jpg",
+        favorite: true,
         opened: false
       },
       vendors: vendorsList.default,
