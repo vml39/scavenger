@@ -1,6 +1,7 @@
 <template>
   <div class="vendorinfo" v-if="opened">
-    <button @click="close">&times;</button>
+    <sui-button class="favorite" icon="heart outline" @click="favorite"></sui-button>
+    <sui-button class="close" @click="close">&times;</sui-button>
     <div class="vendorinfomodal">
       <div class="imgContainer">
         <img class="logo" :src="logo" alt="vendor logo" />
@@ -40,7 +41,8 @@ export default {
       return "("+phone.substring(0, 3)+") "+phone.substring(3,6)+"-"+phone.substring(6);
     },
     close () {
-      this.opened = false; // better way to do this?
+      document.getElementById("vendoroverlay").classList.remove("vendorinfooverlay");
+      this.opened = false;
     }
   }
 }
@@ -49,13 +51,25 @@ export default {
 <style scoped>
   .vendorinfo {
     margin-top: 10px;
-    background-color: rgb(245, 245, 245);
+    background: rgb(245, 245, 245);
   }
 
   button {
     position: absolute;
+    background: none !important;
+    padding: 0 !important
+  }
+
+  .favorite {
+    left: 0;
+    padding-left: 5px !important;
+    padding-top: 5px !important;
+    font-size: 1.5em !important;
+  }
+
+  .close {
     right: 0;
-    font-size: 1.5em;
+    font-size: 2em !important;
   }
 
   .vendorinfomodal {
