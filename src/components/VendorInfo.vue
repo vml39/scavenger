@@ -1,6 +1,7 @@
 <template>
   <div class="vendorinfo" v-if="opened">
-    <sui-button class="favorite" icon="heart outline" @click="favorite"></sui-button>
+    <sui-button v-if="!favorite" class="favorite" icon="heart outline" @click="favoriteVendor"></sui-button>
+    <sui-button v-if="favorite" class="favorite favorited" icon="heart outline" @click="unfavoriteVendor"></sui-button>
     <sui-button class="close" @click="close">&times;</sui-button>
     <div class="vendorinfomodal">
       <div class="imgContainer">
@@ -29,7 +30,8 @@ export default {
     email: String,
     site: String,
     cash: Boolean,
-    credit: Boolean
+    credit: Boolean,
+    favorite: Boolean
   },
   data: function () {
     return {
@@ -39,6 +41,12 @@ export default {
   methods: {
     toPhoneNum (phone) {
       return "("+phone.substring(0, 3)+") "+phone.substring(3,6)+"-"+phone.substring(6);
+    },
+    favoriteVendor () {
+      console.log(name);
+    },
+    unfavoriteVendor () {
+      console.log(name);
     },
     close () {
       document.getElementById("vendoroverlay").classList.remove("vendorinfooverlay");
@@ -65,6 +73,10 @@ export default {
     padding-left: 5px !important;
     padding-top: 5px !important;
     font-size: 1.5em !important;
+  }
+
+  .favorited {
+    color: red !important;
   }
 
   .close {
