@@ -4,9 +4,9 @@
     <div class="search">
       <autocomplete :search="search" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
     </div>
-    <VendorInfo class="vendorinfo" :opened="true" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" />
+    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" />
     <ul>
-      <li :key="vendor" v-for="vendor in vendors" @click="updateVendor(vendor)">
+      <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
         <div>
           <div class="imgContainer">
             <img :src="vendor.logo" alt="vendor logo" />
@@ -40,6 +40,7 @@ export default {
         cash: true,
         credit: false,
         logo: "/img/applefarms.jpg",
+        opened: false
       },
      vendors: [
         {
@@ -140,16 +141,18 @@ export default {
       console.log("searching...");
     },
     updateVendor (vendor) {
-      console.log("clicked");
-      console.log(vendor.name);
       this.vendorInfo = vendor;
-      
+      this.vendorInfo.opened = true;
     }
   }
 }
 </script>
 
 <style scoped>
+  h2 {
+    margin-top: 20px !important;
+  }
+
   .search {
     width: 95%;
     margin: 0 auto 20px auto;
@@ -164,6 +167,7 @@ export default {
   ul li {
     flex-basis: 33%;
     list-style: none;
+    margin: 10px 0;
   }
 
   ul li div {

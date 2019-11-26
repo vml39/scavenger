@@ -1,15 +1,18 @@
 <template>
-  <div class="vendorinfo" v-if="opened && this.openModal">
+  <div class="vendorinfo" v-if="opened">
     <button @click="close">&times;</button>
     <div class="vendorinfomodal">
       <div class="imgContainer">
         <img class="logo" :src="logo" alt="vendor logo" />
       </div>
       <h1>{{ name }}</h1>
-      <p>Payment options: <img class="payment" v-if="cash" src="/img/cashicon.jpg" alt="cash" /><img class="payment" v-if="credit" src="/img/crediticon.jpg" alt="credit" /></p>
-      <p>Phone number: {{ phone }}</p>
+      <p>Payment options:
+        <sui-icon v-if="cash" name="money bill alternate outline"></sui-icon>
+        <sui-icon v-if="credit" name="credit card outline"></sui-icon>
+      </p>
+      <p>Phone number: {{ this.toPhoneNum(phone) }}</p>
       <p>Email: {{ email }}</p>
-      <p v-if="hasSite">Website: {{ site }}</p>
+      <p class="site" v-if="hasSite">Website: </p><a :href="site">{{ site }}</a>
     </div>
   </div>
 </template>
@@ -29,18 +32,15 @@ export default {
   },
   data: function () {
     return {
-      openModal: true,
       hasSite: true
     }
   },
   methods: {
+    toPhoneNum (phone) {
+      return "("+phone.substring(0, 3)+") "+phone.substring(3,6)+"-"+phone.substring(6);
+    },
     close () {
-      this.openModal = false;
-    }
-  },
-  watch: {
-    opened: function () {
-      this.openModal = true;
+      this.opened = false; // better way to do this?
     }
   }
 }
@@ -83,5 +83,11 @@ export default {
 
   .payment {
     width: 10%;
+  }
+
+  .site {
+    display: inline-block;
+    padding-right: 5px;
+    margin-top: 0;
   }
 </style>
