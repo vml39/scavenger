@@ -65,6 +65,7 @@ export default {
   methods: {
     search () {
       console.log("searching...");
+      // search through all vendors where name has substr of the string in search then update the vendors
     },
     updateVendor (vendor) {
       document.getElementById("vendoroverlay").classList.add("vendorinfooverlay");
@@ -141,6 +142,7 @@ export default {
   .vendorinfooverlay {
     filter: blur(3px);
     -webkit-filter: blur(3px);
+    position: fixed;
   }
 
   .vendorinfo {
@@ -149,7 +151,5 @@ export default {
     top: 20%;
     left: 10%;
     z-index: 5;
-    filter: none;
-    -webkit-filter: none;
   }
 </style>
