@@ -1,26 +1,29 @@
 <template>
   <div class="vendors">
-    <h2>Vendor Directory</h2>
-    <div class="search">
-      <autocomplete :search="search" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
-    </div>
     <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" />
-    <ul>
-      <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
-        <div>
-          <div class="imgContainer">
-            <img :src="vendor.logo" alt="vendor logo" />
+      <h2>Vendor Directory</h2>
+      <div class="search">
+        <autocomplete :search="search" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
+      </div>
+      <div id="vendoroverlay">
+      <ul>
+        <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
+          <div>
+            <div class="imgContainer">
+              <img :src="vendor.logo" alt="vendor logo" />
+            </div>
+            <h3>{{ vendor.name }}</h3>
           </div>
-          <h3>{{ vendor.name }}</h3>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
 
 import VendorInfo from '@/components/VendorInfo.vue'
+import * as vendorsList from '../assets/js/vendorsList.js'
 import Autocomplete from '@trevoreyre/autocomplete-vue'
 import '@trevoreyre/autocomplete-vue/dist/style.css'
 
@@ -42,98 +45,7 @@ export default {
         logo: "/img/applefarms.jpg",
         opened: false
       },
-     vendors: [
-        {
-          name: "Apple Farms",
-          phone: "1234567890",
-          email: "applefarms@ithaca.com",
-          site: "https://applefarms.com",
-          cash: true,
-          credit: false,
-          logo: "/img/applefarms.jpg",
-          // Source: https://www.thrillist.com/lifestyle/new-york/best-apple-picking-near-nyc
-        },
-        {
-          name: "Abe Farms",
-          phone: "1234567890",
-          email: "abefarms@ithaca.com",
-          site: "https://abefarms.com",
-          cash: true,
-          credit: true,
-          logo: "/img/abefarms.jpg",
-          // Source: https://www.massaudubon.org/get-outdoors/wildlife-sanctuaries/drumlin-farm
-        },
-        {
-          name: "Beecher's Cheese",
-          phone: "1234567890",
-          email: "beecherscheese@ithaca.com",
-          site: "https://beecherscheese.com",
-          cash: false,
-          credit: true,
-          logo: "/img/beecherscheese.jpg"
-          // Source: https://www.farmanddairy.com/top-stories/8-tips-to-start-a-dairy-farm/423679.html
-        },
-        {
-          name: "Bethany's Botanical Garden",
-          phone: "1234567890",
-          email: "bethanysbotanicalgarden@ithaca.com",
-          site: "https://bethanysbotanicalgarden.com",
-          cash: true,
-          credit: false,
-          logo: "img/bethanysbotanicalgarden.jpg"
-          // Source: https://www.atlasobscura.com/articles/worlds-most-beautiful-botanical-gardens
-        },
-        {
-          name: "Daisy Farm",
-          phone: "1234567890",
-          email: "daisyfarm@ithaca.com",
-          site: "https://daisyfarm.com",
-          cash: true,
-          credit: true,
-          logo: "/img/daisyfarm.jpg"
-          // Source: https://www.countryliving.com/gardening/a22109231/outdoor-daisy-flower-care/
-        },
-        {
-          name: "Elena Eatery",
-          phone: "1234567890",
-          email: "elenaeatery@ithaca.com",
-          site: "https://elenaeatery.com",
-          cash: true,
-          credit: true,
-          logo: "img/elenaeatery.png"
-          // Source: https://emojipedia.org/fork-and-knife/
-        },
-        {
-          name: "Georgian Winery",
-          phone: "1234567890",
-          email: "georgianwinery@ithaca.com",
-          site: "https://georgianwinery.com",
-          cash: true,
-          credit: true,
-          logo: "img/georgianwinery.jpg"
-          // Source: https://singletreewinery.com/abbotsfords-singletree-winery-opens-a-second-location-in-the-okanagan/
-        },
-        {
-          name: "Indian Creek Farm",
-          phone: "1234567890",
-          email: "indiancreekfarm@ithaca.com",
-          site: "https://indiancreekfarm.com",
-          cash: false,
-          credit: true, 
-          logo: "img/indiancreekfarm.jpg"
-          // Source: https://www.visitithaca.com/attractions/indian-creek-farm
-        },
-        {
-          name: "Renee's Bakery",
-          phone: "1234567890",
-          email: "reneesbakery@ithaca.com",
-          site: "https://reneesbakery.com",
-          cash: true,
-          credit: false,
-          logo: "img/reneesbakery.jpg"
-          // Source: https://dansfoods.com/departments/bakery
-        }
-      ] 
+      vendors: vendorsList.default
     }
   },
   methods: {
@@ -141,9 +53,14 @@ export default {
       console.log("searching...");
     },
     updateVendor (vendor) {
+      document.getElementById("vendoroverlay").classList.add("vendorinfooverlay");
       this.vendorInfo = vendor;
       this.vendorInfo.opened = true;
+      console.log(this.vendorInfo.opened);
     }
+  },
+  mounted() {
+    console.log(vendorsList.default);
   }
 }
 </script>
@@ -194,11 +111,22 @@ export default {
     margin-top: 5px;
   }
 
+  .fade {
+    background-color: black;
+  }
+
+  .vendorinfooverlay {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+  }
+
   .vendorinfo {
     width: 80%;
     position: absolute;
     top: 20%;
     left: 10%;
     z-index: 5;
+    filter: none;
+    -webkit-filter: none;
   }
 </style>
