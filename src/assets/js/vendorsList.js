@@ -8,7 +8,8 @@ let vendors = [
     credit: false,
     logo: "/img/applefarms.jpg",
     // Source: https://www.thrillist.com/lifestyle/new-york/best-apple-picking-near-nyc
-    visited: true
+    visited: true,
+    favorite: true
   },
   {
     name: "Abe Farms",
@@ -19,7 +20,8 @@ let vendors = [
     credit: true,
     logo: "/img/abefarms.jpg",
     // Source: https://www.massaudubon.org/get-outdoors/wildlife-sanctuaries/drumlin-farm
-    visited: true
+    visited: true,
+    favorite: false
   },
   {
     name: "Beecher's Cheese",
@@ -30,7 +32,8 @@ let vendors = [
     credit: true,
     logo: "/img/beecherscheese.jpg",
     // Source: https://www.farmanddairy.com/top-stories/8-tips-to-start-a-dairy-farm/423679.html
-    visited: true
+    visited: true,
+    favorite: false
   },
   {
     name: "Bethany's Botanical Garden",
@@ -41,7 +44,8 @@ let vendors = [
     credit: false,
     logo: "img/bethanysbotanicalgarden.jpg",
     // Source: https://www.atlasobscura.com/articles/worlds-most-beautiful-botanical-gardens
-    visited: true
+    visited: true,
+    favorite: false
   },
   {
     name: "Daisy Farm",
@@ -52,7 +56,8 @@ let vendors = [
     credit: true,
     logo: "/img/daisyfarm.jpg",
     // Source: https://www.countryliving.com/gardening/a22109231/outdoor-daisy-flower-care/
-    visited: false
+    visited: false,
+    favorite: false
   },
   {
     name: "Elena Eatery",
@@ -63,7 +68,8 @@ let vendors = [
     credit: true,
     logo: "img/elenaeatery.png",
     // Source: https://emojipedia.org/fork-and-knife/
-    visited: false
+    visited: false,
+    favorite: false
   },
   {
     name: "Georgian Winery",
@@ -74,7 +80,8 @@ let vendors = [
     credit: true,
     logo: "img/georgianwinery.jpg",
     // Source: https://singletreewinery.com/abbotsfords-singletree-winery-opens-a-second-location-in-the-okanagan/
-    visited: false
+    visited: false,
+    favorite: false
   },
   {
     name: "Indian Creek Farm",
@@ -85,7 +92,8 @@ let vendors = [
     credit: true, 
     logo: "img/indiancreekfarm.jpg",
     // Source: https://www.visitithaca.com/attractions/indian-creek-farm
-    visited: false
+    visited: true,
+    favorite: true
   },
   {
     name: "Renee's Bakery",
@@ -96,7 +104,8 @@ let vendors = [
     credit: false,
     logo: "img/reneesbakery.jpg",
     // Source: https://dansfoods.com/departments/bakery
-    visited: false
+    visited: false,
+    favorite: false
   }
 ] 
 

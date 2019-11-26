@@ -6,13 +6,25 @@
         <autocomplete :search="search" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
       </div>
       <div id="vendoroverlay">
+      <h3>Favorite Vendors</h3>
+      <ul>
+        <li :key="vendor.name" v-for="vendor in favVendors" @click="updateVendor(vendor)">
+          <div>
+            <div class="imgContainer">
+              <img :src="vendor.logo" alt="vendor logo" />
+            </div>
+            <h4>{{ vendor.name }}</h4>
+          </div>
+        </li>
+      </ul>
+      <h3>All Vendors</h3>
       <ul>
         <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
           <div>
             <div class="imgContainer">
               <img :src="vendor.logo" alt="vendor logo" />
             </div>
-            <h3>{{ vendor.name }}</h3>
+            <h4>{{ vendor.name }}</h4>
           </div>
         </li>
       </ul>
@@ -45,7 +57,8 @@ export default {
         logo: "/img/applefarms.jpg",
         opened: false
       },
-      vendors: vendorsList.default
+      vendors: vendorsList.default,
+      favVendors: vendorsList.default.filter(vendor => vendor.favorite)
     }
   },
   methods: {
@@ -56,11 +69,16 @@ export default {
       document.getElementById("vendoroverlay").classList.add("vendorinfooverlay");
       this.vendorInfo = vendor;
       this.vendorInfo.opened = true;
-      console.log(this.vendorInfo.opened);
+    },
+    getFavoriteVendors (vendorList) {
+      let favVendors = [];
+      for (let vendor in vendorList) {
+        if (vendor.favorite) {
+          favVendors.push(vendor);
+        }
+      }
+      return favVendors;
     }
-  },
-  mounted() {
-    console.log(vendorsList.default);
   }
 }
 </script>
@@ -92,6 +110,10 @@ export default {
     margin: 0 auto;
   }
 
+  h3 {
+    font-size: 1.5em;
+  }
+
   .imgContainer {
     width: 100px;
     height: 100px;
@@ -107,7 +129,7 @@ export default {
     width: auto;
   }
 
-  h3 {
+  h4 {
     margin-top: 5px;
   }
 
