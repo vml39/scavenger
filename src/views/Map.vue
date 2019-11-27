@@ -97,14 +97,14 @@ export default {
 				this.tokenArray.push({number: this.tokens+1, collected:false})
 				this.tokenArray.push({number: this.tokens+2, collected:false})
 				this.tokenArray.push({number: this.tokens+3, collected:false})
+				while(this.tokenArray.length > 8) {
+					this.tokenArray.shift()
+				}
 				setTimeout(() => {
 					this.colorIndices.forEach((number, index) => {
 						this.colorIndices[index] = number+1>=this.colorArray.length ? 0 : number+1
 					})
-					this.allfilled = false
-					while(this.tokenArray.length > 8) {
-						this.tokenArray.shift()
-					}
+					this.allfilled = false	
 					this.updateLocalStorage()
 				}, 1000)	
 			}
