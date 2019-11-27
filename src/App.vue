@@ -3,16 +3,20 @@
     <div id="main-container">
       <router-view/>
     </div>
-    <div id="nav">
-      <router-link to="/">
-        <div class="nav-button">Map</div>
-      </router-link>
-      <router-link to="/vendors">
-        <div class="nav-button">Vendors</div>
-      </router-link>
-    </div>
+    <Nav />
   </div>
 </template>
+
+<script>
+
+import Nav from "./components/Nav"
+export default {
+  name:"app",
+  components: {
+    Nav
+  }
+}
+</script>
 
 <style lang="scss">
   @import "./css/main.scss"

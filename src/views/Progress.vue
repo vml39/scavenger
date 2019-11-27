@@ -1,7 +1,7 @@
 <template>
-  <div id="map">
-    <div id="map-container" >
-      <div id="map-background" :class="{'offset':allfilled}" v-bind:style="{backgroundImage: 'linear-gradient(0, '+ colorArray[colorIndices[0]] + ' 0%, ' + colorArray[colorIndices[1]] + ' 50%, ' + colorArray[colorIndices[2]] + ' 100%)'}"></div>
+  <div id="progress">
+    <div id="progress-container" >
+      <div id="progress-background" :class="{'offset':allfilled}" v-bind:style="{backgroundImage: 'linear-gradient(0, '+ colorArray[colorIndices[0]] + ' 0%, ' + colorArray[colorIndices[1]] + ' 50%, ' + colorArray[colorIndices[2]] + ' 100%)'}"></div>
 			<div id="tokens">
 				<Token v-for="token in tokenArray" :key="token.number" :number="token.number" :collected=token.collected  ></Token>
 			</div>    
@@ -68,7 +68,7 @@
 <script>
 import Token from "../components/Token.vue"
 export default {
-  name: 'map',
+  name: 'Progress',
   components: {
     Token
   },
@@ -97,14 +97,14 @@ export default {
 				this.tokenArray.push({number: this.tokens+1, collected:false})
 				this.tokenArray.push({number: this.tokens+2, collected:false})
 				this.tokenArray.push({number: this.tokens+3, collected:false})
-				while(this.tokenArray.length > 8) {
-					this.tokenArray.shift()
-				}
 				setTimeout(() => {
 					this.colorIndices.forEach((number, index) => {
 						this.colorIndices[index] = number+1>=this.colorArray.length ? 0 : number+1
 					})
-					this.allfilled = false	
+					this.allfilled = false
+					while(this.tokenArray.length>7) {
+						this.tokenArray.shift()
+					}
 					this.updateLocalStorage()
 				}, 1000)	
 			}
@@ -137,5 +137,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "../css/map.scss"
+  @import "../css/progress.scss"
 </style>

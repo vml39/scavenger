@@ -1,10 +1,12 @@
 <template>
-    <div class = "nav">
-        <nav>
-            <router-link to="/map">Map</router-link>
-            <router-link to="/vendors">Vendor</router-link>
-        </nav>
-    </div>
+    <nav>
+        <router-link to="/">
+            <div class="nav-button">Progress</div>
+        </router-link>
+        <router-link to="/vendors">
+            <div class="nav-button">Vendors</div>
+        </router-link>
+    </nav>
 </template>
 
 <script>
@@ -13,4 +15,6 @@ export default {
 }
 </script>
 
-// Add import statements to map and vendor and merge to dev.  Do git checkout dev and get merge nav.
+<style lang="scss">
+  @import "../css/main.scss"
+</style>
