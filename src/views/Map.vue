@@ -102,15 +102,35 @@ export default {
 						this.colorIndices[index] = number+1>=this.colorArray.length ? 0 : number+1
 					})
 					this.allfilled = false
-					this.tokenArray.shift()
-					this.tokenArray.shift()
-					this.tokenArray.shift()
-				}, 1000)
+					while(this.tokenArray.length > 8) {
+						this.tokenArray.shift()
+					}
+					this.updateLocalStorage()
+				}, 1000)	
 			}
+			this.updateLocalStorage()
 		},
+
+		updateLocalStorage() {
+			localStorage.setItem("tokens", JSON.stringify(this.tokens))
+			localStorage.setItem("tokenArray", JSON.stringify(this.tokenArray))
+			localStorage.setItem("colorIndices", JSON.stringify(this.colorIndices))
+		}
 	},
 	
 	mounted() {
+		let tokens = JSON.parse(localStorage.getItem("tokens"))
+		let tokenArray = JSON.parse(localStorage.getItem("tokenArray"))
+		let colorIndices = JSON.parse(localStorage.getItem("colorIndices"))
+		if(tokens) {
+			this.tokens=tokens
+		}
+		if(tokenArray) {
+			this.tokenArray=tokenArray
+		}
+		if(colorIndices) {
+			this.colorIndices=colorIndices
+		}
 	},
 
 }
