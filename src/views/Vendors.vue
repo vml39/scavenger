@@ -3,32 +3,49 @@
     <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="this.updateFavoriteVendor" />
       <h2>Vendor Directory</h2>
       <div class="search">
-        <autocomplete :search="search" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
+        <autocomplete :search="searchVendor" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
       </div>
       <div id="vendoroverlay">
-      <h3>Favorite Vendors</h3>
-      <ul>
-        <li :key="vendor.name" v-for="vendor in favVendors" @click="updateVendor(vendor)">
-          <div>
-            <div class="imgContainer">
-              <img :src="vendor.logo" alt="vendor logo" />
-            </div>
-            <h4>{{ vendor.name }}</h4>
-          </div>
-        </li>
-      </ul>
-      <h3>All Vendors</h3>
-      <ul>
-        <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
-          <div>
-            <div class="imgContainer">
-              <img :src="vendor.logo" alt="vendor logo" />
-            </div>
-            <h4>{{ vendor.name }}</h4>
-          </div>
-        </li>
-      </ul>
-    </div>
+        <div v-if="this.searching">
+          <h3>{{ this.searchInput }}</h3>
+          <ul>
+            <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
+              <div>
+                <div class="imgContainer">
+                  <img :src="vendor.logo" alt="vendor logo" />
+                </div>
+                <h4>{{ vendor.name }}</h4>
+              </div>
+            </li>
+          </ul>
+          <p v-if="this.vendors.length == 0">No vendors match your search.</p>
+        </div>
+        <div v-if="!this.searching">
+          <h3>Favorite Vendors</h3>
+          <ul>
+            <li :key="vendor.name" v-for="vendor in favVendors" @click="updateVendor(vendor)">
+              <div>
+                <div class="imgContainer">
+                  <img :src="vendor.logo" alt="vendor logo" />
+                </div>
+                <h4>{{ vendor.name }}</h4>
+              </div>
+            </li>
+          </ul>
+          <p v-if="this.favVendors.length == 0">No favorite vendors.</p>
+          <h3>All Vendors</h3>
+          <ul>
+            <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
+              <div>
+                <div class="imgContainer">
+                  <img :src="vendor.logo" alt="vendor logo" />
+                </div>
+                <h4>{{ vendor.name }}</h4>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -47,6 +64,8 @@ export default {
   },
   data: function () {
     return {
+      searching: false,
+      searchInput: "",
       vendorInfo: {
         name: "Apple Farms",
         phone: "1234567890",
@@ -63,9 +82,22 @@ export default {
     }
   },
   methods: {
-    search () {
-      console.log("searching...");
-      // search through all vendors where name has substr of the string in search then update the vendors
+    searchVendor (input) {
+      let searchVendors = [];
+      if (input.length > 0) {
+        this.searching = true;
+        this.searchInput = input;
+        for (let vendor of this.vendors) {
+          if (vendor.name.toLowerCase().search(input.toLowerCase()) != -1) {
+            searchVendors.push(vendor);
+          }
+        }
+        this.vendors = searchVendors;
+      } else {
+        this.vendors = vendorsList.default;
+        this.searching = false;
+      }
+      return this.vendors;
     },
     updateVendor (vendor) {
       document.getElementById("vendoroverlay").classList.add("vendorinfooverlay");
@@ -73,7 +105,6 @@ export default {
       this.vendorInfo.opened = true;
     },
     deleteFromFav (vendorname) {
-      console.log("deletefromfav");
       let newFavVendors = [];
       for (let vendor of this.favVendors) {
         if (vendor.name != vendorname) {
