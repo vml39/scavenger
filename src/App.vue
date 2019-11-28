@@ -1,31 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Map</router-link> |
-      <router-link to="/vendors">Vendors</router-link>
+    <div id="main-container">
+      <router-view/>
     </div>
-    <router-view/>
+    <Nav />
   </div>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+<script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+import Nav from "./components/Nav"
+export default {
+  name:"app",
+  components: {
+    Nav
+  }
 }
+</script>
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style lang="scss">
+  @import "./css/main.scss"
 </style>
