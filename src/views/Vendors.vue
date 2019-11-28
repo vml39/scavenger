@@ -1,6 +1,6 @@
 <template>
   <div class="vendors">
-    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" />
+    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="this.updateFavoriteVendor" />
       <h2>Vendor Directory</h2>
       <div class="search">
         <autocomplete :search="search" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
@@ -72,14 +72,44 @@ export default {
       this.vendorInfo = vendor;
       this.vendorInfo.opened = true;
     },
-    getFavoriteVendors (vendorList) {
-      let favVendors = [];
-      for (let vendor in vendorList) {
-        if (vendor.favorite) {
-          favVendors.push(vendor);
+    deleteFromFav (vendorname) {
+      console.log("deletefromfav");
+      let newFavVendors = [];
+      for (let vendor of this.favVendors) {
+        if (vendor.name != vendorname) {
+          newFavVendors.push(vendor);
         }
       }
-      return favVendors;
+      return newFavVendors;
+    },
+    updateVendorFavorite (vendorname) {
+      let newVendors = [];
+      for (let vendor of this.vendors) {
+        if (vendor.name == vendorname) {
+          let newVendor = {
+            name: vendor.name,
+            phone: vendor.phone,
+            email: vendor.email,
+            site: vendor.site,
+            cash: vendor.cash,
+            credit: vendor.credit,
+            logo: vendor.logo,
+            favorite: !vendor.favorite
+          }
+          newVendors.push(newVendor);
+          if (newVendor.favorite) {
+            this.favVendors.push(newVendor);
+          } else {
+            this.favVendors = this.deleteFromFav(vendorname);
+          }
+        } else {
+          newVendors.push(vendor);
+        }
+      }
+      return newVendors;
+    },
+    updateFavoriteVendor (vendorname) {
+      this.vendors = this.updateVendorFavorite(vendorname);
     }
   }
 }

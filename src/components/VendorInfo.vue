@@ -1,7 +1,7 @@
 <template>
   <div class="vendorinfo" v-if="opened">
-    <sui-button v-if="!favorite" class="favorite" icon="heart outline" @click="favoriteVendor"></sui-button>
-    <sui-button v-if="favorite" class="favorite favorited" icon="heart outline" @click="unfavoriteVendor"></sui-button>
+    <sui-button v-if="!favorite" class="favorite" icon="heart outline" @click="updateFavoriteVendor"></sui-button>
+    <sui-button v-if="favorite" class="favorite favorited" icon="heart outline" @click="updateFavoriteVendor"></sui-button>
     <sui-button class="close" @click="close">&times;</sui-button>
     <div class="vendorinfomodal">
       <div class="imgContainer">
@@ -42,11 +42,9 @@ export default {
     toPhoneNum (phone) {
       return "("+phone.substring(0, 3)+") "+phone.substring(3,6)+"-"+phone.substring(6);
     },
-    favoriteVendor () {
-      console.log(name);
-    },
-    unfavoriteVendor () {
-      console.log(name);
+    updateFavoriteVendor () {
+      this.favorite = true;
+      this.$emit('updateFavoriteVendor', this.name, true);
     },
     close () {
       document.getElementById("vendoroverlay").classList.remove("vendorinfooverlay");

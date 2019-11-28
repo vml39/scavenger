@@ -33,7 +33,7 @@ let vendors = [
     logo: "/img/beecherscheese.jpg",
     // Source: https://www.farmanddairy.com/top-stories/8-tips-to-start-a-dairy-farm/423679.html
     visited: true,
-    favorite: false
+    favorite: true
   },
   {
     name: "Bethany's Botanical Garden",
