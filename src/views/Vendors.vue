@@ -3,7 +3,7 @@
     <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="this.updateFavoriteVendor" />
       <h2>Vendor Directory</h2>
       <div class="search">
-        <autocomplete :search="searchVendor" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
+        <autocomplete :search="searchVendor" :getResultValue="getResultValue" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
       </div>
       <div id="vendoroverlay">
         <div v-if="this.searching">
@@ -98,6 +98,9 @@ export default {
         this.searching = false;
       }
       return this.vendors;
+    },
+    getResultValue (result) {
+      return result.name;
     },
     updateVendor (vendor) {
       document.getElementById("vendoroverlay").classList.add("vendorinfooverlay");
