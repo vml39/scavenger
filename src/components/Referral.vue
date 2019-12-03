@@ -21,7 +21,10 @@
             <div class="modal-body">
                
                     <label> Vendor Name: </label>
-                    <input>
+                    <select class="vendorsDropDown">
+                      <option> </option>
+                      <option> </option>
+                    </select>
                     <label> Friend's Email: </label>
                     <input id= "friendsEmail">
                 
@@ -176,6 +179,10 @@
   float: right;
 }
 input {
+  margin-bottom: 10px;
+  width: 240px;
+}
+select {
   margin-bottom: 10px;
   width: 240px;
 }
