@@ -21,9 +21,9 @@
             <div class="modal-body">
                
                     <label> Vendor Name: </label>
-                    <select class="vendorsDropDown">
+                    <select class="vendorsDropDown" id="selectedVendor">
                       <option> </option>
-                      <option :key="vendor.name" v-for="vendor in vendorsList" @click="updateVendor(vendor)"> {{vendor.name}} </option>
+                      <option :key="vendor.name" v-for="vendor in allVendors"> {{vendor.name}} </option>
                     </select>
                     <label> Friend's Email: </label>
                     <input id= "friendsEmail">
@@ -33,7 +33,7 @@
             <div class="modal-footer">
                 <slot name="footer">
                   <button class="button" id="sendButton" @click="store">
-                    <a :href="'mailto:' + this.email + '?subject=Ithaca%20Farmers%20Market%20Vendor%20Referral&body=Hey!%20I%20just%20visited%20out%20[VENDOR%20NAME]%20and%20they%20are%20awesome!%20Check%20them%20out%20next%20time%20you%20go%20to%20the%20market!'">Send referral email</a>
+                    <a :href="'mailto:' + this.email + '?subject=Ithaca%20Farmers%20Market%20Vendor%20Referral&body=Hey!%20I%20just%20visited%20out%20'+ this.vendorName + '%20and%20they%20are%20awesome!%20Check%20them%20out%20next%20time%20you%20go%20to%20the%20farmers%20market!'">Send referral email</a>
                   </button>
                   <button class="button" id="doneButton" @click="$emit('close')">
                       Done
@@ -66,23 +66,30 @@
 <script>
     import * as vendorsList from '../assets/js/vendorsList.js'
     export default {
-        data () {
+        data: function () {
                 return {
                     email: '',
+                    theVendor: '',
+                    vendorName:'',
+                    allVendors: vendorsList.default,
                 }
+                
         },
         methods: {
             store() {
                 var email = document.getElementById("friendsEmail");
+                var theVendor = document.getElementByID("selectedVendor")
+                var vendorName = theVendor.options[theVendor.selectedIndex].text;
             },
             close() {
                 this.$emit('close');
                 this.email = "";
+                this.theVendor = "",
+                this.vendorName = ""
                 
             }
         }
     };
-
 
 
 
