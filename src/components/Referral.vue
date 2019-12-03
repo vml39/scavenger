@@ -23,7 +23,7 @@
                     <label> Vendor Name: </label>
                     <select class="vendorsDropDown" id="selectedVendor">
                       <option> </option>
-                      <option :key="vendor.name" v-for="vendor in allVendors"> {{vendor.name}} </option>
+                      <option :key="vendor.name" v-for="vendor in visitedVendors"> {{vendor.name}} </option>
                     </select>
                     <label> Friend's Email: </label>
                     <input id= "friendsEmail">
@@ -32,11 +32,11 @@
 
             <div class="modal-footer">
                 <slot name="footer">
-                  <button class="button" id="sendButton" @click="store">
-                    <a :href="'mailto:' + this.email + '?subject=Ithaca%20Farmers%20Market%20Vendor%20Referral&body=Hey!%20I%20just%20visited%20out%20'+ this.vendorName + '%20and%20they%20are%20awesome!%20Check%20them%20out%20next%20time%20you%20go%20to%20the%20farmers%20market!'">Send referral email</a>
-                  </button>
                   <button class="button" id="doneButton" @click="$emit('close')">
                       Done
+                  </button>
+                  <button class="button" id="sendButton" @click="store">
+                    <a :href="'mailto:' + this.email + '?subject=Ithaca%20Farmers%20Market%20Vendor%20Referral&body=Hey!%20I%20just%20visited%20out%20'+ this.vendorName + '%20and%20they%20are%20awesome!%20Check%20them%20out%20next%20time%20you%20go%20to%20the%20farmers%20market!'">Send referral email</a>
                   </button>
                 </slot>
             </div>
@@ -72,6 +72,7 @@
                     theVendor: '',
                     vendorName:'',
                     allVendors: vendorsList.default,
+                    visitedVendors: allVendors.default.filter(vendor => vendor.visited)
                 }
                 
         },
@@ -126,21 +127,23 @@
   font-size: 16px;
 }
 
-#sendButton {
+#doneButton {
   background-color: White; /* Green */
   border: 0px solid #2C3E50 ;
   color: #2C3E50;
   margin-left: 38px;
+  
 }
 
 #sendButton a {
-  color: #2C3E50;
+  color: white;
 }
 
-#doneButton {
+#sendButton {
   background-color: #2C3E50; /* Green */
   border: 1px solid white ;
   color: white;
+  margin-left: 10px;
 }
 
 
