@@ -77,13 +77,25 @@ export default {
         favorite: true,
         opened: false
       },
-      vendors: vendorsList.default,
-      favVendors: vendorsList.default.filter(vendor => vendor.favorite)
+      vendors: this.sortVendors(vendorsList.default),
+      favVendors: this.sortVendors(this.getFavoriteVendors(vendorsList.default))
     }
   },
   methods: {
-    sortFavoriteVendors () {
-
+    sortVendors (vendors) {
+      let newvendors = vendors.sort((v1, v2) => {
+        if (v1.name < v2.name) {
+          return -1;
+        } else if (v1.name > v2.name) {
+          return 1;
+        } else {
+          return 0;
+        }
+      })
+      return newvendors;
+    },
+    getFavoriteVendors (vendors) {
+      return vendors.filter(vendor => vendor.favorite);
     },
     searchVendor (input) {
       let searchVendors = [];
@@ -117,7 +129,7 @@ export default {
           newFavVendors.push(vendor);
         }
       }
-      return newFavVendors;
+      return this.sortVendors(newFavVendors);
     },
     updateVendorFavorite (vendorname) {
       let newVendors = [];
@@ -143,7 +155,7 @@ export default {
           newVendors.push(vendor);
         }
       }
-      return newVendors;
+      return this.sortVendors(newVendors);
     },
     updateFavoriteVendor (vendorname) {
       this.vendors = this.updateVendorFavorite(vendorname);
