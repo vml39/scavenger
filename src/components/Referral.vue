@@ -61,6 +61,7 @@
 </template>
 
 <script>
+    import * as vendorsList from '../assets/js/vendorsList.js'
     export default {
         data () {
                 return {
