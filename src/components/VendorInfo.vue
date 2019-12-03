@@ -47,8 +47,8 @@ export default {
         document.getElementById("favoriteIcon").classList.add("favorited");
       } else {
         document.getElementById("favoriteIcon").classList.remove("favorited");
-     }
-      this.$emit('updateFavoriteVendor', this.name, this.favorite);
+      }
+      this.$emit('updateFavoriteVendor', this.name, true);
     },
     close () {
       document.getElementById("vendoroverlay").classList.remove("vendorinfooverlay");
