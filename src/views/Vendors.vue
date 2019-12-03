@@ -83,7 +83,8 @@ export default {
   },
   methods: {
     sortVendors (vendors) {
-      let newvendors = vendors.sort((v1, v2) => {
+      console.log("sorting");
+      function compareFunction (v1, v2) {
         if (v1.name < v2.name) {
           return -1;
         } else if (v1.name > v2.name) {
@@ -91,8 +92,8 @@ export default {
         } else {
           return 0;
         }
-      })
-      return newvendors;
+      }
+      return vendors.sort(compareFunction);
     },
     getFavoriteVendors (vendors) {
       return vendors.filter(vendor => vendor.favorite);
@@ -129,7 +130,7 @@ export default {
           newFavVendors.push(vendor);
         }
       }
-      return this.sortVendors(newFavVendors);
+      return newFavVendors;
     },
     updateVendorFavorite (vendorname) {
       let newVendors = [];
@@ -148,6 +149,7 @@ export default {
           newVendors.push(newVendor);
           if (newVendor.favorite) {
             this.favVendors.push(newVendor);
+            this.favVendors = this.sortVendors(this.favVendors);
           } else {
             this.favVendors = this.deleteFromFav(vendorname);
           }
@@ -155,7 +157,7 @@ export default {
           newVendors.push(vendor);
         }
       }
-      return this.sortVendors(newVendors);
+      return newVendors;
     },
     updateFavoriteVendor (vendorname) {
       this.vendors = this.updateVendorFavorite(vendorname);
