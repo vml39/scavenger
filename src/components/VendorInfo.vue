@@ -1,7 +1,6 @@
 <template>
   <div class="vendorinfo" v-if="opened">
-    <sui-button v-if="!favorite" class="favorite" icon="heart outline" @click="updateFavoriteVendor"></sui-button>
-    <sui-button v-if="favorite" class="favorite favorited" icon="heart outline" @click="updateFavoriteVendor"></sui-button>
+    <sui-button id="favoriteIcon" class="favorite" icon="heart" @click="updateFavoriteVendor"></sui-button>
     <sui-button class="close" @click="close">&times;</sui-button>
     <div class="vendorinfomodal">
       <div class="imgContainer">
@@ -43,12 +42,26 @@ export default {
       return "("+phone.substring(0, 3)+") "+phone.substring(3,6)+"-"+phone.substring(6);
     },
     updateFavoriteVendor () {
-      this.favorite = true;
-      this.$emit('updateFavoriteVendor', this.name, true);
+      this.favorite = !this.favorite;
+      if (this.favorite) {
+        document.getElementById("favoriteIcon").classList.add("favorited");
+      } else {
+        document.getElementById("favoriteIcon").classList.remove("favorited");
+     }
+      this.$emit('updateFavoriteVendor', this.name, this.favorite);
     },
     close () {
       document.getElementById("vendoroverlay").classList.remove("vendorinfooverlay");
       this.opened = false;
+    }
+  },
+  updated () {
+    if (this.opened) {
+      if (this.favorite) {
+        document.getElementById("favoriteIcon").classList.add("favorited");
+      } else {
+        document.getElementById("favoriteIcon").classList.remove("favorited");
+      }
     }
   }
 }
@@ -68,9 +81,9 @@ export default {
 
   .favorite {
     left: 0;
-    padding-left: 5px !important;
-    padding-top: 5px !important;
-    font-size: 1.5em !important;
+    padding-left: 8px !important;
+    padding-top: 8px !important;
+    font-size: 1.2em !important;
   }
 
   .favorited {

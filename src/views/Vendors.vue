@@ -82,6 +82,9 @@ export default {
     }
   },
   methods: {
+    sortFavoriteVendors () {
+
+    },
     searchVendor (input) {
       let searchVendors = [];
       if (input.length > 0) {
