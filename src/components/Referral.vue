@@ -23,7 +23,7 @@
                     <label> Vendor Name: </label>
                     <select class="vendorsDropDown">
                       <option> </option>
-                      <option> </option>
+                      <option :key="vendor.name" v-for="vendor in vendorsList" @click="updateVendor(vendor)"> {{vendor.name}} </option>
                     </select>
                     <label> Friend's Email: </label>
                     <input id= "friendsEmail">
@@ -185,6 +185,7 @@ input {
 select {
   margin-bottom: 10px;
   width: 240px;
+  height: 23px;
 }
 /*
  * The following styles are auto-applied to elements with
