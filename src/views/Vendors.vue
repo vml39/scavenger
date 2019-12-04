@@ -138,6 +138,7 @@ export default {
       return newFavVendors;
     },
     updateVendorFavorite (vendorname) {
+      // need to update vendor list js as well 
       let newVendors = [];
       for (let vendor of this.vendors) {
         if (vendor.name == vendorname) {
@@ -151,6 +152,7 @@ export default {
             logo: vendor.logo,
             favorite: !vendor.favorite
           }
+          // this.vendorInfo = newVendor;
           newVendors.push(newVendor);
           if (newVendor.favorite) {
             this.favVendors.push(newVendor);
