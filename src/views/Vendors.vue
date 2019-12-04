@@ -3,7 +3,7 @@
     <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="this.updateFavoriteVendor" />
       <h2>Vendor Directory</h2>
       <div class="search">
-        <autocomplete :search="searchVendor" :getResultValue="getResultValue" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
+        <autocomplete :getResultValue="getResultValue" :search="searchVendor" @submit="searchResult" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
       </div>
       <div id="vendoroverlay">
         <div v-if="this.searching">
@@ -97,11 +97,17 @@ export default {
     getFavoriteVendors (vendors) {
       return vendors.filter(vendor => vendor.favorite);
     },
+    searchResult (result) {
+      if (result) {
+        this.searching = true;
+        this.vendors = [result];
+      }
+    },
     searchVendor (input) {
-      let searchVendors = [];
       if (input.length > 0) {
         this.searching = true;
         this.searchInput = input;
+        let searchVendors = [];
         for (let vendor of vendorsList.default) {
           if (vendor.name.toLowerCase().search(input.toLowerCase()) != -1) {
             searchVendors.push(vendor);
