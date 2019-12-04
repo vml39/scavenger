@@ -34,7 +34,10 @@ export default {
   },
   data: function () {
     return {
-      hasSite: true
+      firstOpened: true,
+      hasSite: true,
+      // change starting condition
+      vendorFavorite: false 
     }
   },
   methods: {
@@ -42,8 +45,8 @@ export default {
       return "("+phone.substring(0, 3)+") "+phone.substring(3,6)+"-"+phone.substring(6);
     },
     updateFavoriteVendor () {
-      this.favorite = !this.favorite;
-      if (this.favorite) {
+      this.vendorFavorite = !this.vendorFavorite;
+      if (this.vendorFavorite) {
         document.getElementById("favoriteIcon").classList.add("favorited");
       } else {
         document.getElementById("favoriteIcon").classList.remove("favorited");
@@ -53,17 +56,34 @@ export default {
     close () {
       document.getElementById("vendoroverlay").classList.remove("vendorinfooverlay");
       this.opened = false;
+      this.firstOpened = true;
     }
   },
   updated () {
+    if (this.firstOpened && this.opened) {
+      this.vendorFavorite = this.favorite;
+      this.firstOpened = false;
+    }
     if (this.opened) {
-      if (this.favorite) {
+      if (this.vendorFavorite) {
         document.getElementById("favoriteIcon").classList.add("favorited");
       } else {
         document.getElementById("favoriteIcon").classList.remove("favorited");
       }
     }
-  }
+  },
+  // watch: {
+  //   favorite: function () {
+  //     console.log("watching ", this.vendorFavorite);
+  //     if (this.opened) {
+  //       if (this.vendorFavorite) {
+  //         document.getElementById("favoriteIcon").classList.add("favorited");
+  //       } else {
+  //         document.getElementById("favoriteIcon").classList.remove("favorited");
+  //       }
+  //     }
+  //   }
+  // }
 }
 </script>
 
