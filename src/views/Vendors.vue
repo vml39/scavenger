@@ -1,9 +1,9 @@
 <template>
   <div class="vendors">
-    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="this.updateFavoriteVendor" />
+    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="this.updateFavoriteVendor" :openAgain="openAgain"/>
       <h2>Vendor Directory</h2>
       <div class="search">
-        <autocomplete :search="searchVendor" :getResultValue="getResultValue" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
+        <autocomplete :getResultValue="getResultValue" :search="searchVendor" @submit="searchResult" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
       </div>
       <div id="vendoroverlay">
         <div v-if="this.searching">
@@ -77,17 +77,39 @@ export default {
         favorite: true,
         opened: false
       },
-      vendors: vendorsList.default,
-      favVendors: vendorsList.default.filter(vendor => vendor.favorite)
+      vendors: this.sortVendors(vendorsList.default),
+      favVendors: this.sortVendors(this.getFavoriteVendors(vendorsList.default)),
+      openAgain: false
     }
   },
   methods: {
+    sortVendors (vendors) {
+      function compareFunction (v1, v2) {
+        if (v1.name < v2.name) {
+          return -1;
+        } else if (v1.name > v2.name) {
+          return 1;
+        } else {
+          return 0;
+        }
+      }
+      return vendors.sort(compareFunction);
+    },
+    getFavoriteVendors (vendors) {
+      return vendors.filter(vendor => vendor.favorite);
+    },
+    searchResult (result) {
+      if (result) {
+        this.searching = true;
+        this.vendors = [result];
+      }
+    },
     searchVendor (input) {
-      let searchVendors = [];
       if (input.length > 0) {
         this.searching = true;
         this.searchInput = input;
-        for (let vendor of this.vendors) {
+        let searchVendors = [];
+        for (let vendor of vendorsList.default) {
           if (vendor.name.toLowerCase().search(input.toLowerCase()) != -1) {
             searchVendors.push(vendor);
           }
@@ -106,6 +128,7 @@ export default {
       document.getElementById("vendoroverlay").classList.add("vendorinfooverlay");
       this.vendorInfo = vendor;
       this.vendorInfo.opened = true;
+      this.openAgain = !this.openAgain;
     },
     deleteFromFav (vendorname) {
       let newFavVendors = [];
@@ -133,6 +156,7 @@ export default {
           newVendors.push(newVendor);
           if (newVendor.favorite) {
             this.favVendors.push(newVendor);
+            this.favVendors = this.sortVendors(this.favVendors);
           } else {
             this.favVendors = this.deleteFromFav(vendorname);
           }
