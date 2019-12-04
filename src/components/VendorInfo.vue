@@ -30,7 +30,8 @@ export default {
     site: String,
     cash: Boolean,
     credit: Boolean,
-    favorite: Boolean
+    favorite: Boolean,
+    openAgain: Boolean
   },
   data: function () {
     return {
