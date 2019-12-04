@@ -1,6 +1,6 @@
 <template>
   <div class="vendors">
-    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="this.updateFavoriteVendor" />
+    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="this.updateFavoriteVendor" :openAgain="openAgain"/>
       <h2>Vendor Directory</h2>
       <div class="search">
         <autocomplete :getResultValue="getResultValue" :search="searchVendor" @submit="searchResult" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
@@ -78,7 +78,8 @@ export default {
         opened: false
       },
       vendors: this.sortVendors(vendorsList.default),
-      favVendors: this.sortVendors(this.getFavoriteVendors(vendorsList.default))
+      favVendors: this.sortVendors(this.getFavoriteVendors(vendorsList.default)),
+      openAgain: false
     }
   },
   methods: {
@@ -127,6 +128,7 @@ export default {
       document.getElementById("vendoroverlay").classList.add("vendorinfooverlay");
       this.vendorInfo = vendor;
       this.vendorInfo.opened = true;
+      this.openAgain = !this.openAgain;
     },
     deleteFromFav (vendorname) {
       let newFavVendors = [];
@@ -138,7 +140,6 @@ export default {
       return newFavVendors;
     },
     updateVendorFavorite (vendorname) {
-      // need to update vendor list js as well 
       let newVendors = [];
       for (let vendor of this.vendors) {
         if (vendor.name == vendorname) {
@@ -152,7 +153,6 @@ export default {
             logo: vendor.logo,
             favorite: !vendor.favorite
           }
-          // this.vendorInfo = newVendor;
           newVendors.push(newVendor);
           if (newVendor.favorite) {
             this.favVendors.push(newVendor);
