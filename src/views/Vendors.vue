@@ -83,7 +83,6 @@ export default {
   },
   methods: {
     sortVendors (vendors) {
-      console.log("sorting");
       function compareFunction (v1, v2) {
         if (v1.name < v2.name) {
           return -1;
@@ -103,7 +102,7 @@ export default {
       if (input.length > 0) {
         this.searching = true;
         this.searchInput = input;
-        for (let vendor of this.vendors) {
+        for (let vendor of vendorsList.default) {
           if (vendor.name.toLowerCase().search(input.toLowerCase()) != -1) {
             searchVendors.push(vendor);
           }
