@@ -174,6 +174,12 @@ export default {
 </script>
 
 <style scoped>
+  .vendors {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll 
+  }
+
   h2 {
     margin-top: 20px !important;
   }
