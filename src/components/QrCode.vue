@@ -30,6 +30,10 @@ Documentation: https://gruhn.github.io/vue-qrcode-reader/api/QrcodeStream.html
             //this.vendorresponse= "<b>Congrats on visiting a new vendor!</b>"
             //this.checkedin=true
             // then show the check in and level up button
+            // if ( (this.visitedVendors).includes(this.result) ){
+            //   this.vendorresponse= "<b>Congrats on visiting a new vendor!</b>"
+            //   this.checkedin = true
+            // }
 
         },
         async onInit (promise) {

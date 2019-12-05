@@ -5,10 +5,16 @@
         name: 'Modal',
         props: {
             selectedModal : null,
+            
         },
         components: {
             QRcode,
             SocialMediaTag,
+        },
+        data() {
+          return {
+            displayCompletedButton: false,
+          }
         },
         methods: {
         close() {
@@ -33,7 +39,7 @@
           <section class="modal-body">
                 <QRcode v-if="selectedModal == 'QRcode'" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal" />
                 <SocialMediaTag v-if="selectedModal == 'SocialMediaTag'" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal" theme="fall" />
-                <sui-button color="green" @click="closeandcollectpoints" content="Complete Task!" />
+                <sui-button v-show="displayCompletedButton" color="green" @click="closeandcollectpoints" content="Complete Task!" />
           </section>
           </div>
         </div>
