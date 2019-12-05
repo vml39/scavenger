@@ -1,51 +1,51 @@
 <template>
   <div class="vendors">
-    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="this.updateFavoriteVendor" :openAgain="openAgain"/>
-      <h2>Vendor Directory</h2>
-      <div class="search">
-        <autocomplete :getResultValue="getResultValue" :search="searchVendor" @submit="searchResult" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
+    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="updateFavoriteVendor" :openAgain="openAgain" @closeVendorInfo="closeVendorInfo"/>
+    <h2>Vendor Directory</h2>
+    <div class="search">
+      <autocomplete :getResultValue="getResultValue" :search="searchVendor" @submit="searchResult" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
+    </div>
+    <div id="vendoroverlay">
+      <div v-if="this.searching">
+        <h3>{{ this.searchInput }}</h3>
+        <ul>
+          <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
+            <div>
+              <div class="imgContainer">
+                <img :src="vendor.logo" alt="vendor logo" />
+              </div>
+              <h4>{{ vendor.name }}</h4>
+            </div>
+          </li>
+        </ul>
+        <p v-if="this.vendors.length == 0">No vendors match your search.</p>
       </div>
-      <div id="vendoroverlay">
-        <div v-if="this.searching">
-          <h3>{{ this.searchInput }}</h3>
-          <ul>
-            <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
-              <div>
-                <div class="imgContainer">
-                  <img :src="vendor.logo" alt="vendor logo" />
-                </div>
-                <h4>{{ vendor.name }}</h4>
+      <div v-if="!this.searching">
+        <h3>Favorite Vendors</h3>
+        <ul>
+          <li :key="vendor.name" v-for="vendor in favVendors" @click="updateVendor(vendor)">
+            <div>
+              <div class="imgContainer">
+                <img :src="vendor.logo" alt="vendor logo" />
               </div>
-            </li>
-          </ul>
-          <p v-if="this.vendors.length == 0">No vendors match your search.</p>
-        </div>
-        <div v-if="!this.searching">
-          <h3>Favorite Vendors</h3>
-          <ul>
-            <li :key="vendor.name" v-for="vendor in favVendors" @click="updateVendor(vendor)">
-              <div>
-                <div class="imgContainer">
-                  <img :src="vendor.logo" alt="vendor logo" />
-                </div>
-                <h4>{{ vendor.name }}</h4>
+              <h4>{{ vendor.name }}</h4>
+            </div>
+          </li>
+        </ul>
+        <p v-if="this.favVendors.length == 0">No favorite vendors.</p>
+        <h3>All Vendors</h3>
+        <ul>
+          <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
+            <div>
+              <div class="imgContainer">
+                <img :src="vendor.logo" alt="vendor logo" />
               </div>
-            </li>
-          </ul>
-          <p v-if="this.favVendors.length == 0">No favorite vendors.</p>
-          <h3>All Vendors</h3>
-          <ul>
-            <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
-              <div>
-                <div class="imgContainer">
-                  <img :src="vendor.logo" alt="vendor logo" />
-                </div>
-                <h4>{{ vendor.name }}</h4>
-              </div>
-            </li>
-          </ul>
-        </div>
+              <h4>{{ vendor.name }}</h4>
+            </div>
+          </li>
+        </ul>
       </div>
+    </div>
   </div>
 </template>
 
@@ -129,6 +129,9 @@ export default {
       this.vendorInfo = vendor;
       this.vendorInfo.opened = true;
       this.openAgain = !this.openAgain;
+    },
+    closeVendorInfo () {
+      this.vendorInfo.opened = false;
     },
     deleteFromFav (vendorname) {
       let newFavVendors = [];
