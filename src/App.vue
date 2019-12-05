@@ -4,6 +4,19 @@
   </div>
 </template>
 
+<script>
+export default {
+  created () {
+    if (!localStorage.visited) {
+      localStorage.setItem("visited", JSON.stringify([1, 2, 3, 4, 8]));
+    }
+    if (!localStorage.favorited) {
+      localStorage.setItem("favorited", JSON.stringify([1, 8]));
+    }
+  }
+}
+</script>
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

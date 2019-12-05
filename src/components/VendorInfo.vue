@@ -24,6 +24,7 @@ export default {
   props: {
     opened: Boolean,
     logo: String,
+    id: Number,
     name: String,
     phone: String,
     email: String,
@@ -36,6 +37,7 @@ export default {
   data: function () {
     return {
       firstOpened: true,
+      vendorInfoOpened: false,
       hasSite: true,
       vendorFavorite: false 
     }
@@ -51,7 +53,7 @@ export default {
       } else {
         document.getElementById("favoriteIcon").classList.remove("favorited");
       }
-      this.$emit('updateFavoriteVendor', this.name, true);
+      this.$emit('updateFavoriteVendor', this.id, true);
     },
     close () {
       document.getElementById("vendoroverlay").classList.remove("vendorinfooverlay");
@@ -63,6 +65,7 @@ export default {
   updated () {
     if (this.firstOpened && this.opened) {
       this.vendorFavorite = this.favorite;
+      this.hasSite = this.site ? true : false;
       this.firstOpened = false;
     }
     if (this.opened) {
@@ -72,7 +75,7 @@ export default {
         document.getElementById("favoriteIcon").classList.remove("favorited");
       }
     }
-  },
+  }
 }
 </script>
 
