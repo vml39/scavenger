@@ -1,7 +1,6 @@
 <template>
   <div class="vendorinfo" v-if="opened">
-    <sui-button v-if="!favorite" class="favorite" icon="heart outline" @click="updateFavoriteVendor"></sui-button>
-    <sui-button v-if="favorite" class="favorite favorited" icon="heart outline" @click="updateFavoriteVendor"></sui-button>
+    <sui-button id="favoriteIcon" class="favorite" icon="heart" @click="updateFavoriteVendor"></sui-button>
     <sui-button class="close" @click="close">&times;</sui-button>
     <div class="vendorinfomodal">
       <div class="imgContainer">
@@ -31,11 +30,15 @@ export default {
     site: String,
     cash: Boolean,
     credit: Boolean,
-    favorite: Boolean
+    favorite: Boolean,
+    openAgain: Boolean
   },
   data: function () {
     return {
-      hasSite: true
+      firstOpened: true,
+      hasSite: true,
+      // change starting condition
+      vendorFavorite: false 
     }
   },
   methods: {
@@ -43,14 +46,45 @@ export default {
       return "("+phone.substring(0, 3)+") "+phone.substring(3,6)+"-"+phone.substring(6);
     },
     updateFavoriteVendor () {
-      this.favorite = true;
+      this.vendorFavorite = !this.vendorFavorite;
+      if (this.vendorFavorite) {
+        document.getElementById("favoriteIcon").classList.add("favorited");
+      } else {
+        document.getElementById("favoriteIcon").classList.remove("favorited");
+      }
       this.$emit('updateFavoriteVendor', this.name, true);
     },
     close () {
       document.getElementById("vendoroverlay").classList.remove("vendorinfooverlay");
       this.opened = false;
+      this.firstOpened = true;
     }
-  }
+  },
+  updated () {
+    if (this.firstOpened && this.opened) {
+      this.vendorFavorite = this.favorite;
+      this.firstOpened = false;
+    }
+    if (this.opened) {
+      if (this.vendorFavorite) {
+        document.getElementById("favoriteIcon").classList.add("favorited");
+      } else {
+        document.getElementById("favoriteIcon").classList.remove("favorited");
+      }
+    }
+  },
+  // watch: {
+  //   favorite: function () {
+  //     console.log("watching ", this.vendorFavorite);
+  //     if (this.opened) {
+  //       if (this.vendorFavorite) {
+  //         document.getElementById("favoriteIcon").classList.add("favorited");
+  //       } else {
+  //         document.getElementById("favoriteIcon").classList.remove("favorited");
+  //       }
+  //     }
+  //   }
+  // }
 }
 </script>
 
@@ -68,9 +102,9 @@ export default {
 
   .favorite {
     left: 0;
-    padding-left: 5px !important;
-    padding-top: 5px !important;
-    font-size: 1.5em !important;
+    padding-left: 8px !important;
+    padding-top: 8px !important;
+    font-size: 1.2em !important;
   }
 
   .favorited {
