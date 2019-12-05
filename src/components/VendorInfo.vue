@@ -37,7 +37,6 @@ export default {
     return {
       firstOpened: true,
       hasSite: true,
-      // change starting condition
       vendorFavorite: false 
     }
   },
@@ -58,6 +57,7 @@ export default {
       document.getElementById("vendoroverlay").classList.remove("vendorinfooverlay");
       this.opened = false;
       this.firstOpened = true;
+      this.$emit("closeVendorInfo");
     }
   },
   updated () {
@@ -73,18 +73,6 @@ export default {
       }
     }
   },
-  // watch: {
-  //   favorite: function () {
-  //     console.log("watching ", this.vendorFavorite);
-  //     if (this.opened) {
-  //       if (this.vendorFavorite) {
-  //         document.getElementById("favoriteIcon").classList.add("favorited");
-  //       } else {
-  //         document.getElementById("favoriteIcon").classList.remove("favorited");
-  //       }
-  //     }
-  //   }
-  // }
 }
 </script>
 
