@@ -15,6 +15,7 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-vue": "^0.8.1",
     "vue": "^2.6.10",
+    "vue-qrcode-reader": "^2.1.1",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {

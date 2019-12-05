@@ -7,7 +7,7 @@
 			</div>    
     </div>
 		<div id="actions-container">
-      <div class="action-button"  v-on:click="add()">
+      <div class="action-button" @click="openModal('QRcode')"> <!-- v-on:click="add()"> -->
 				<div>Scan</div>
 				<svg width="56.54px" height="56.54px" viewBox="0 0 56.54 56.54" style="enable-background:new 0 0 56.54 56.54;" xml:space="preserve">
 					<path d="M2.27,19.16L2.27,19.16C1.02,19.16,0,18.15,0,16.89V8.01C0,3.59,3.59,0,8.01,0h8.89c1.25,0,2.27,1.02,2.27,2.27v0
@@ -36,7 +36,7 @@
 						C43.67,29.48,45.27,31.08,45.27,33.05z"/>
 				</svg>
 			</div>
-      <div class="action-button"  v-on:click="add()">
+		<div class="action-button"  @click="openModal('SocialMediaTag')"> <!-- v-on:click="add()"> -->
 				<div>Share</div>
 				<svg width="62.5px" height="56px" viewBox="0 0 62.5 56" style="enable-background:new 0 0 62.5 56;" xml:space="preserve">
 					<circle cx="12" cy="30.5" r="12"/>
@@ -45,7 +45,7 @@
 					<polyline class="st0" points="53.5,47 11.5,30 41.5,9 	"/>
 				</svg>
 			</div>
-      <div class="action-button"  v-on:click="add()">
+      <div class="action-button"  v-on:click="add()"> <!--Needs to be fixed! -->
 				<div>Refer</div>
 				<svg width="60.5px" height="46.13px" viewBox="0 0 60.5 46.13" style="enable-background:new 0 0 60.5 46.13;" xml:space="preserve">
 					<circle cx="20.12" cy="12" r="12"/>
@@ -59,32 +59,49 @@
 				</svg>
 			</div>
     </div>
-    <div class="popup" v-show="scanMode"></div>
-    <div class="popup" v-show="shareMode"></div>
-    <div class="popup" v-show="referMode"></div>
+	<Modal v-show="modalOpen" v-bind:selectedModal="selectedModal" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal"/>
+
   </div>
 </template>
 
 <script>
 import Token from "../components/Token.vue"
+import Modal from '@/components/Modal.vue';
+
 export default {
   name: 'Progress',
   components: {
-    Token
+	Token,
+	Modal
   },
   data() {
     return {
-      scanMode: false,
-      shareMode: false,
-			referMode: false,
-			tokens: 0,
-			allfilled: false,
-			tokenArray:[{number: 1, collected: false}, {number: 2, collected: false}, {number: 3, collected: false}, {number: 4, collected: false}],
-			colorArray: ["#ff9999", "#ffd699", "#ebff99", "#adff99", "#99ffc2", "#99ffff", "#99c2ff", "#ad99ff", "#eb99ff", "#ff99d6"],
-			colorIndices: [0, 1, 2],
+		scanMode: false,
+		shareMode: false,
+		referMode: false,
+		tokens: 0,
+		allfilled: false,
+		tokenArray:[{number: 1, collected: false}, {number: 2, collected: false}, {number: 3, collected: false}, {number: 4, collected: false}],
+		colorArray: ["#ff9999", "#ffd699", "#ebff99", "#adff99", "#99ffc2", "#99ffff", "#99c2ff", "#ad99ff", "#eb99ff", "#ff99d6"],
+		colorIndices: [0, 1, 2],
+		modalOpen: false,
+		selectedModal: null,
     }
   },
   methods: {
+	openModal(modalSelected) {
+		this.modalOpen = true;
+		this.selectedModal = modalSelected;
+	},
+	closeModal() {
+		this.modalOpen = false;
+		this.selectedModal = null;
+	},
+	closeModalAndCollectPoint() {
+		this.modalOpen = false;
+		this.selectedModal = null;
+		this.add();
+	},
     add() {
 			this.tokens++
 			this.tokenArray.forEach((elem,index)=> {
