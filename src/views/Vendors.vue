@@ -1,6 +1,6 @@
 <template>
   <div class="vendors">
-    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="updateFavoriteVendor" :openAgain="openAgain" @closeVendorInfo="closeVendorInfo"/>
+    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :id="vendorInfo.id" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="updateFavoriteVendor" :openAgain="openAgain" @closeVendorInfo="closeVendorInfo"/>
     <h2>Vendor Directory</h2>
     <div class="search">
       <autocomplete :getResultValue="getResultValue" :search="searchVendor" @submit="searchResult" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
@@ -67,6 +67,7 @@ export default {
       searching: false,
       searchInput: "",
       vendorInfo: {
+        id: 1,
         name: "Apple Farms",
         phone: "1234567890",
         email: "applefarms@ithaca.com",
@@ -96,7 +97,14 @@ export default {
       return vendors.sort(compareFunction);
     },
     getFavoriteVendors (vendors) {
-      return vendors.filter(vendor => vendor.favorite);
+      let favVendorsId = JSON.parse(localStorage.getItem("favorited"));
+      let favVendors = [];
+      for (let vendor of vendors) {
+        if (favVendorsId.includes(vendor.id)) {
+          favVendors.push(vendor);
+        }
+      }
+      return favVendors;
     },
     searchResult (result) {
       if (result) {
@@ -127,50 +135,23 @@ export default {
     updateVendor (vendor) {
       document.getElementById("vendoroverlay").classList.add("vendorinfooverlay");
       this.vendorInfo = vendor;
+      this.vendorInfo.favorite = JSON.parse(localStorage.getItem("favorited")).includes(vendor.id);
       this.vendorInfo.opened = true;
       this.openAgain = !this.openAgain;
+      // make it so that you can't click on anything else 
     },
     closeVendorInfo () {
       this.vendorInfo.opened = false;
     },
-    deleteFromFav (vendorname) {
-      let newFavVendors = [];
-      for (let vendor of this.favVendors) {
-        if (vendor.name != vendorname) {
-          newFavVendors.push(vendor);
-        }
+    updateFavoriteVendor (vendorid) {
+      let favVendorsId = JSON.parse(localStorage.getItem("favorited"));
+      if (!favVendorsId.includes(vendorid)) {
+        favVendorsId.push(vendorid);
+      } else {
+        favVendorsId.splice(favVendorsId.indexOf(vendorid), 1);
       }
-      return newFavVendors;
-    },
-    updateVendorFavorite (vendorname) {
-      let newVendors = [];
-      for (let vendor of this.vendors) {
-        if (vendor.name == vendorname) {
-          let newVendor = {
-            name: vendor.name,
-            phone: vendor.phone,
-            email: vendor.email,
-            site: vendor.site,
-            cash: vendor.cash,
-            credit: vendor.credit,
-            logo: vendor.logo,
-            favorite: !vendor.favorite
-          }
-          newVendors.push(newVendor);
-          if (newVendor.favorite) {
-            this.favVendors.push(newVendor);
-            this.favVendors = this.sortVendors(this.favVendors);
-          } else {
-            this.favVendors = this.deleteFromFav(vendorname);
-          }
-        } else {
-          newVendors.push(vendor);
-        }
-      }
-      return newVendors;
-    },
-    updateFavoriteVendor (vendorname) {
-      this.vendors = this.updateVendorFavorite(vendorname);
+      localStorage.setItem("favorited", JSON.stringify(favVendorsId));
+      this.favVendors = this.sortVendors(this.getFavoriteVendors(vendorsList.default));
     }
   }
 }
