@@ -1,5 +1,5 @@
 <template>
-  <div class="vendors">
+  <div class="vendors" :style="{top: top+'px', position: position}">
     <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :id="vendorInfo.id" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="updateFavoriteVendor" :openAgain="openAgain" @closeVendorInfo="closeVendorInfo"/>
     <h2>Vendor Directory</h2>
     <div class="search">
@@ -80,7 +80,10 @@ export default {
       },
       vendors: this.sortVendors(vendorsList.default),
       favVendors: this.sortVendors(this.getFavoriteVendors(vendorsList.default)),
-      openAgain: false
+      openAgain: false,
+      scrolled: 0,
+      top: 0,
+      position: ""
     }
   },
   methods: {
@@ -133,15 +136,20 @@ export default {
       return result.name;
     },
     updateVendor (vendor) {
-      document.getElementById("vendoroverlay").classList.add("vendorinfooverlay");
-      this.vendorInfo = vendor;
-      this.vendorInfo.favorite = JSON.parse(localStorage.getItem("favorited")).includes(vendor.id);
-      this.vendorInfo.opened = true;
-      this.openAgain = !this.openAgain;
-      // make it so that you can't click on anything else 
+      if (!this.vendorInfo.opened) {
+        this.top = -this.scrolled;
+        this.position = "fixed";
+        window.scroll(0, this.scrolled);
+        document.getElementById("vendoroverlay").classList.add("vendorinfooverlay");
+        this.vendorInfo = vendor;
+        this.vendorInfo.favorite = JSON.parse(localStorage.getItem("favorited")).includes(vendor.id);
+        this.vendorInfo.opened = true;
+        this.openAgain = !this.openAgain;
+      }
     },
     closeVendorInfo () {
       this.vendorInfo.opened = false;
+      this.position = "";
     },
     updateFavoriteVendor (vendorid) {
       let favVendorsId = JSON.parse(localStorage.getItem("favorited"));
@@ -152,12 +160,27 @@ export default {
       }
       localStorage.setItem("favorited", JSON.stringify(favVendorsId));
       this.favVendors = this.sortVendors(this.getFavoriteVendors(vendorsList.default));
+    },
+    handleScroll () {
+      this.scrolled = window.scrollY;
     }
+  },
+  created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 }
 </script>
 
 <style scoped>
+
+  .vendors {
+    /* position: ; */
+    /* overflow-y: hidden; */
+  }
+
   h2 {
     margin-top: 20px !important;
   }
@@ -214,12 +237,11 @@ export default {
   .vendorinfooverlay {
     filter: blur(3px);
     -webkit-filter: blur(3px);
-    position: fixed;
   }
 
   .vendorinfo {
     width: 80%;
-    position: absolute;
+    position: fixed;
     top: 20%;
     left: 10%;
     z-index: 5;
