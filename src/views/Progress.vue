@@ -3,7 +3,7 @@
     <div id="progress-container" >
       <div id="progress-background" :class="{'offset':allfilled}" v-bind:style="{backgroundImage: 'linear-gradient(0, '+ colorArray[colorIndices[0]] + ' 0%, ' + colorArray[colorIndices[1]] + ' 50%, ' + colorArray[colorIndices[2]] + ' 100%)'}"></div>
 			<div id="tokens">
-				<Token v-for="token in tokenArray" :key="token.number" :number="token.number" :collected=token.collected  ></Token>
+				<Token v-for="token in tokenArray" :key="token.number" :number="token.number" :collected="token.collected" ></Token>
 			</div>    
     </div>
 		<div id="actions-container">
