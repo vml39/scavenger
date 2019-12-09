@@ -175,6 +175,10 @@ export default {
 </script>
 
 <style scoped>
+  nav {
+    position: fixed;
+  }
+
   h2 {
     margin-top: 20px !important;
   }
