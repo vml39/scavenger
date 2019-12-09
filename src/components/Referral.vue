@@ -1,5 +1,5 @@
 <template>
-   <div class="Referral">
+   <div class="referral_modal">
     <!-- <h2>Refer a vendor to a friend!</h2>
     <p>Refer a favorite vendor to a friend!</p>
     <label> Vendor Name: </label>
@@ -7,18 +7,18 @@
     <label> Friend's Number: </label>
     <input>
     <button>Send<button> onclick would close the modal and send a text -->
-    <transition name="modal">
+    <!-- <transition name="modal">
         <div class="modal-mask">
         <div class="modal-wrapper">
             <div class="modal-container">
 
             <div class="modal-header">
-                <slot name="header">
-                <h3> Refer a vendor to a friend! </h3>
-                </slot>
-            </div>
+                <slot name="header"> -->
+                <h1 id="popupheader">Check in at a Vendor Booth</h1>
+                <!-- </slot>
+            </div> -->
 
-            <div class="modal-body">
+            <!-- <div class="modal-body"> -->
                
                     <label> Vendor Name: </label>
                     <select class="vendorsDropDown" id="selectedVendor">
@@ -28,22 +28,22 @@
                     <label> Friend's Email: </label>
                     <input id= "friendsEmail">
                 
-            </div>
+            <!-- </div> -->
 
-            <div class="modal-footer">
-                <slot name="footer">
+            <!-- <div class="modal-footer">
+                <slot name="footer"> -->
                   <button class="button" id="doneButton" @click="$emit('close')">
                       Done
                   </button>
                   <button class="button" id="sendButton" @click="store">
                     <a :href="'mailto:' + this.email + '?subject=Ithaca%20Farmers%20Market%20Vendor%20Referral&body=Hey!%20I%20just%20visited%20out%20'+ this.vendorName + '%20and%20they%20are%20awesome!%20Check%20them%20out%20next%20time%20you%20go%20to%20the%20farmers%20market!'">Send referral email</a>
                   </button>
-                </slot>
+                <!-- </slot>
             </div>
             </div>
         </div>
         </div>
-    </transition>
+    </transition> -->
 
 
     <!-- <div id="app">
