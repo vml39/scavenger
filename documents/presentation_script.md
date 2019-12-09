@@ -21,11 +21,15 @@ Start with a walkthrough of the map/progress ~could say something like this~:
 - To complete a task, the user can select one of the task options on the left when their icon is sitting on a node (maybe go over the different tasks)
 - and when the task is completed, they move onto the next one
 - once finished, the screen moves and they level up
+- and although this was beyond 
 
 
-Talk about the vendors aspect and fav vendors
+Talk about the vendors aspect and fav vendors:
 
--
+- We also have a vendors page, where user's are able to get the information of a vendor that they visited after they completed a task with that vendor.  
+- they can see information on the vendor's phone number, email, and even what kind of payment they take at the market for future reference.
+- additionally, if a user really likes a vendor that they had to visit, they can "like" the vendor and have it added to their "favorited vendors" list
+
 
 
 
