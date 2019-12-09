@@ -1,6 +1,7 @@
 <script>
 	import QRcode from '@/components/QrCode.vue';
     import SocialMediaTag from '@/components/SocialMediaTag.vue';
+    import Referral from '@/components/Referral.vue';
     export default {
         name: 'Modal',
         props: {
@@ -33,6 +34,7 @@
           <section class="modal-body">
                 <QRcode v-if="selectedModal == 'QRcode'" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal" />
                 <SocialMediaTag v-if="selectedModal == 'SocialMediaTag'" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal" theme="fall" />
+                <Referral v-if="selectedModal == 'Referral'" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal" />
                 <sui-button color="green" @click="closeandcollectpoints" content="Complete Task!" />
           </section>
           </div>
