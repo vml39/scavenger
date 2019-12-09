@@ -45,7 +45,7 @@
 					<polyline class="st0" points="53.5,47 11.5,30 41.5,9 	"/>
 				</svg>
 			</div>
-      <div class="action-button"  v-on:click="add()"> <!--Needs to be fixed! -->
+      <div class="action-button"  @click="openModal('Referral')"> <!-- v-on:click="add()"> -->
 				<div>Refer</div>
 				<svg width="60.5px" height="46.13px" viewBox="0 0 60.5 46.13" style="enable-background:new 0 0 60.5 46.13;" xml:space="preserve">
 					<circle cx="20.12" cy="12" r="12"/>
