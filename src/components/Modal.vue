@@ -10,6 +10,7 @@
         components: {
             QRcode,
             SocialMediaTag,
+            Referral
         },
         methods: {
         close() {
