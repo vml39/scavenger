@@ -1,6 +1,6 @@
 # Brainstorm & Features
 
-## Site content:
+## Site content (v1):
 
 Organizing content:
 ![content](brainstorm/content.jpg)
@@ -38,3 +38,20 @@ We wanted to make the gamification aspect an extension of the user accounts. Our
 
 ### Vendor account:
 Since the vendors are not our target audience, we questioned where to put the login and how visible we wanted this feature to be. Originally, there would just be an update button on the inventory page, but since we didn't want the users to be exposed to this side of the app as well, we decided that the vendor account would only be accessible through a link not included in the navigation. This would direct the user to log in, then would take them to a form pre-populated with their previous responses with their name, inventory, payment type, and location. The vendor would be able to update this information. We also wondered if we should allow the vendors to upload their own images for their produce but decided in order to keep with our inventory layout, we'd use stock images instead. 
+
+## Site content (v2)
+
+Organizing content: 
+![content](brainstorm/content2.jpg)
+
+Cardsort variations:
+![v2](brainstorm/cardsortv2.jpg)
+![v3](brainstorm/cardsortv3.jpg)
+
+This time around, our group focused a lot more on how to present our app as an **app** and less like a website. We decided to omit a lot of the information we thought was necessary for the user such as location and hours, and instead focus on our persuasive design aspect instead.
+
+### App Purpose
+Again, to align with the idea of designing an app over a website, we decided to narrow our scope to display only the vendors of the market. The app is still intended to be used while the user is at the farmers market, but this time, there are actionable tasks for the user to do while they're at the market. These tasks are designed to encourage some sort of behavior from the user and will thus allow them to explore the farmers market in a fun way. The overall purpose of our app is to facilitate relations between new vendors and patrons.
+
+### Gamification: 
+As mentioned above, for our persuasive design/gamification aspect, we wanted the user to perform certain tasks for some sort of reward. Since we're unable to offer monetary rewards and were informed that this part should be intrinsically motivated, we discussed incorporating levels, badges, a leaderboard, or some competitive aspect between friends as a gamification component. We narrowed the choices down to just levels and badges but debated the purpose of these two components and how they would motivate the user. This is described more in the persuasive design writeup. We decided that the user have to perform tasks to increase their level, tasks would change every week so they won't get stuck on any level, and the badges would be "hidden rewards" that they would have to hunt for by exploring the market in unique ways (e.g. taking a picture with a unique vegetable or visiting 20 vendors). We incorporated activities that would engage the user with the market and its vendors such as scanning vendors' QR codes, referring a vendor to a friend, and publishing social media posts. 
