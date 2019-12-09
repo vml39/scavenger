@@ -59,33 +59,34 @@
 				</svg>
 			</div>
     </div>
-	<Modal v-show="modalOpen" v-bind:selectedModal="selectedModal" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal"/>
-
+		<Modal v-show="modalOpen" v-bind:selectedModal="selectedModal" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal"/>
+		<EmojiRain v-if="rain" />
   </div>
 </template>
 
 <script>
 import Token from "../components/Token.vue"
+import EmojiRain from "../components/EmojiRain.vue"
 import Modal from '@/components/Modal.vue';
+
 
 export default {
   name: 'Progress',
   components: {
 	Token,
-	Modal
+	Modal,
+	EmojiRain
   },
   data() {
     return {
-		scanMode: false,
-		shareMode: false,
-		referMode: false,
-		tokens: 0,
-		allfilled: false,
-		tokenArray:[{number: 1, collected: false}, {number: 2, collected: false}, {number: 3, collected: false}, {number: 4, collected: false}],
-		colorArray: ["#ff9999", "#ffd699", "#ebff99", "#adff99", "#99ffc2", "#99ffff", "#99c2ff", "#ad99ff", "#eb99ff", "#ff99d6"],
-		colorIndices: [0, 1, 2],
-		modalOpen: false,
-		selectedModal: null,
+			tokens: 0,
+			allfilled: false,
+			tokenArray:[{number: 1, collected: false}, {number: 2, collected: false}, {number: 3, collected: false}, {number: 4, collected: false}],
+			colorArray: ["#ff9999", "#ffd699", "#ebff99", "#adff99", "#99ffc2", "#99ffff", "#99c2ff", "#ad99ff", "#eb99ff", "#ff99d6"],
+			colorIndices: [0, 1, 2],
+			modalOpen: false,
+			selectedModal: null,
+			rain: false,
     }
   },
   methods: {
@@ -106,6 +107,12 @@ export default {
 	},
     add() {
 			this.tokens++
+			if(this.tokens % 10 == 0) {
+				this.rain = true
+				setTimeout(() => {
+					this.rain = false
+				}, 2000)
+			}
 			this.tokenArray.forEach((elem,index)=> {
 				if(elem.number==this.tokens) {
 					this.tokenArray[index].collected=true

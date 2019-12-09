@@ -187,4 +187,11 @@
       }
     }
   }
+
+  .rain-enter-active, .rain-leave-active {
+    transition: opacity .5s;
+  }
+  .rain-enter, .rain-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
 }
