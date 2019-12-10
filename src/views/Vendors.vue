@@ -111,8 +111,11 @@ export default {
     },
     searchResult (result) {
       if (result) {
+        this.position = "";
         this.searching = true;
         this.vendors = [result];
+      } else {
+        this.position = "fixed";
       }
     },
     searchVendor (input) {
@@ -175,8 +178,9 @@ export default {
 </script>
 
 <style scoped>
-  nav {
-    position: fixed;
+  .vendors {
+    width: 100%;
+    padding-bottom: 15%;
   }
 
   h2 {
