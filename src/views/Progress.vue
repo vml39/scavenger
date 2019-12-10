@@ -123,7 +123,7 @@ export default {
 	},
 	closeModal() {
 		this.modalOpen = false;
-		this.selectedModal = null;
+		// this.selectedModal = null;
 	},
 	closeModalAndCollectPoint() {
 		this.modalOpen = false;
