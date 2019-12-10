@@ -5,8 +5,8 @@ body {
 }
 
 #app {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,15 +15,12 @@ body {
 }
 
 #main-container {
-  position: absolute;
   top: 0;
-  height: 90%;
   width: 100%;
-  // overflow-y: scroll;
 }
 
 nav {
-  height: 10%;
+  height: 10vh;
   width: 100%;
   box-sizing: border-box;
   padding: 0;
