@@ -17,6 +17,9 @@ export default {
     getTags (theme) {
       this.tags = this.themes[theme];
     },
+    completeTask() {
+      this.$emit('completeTask');
+    }
   },
   mounted: function () {
     this.getTags(this.theme);
@@ -36,6 +39,8 @@ export default {
         #{{ tag }}
       </li>
     </ul>
+    <sui-button color="green" @click="completeTask" content="Complete Task!" />
+
   </div>
 </template>
 
