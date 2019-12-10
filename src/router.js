@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Progress from './views/Progress.vue'
-import Vendors from './views/Vendors.vue'
+// import Progress from './views/Progress.vue'
+// import Vendors from './views/Vendors.vue'
 import SuiVue from 'semantic-ui-vue'
 import 'semantic-ui-css/semantic.min.css'
 
@@ -15,16 +15,16 @@ export default new Router({
     {
       path: '/',
       name: 'progress',
-      component: Progress
+      component: () => import('./views/Progress.vue')
     },
     {
       path: '/vendors',
       name: 'vendors',
-      component: Vendors
+      component: () => import('./views/Vendors.vue')
     },
     {
       path: '*',
-      component: Map
+      component: () => import('./views/Progress.vue')
     }
   ]
 })

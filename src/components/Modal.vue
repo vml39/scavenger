@@ -1,6 +1,7 @@
 <script>
-	import QRcode from '@/components/QrCode.vue';
+    import QRcode from '@/components/QrCode.vue';
     import SocialMediaTag from '@/components/SocialMediaTag.vue';
+    import Referral from '@/components/Referral.vue';
     export default {
         name: 'Modal',
         props: {
@@ -9,6 +10,7 @@
         components: {
             QRcode,
             SocialMediaTag,
+            Referral
         },
         data() {
           return {
@@ -36,6 +38,8 @@
           <section class="modal-body">
                 <QRcode v-if="selectedModal == 'QRcode'" @completeTask="closeandcollectpoints" />
                 <SocialMediaTag v-if="selectedModal == 'SocialMediaTag'" @completeTask="closeandcollectpoints" theme="fall" />
+                <Referral v-if="selectedModal == 'Referral'" @completeTask="closeandcollectpoints" />
+
           </section>
           </div>
         </div>
