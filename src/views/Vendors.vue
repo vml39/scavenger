@@ -180,6 +180,7 @@ export default {
 <style scoped>
   .vendors {
     width: 100%;
+    padding-bottom: 15%;
   }
 
   h2 {
