@@ -191,7 +191,47 @@
   .rain-enter-active, .rain-leave-active {
     transition: opacity .5s;
   }
-  .rain-enter, .rain-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  .rain-enter, .rain-leave-to {
     opacity: 0;
+  }
+
+  #congrats {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(3px);
+
+    svg {
+      width: 50%;
+      fill: rgba(255,255,255,0.7);
+    }
+
+    div {
+      font-size: 48px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.7);
+    }
+
+    &.rain-enter-active {
+      transition: opacity .5s;
+      svg {
+        transition:  all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+    }
+  
+    &.rain-enter {
+      opacity: 0;
+      svg {
+        width: 0;
+        height: 0;
+      }
+    }
   }
 }

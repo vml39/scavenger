@@ -20,7 +20,7 @@
       addEmoji() {
         this.emojiArray.push({
           x: Math.random()*window.innerWidth,
-          emoji: ["🥕", "🥳", "🥑", "🍆", "😃", "🌽"][Math.round(Math.random()*5)]
+          emoji: ["🥕", "🥳", "🥕", "🥕", "😃", "🥕"][Math.round(Math.random()*5)]
         })
       }
     },
@@ -49,7 +49,7 @@
     &.rain-enter-active {
     transition: opacity .5s;
     }
-    &.rain-enter /* .fade-leave-active below version 2.1.8 */ {
+    &.rain-enter {
       opacity: 0;
     }
 
