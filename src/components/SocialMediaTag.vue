@@ -17,6 +17,9 @@ export default {
     getTags (theme) {
       this.tags = this.themes[theme];
     },
+    completeTask() {
+      this.$emit('completeTask');
+    }
   },
   mounted: function () {
     this.getTags(this.theme);
@@ -43,6 +46,8 @@ export default {
       <li><a href="http://twitter.com/"><img src="/img/twitter.png" alt="Twitter"></a></li>
       <!-- Source: https://www.iconfinder.com/icons/317723/social_social_media_tweet_twitter_icon -->
     </ul>
+    <sui-button color="green" @click="completeTask" content="Complete Task!" />
+
   </div>
 </template>
 

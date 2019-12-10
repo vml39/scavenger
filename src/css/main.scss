@@ -17,12 +17,12 @@ body {
 #main-container {
   position: absolute;
   top: 0;
-  height: 92%;
+  height: 90%;
   width: 100%;
 }
 
 nav {
-  height: 8%;
+  height: 10%;
   width: 100%;
   box-sizing: border-box;
   padding: 0;
@@ -40,21 +40,32 @@ nav {
     font-weight: bold;
     text-decoration: none;
     transition: all 0.3s;
-    
-    .nav-button {
-      transition: all 0.3s;
-    }
-
-    &:active {
-      background: transparent;
-    }
 
     &:visited {
       color: #363636;
     }
+    
+    .nav-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s;
+      opacity: 0.3;
+
+      svg {
+        width: 36px;
+        height: 36px;
+        fill: #363636;
+      }
+
+      div {
+        font-size: 12px;
+      }
+    }
 
     &.router-link-exact-active .nav-button{
-      opacity: 0.5;
+      opacity: 1;
     }
   }
 }
