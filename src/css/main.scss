@@ -1,12 +1,12 @@
 body {
   margin: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 }
 
 #app {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,10 +17,11 @@ body {
 #main-container {
   top: 0;
   width: 100%;
+  // height: 90%;
 }
 
 nav {
-  height: 10vh;
+  height: 10%;
   width: 100%;
   box-sizing: border-box;
   padding: 0;
