@@ -14,7 +14,11 @@ export default {
   name:"app",
   components: {
     Nav
-  },
+  }, 
+  created () {
+    localStorage.setItem("visited", JSON.stringify([1, 2, 3, 4, 8]));
+    localStorage.setItem("favorited", JSON.stringify([1, 3, 8]));
+  }
 }
 </script>
 
