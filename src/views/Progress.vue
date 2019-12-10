@@ -7,7 +7,7 @@
 			</div>    
     </div>
 		<div id="actions-container">
-      <div class="action-button" @click="openModal('QRcode')"> <!-- v-on:click="add()"> -->
+      <div class="action-button" @click="openModal('QRcode')">
 				<div>Scan</div>
 				<svg width="56.54px" height="56.54px" viewBox="0 0 56.54 56.54" style="enable-background:new 0 0 56.54 56.54;" xml:space="preserve">
 					<path d="M2.27,19.16L2.27,19.16C1.02,19.16,0,18.15,0,16.89V8.01C0,3.59,3.59,0,8.01,0h8.89c1.25,0,2.27,1.02,2.27,2.27v0
@@ -36,7 +36,7 @@
 						C43.67,29.48,45.27,31.08,45.27,33.05z"/>
 				</svg>
 			</div>
-		<div class="action-button"  @click="openModal('SocialMediaTag')"> <!-- v-on:click="add()"> -->
+		<div class="action-button"  @click="openModal('SocialMediaTag')">
 				<div>Share</div>
 				<svg width="62.5px" height="56px" viewBox="0 0 62.5 56" style="enable-background:new 0 0 62.5 56;" xml:space="preserve">
 					<circle cx="12" cy="30.5" r="12"/>

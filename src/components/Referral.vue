@@ -38,6 +38,8 @@
                   <button class="button" id="sendButton" @click="store">
                     <a :href="'mailto:' + this.email + '?subject=Ithaca%20Farmers%20Market%20Vendor%20Referral&body=Hey!%20I%20just%20visited%20out%20'+ this.vendorName + '%20and%20they%20are%20awesome!%20Check%20them%20out%20next%20time%20you%20go%20to%20the%20farmers%20market!'">Send referral email</a>
                   </button>
+                  <sui-button color="green" @click="completeTask" content="Complete Task!" />
+
                 <!-- </slot>
             </div>
             </div>
@@ -78,17 +80,19 @@
         },
         methods: {
             store() {
-                var email = document.getElementById("friendsEmail");
-                var theVendor = document.getElementByID("selectedVendor")
-                var vendorName = theVendor.options[theVendor.selectedIndex].text;
+                this.email = document.getElementById("friendsEmail");
+                this.theVendor = document.getElementByID("selectedVendor");
+                this.vendorName = theVendor.options[theVendor.selectedIndex].text;
             },
             close() {
                 this.$emit('close');
                 this.email = "";
                 this.theVendor = "",
                 this.vendorName = ""
-                
-            }
+            },
+          completeTask() {
+              this.$emit('completeTask');
+          }
         }
     };
 
