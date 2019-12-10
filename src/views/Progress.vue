@@ -46,7 +46,7 @@
 				</svg>
 			</div>
       <div class="action-button"  @click="openModal('Referral')"> <!-- v-on:click="add()"> -->
-				<div>Refer</div>
+				<div>Referral</div>
 				<svg width="60.5px" height="46.13px" viewBox="0 0 60.5 46.13" style="enable-background:new 0 0 60.5 46.13;" xml:space="preserve">
 					<circle cx="20.12" cy="12" r="12"/>
 					<path d="M37.98,46L37.98,46c-1.16,0-2.1-0.88-2.25-2.04c-1-7.72-7.62-13.69-15.6-13.69s-14.6,5.98-15.6,13.69
