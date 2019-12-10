@@ -17,24 +17,53 @@ Documentation: https://gruhn.github.io/vue-qrcode-reader/api/QrcodeStream.html
             result: '',
             error: '',
             vendorresponse: '',
-            checkedin: false,
-            visitedVendors: vendorsList.default.filter(vendor => vendor.visited),
+            displayCompletedButton: false,
           }
         },
         methods: {
         onDecode (result) {
-            this.result = result
-            // if result exists in visited table, then print out:
-            // this.vendorresponse= "Looks like we've already been here before."
-            // else
-            //this.vendorresponse= "<b>Congrats on visiting a new vendor!</b>"
-            //this.checkedin=true
-            // then show the check in and level up button
-            // if ( (this.visitedVendors).includes(this.result) ){
-            //   this.vendorresponse= "<b>Congrats on visiting a new vendor!</b>"
-            //   this.checkedin = true
-            // }
+            this.result = result;
+            this.error= '';
+            this.vendorresponse= '';
+            this.displayCompletedButton= false;
+            this.checkIfVendorWasVisitedBefore(this.result);
+        },
+        checkIfVendorIsValid(name) 
+        {
+          var index= -1;
+          (vendorsList.default).forEach(vendor => {
+            if (name == vendor.name) {
+              index= vendor.id;
+            }
+          });
+          return index;
+        },
+        checkIfVendorWasVisitedBefore(name) 
+        {
+          var visitedArray = JSON.parse( (localStorage).getItem("visited") );
+          var nameId = this.checkIfVendorIsValid(name);
+          if (nameId != -1) {
+            if (nameId in visitedArray) {
+              this.vendorresponse= "Looks like we've already been here before.";
+            }
+            else {
+              this.vendorresponse= "Congrats on visiting a new vendor!";
 
+              visitedArray.push(nameId);
+              localStorage.setItem("visited", JSON.stringify(visitedArray));
+              this.displayCompletedButton = true;
+            }
+          }
+          else {
+            this.vendorresponse= "Weird! This isn't a valid vendor in our list."
+          }
+        },
+        completeTask() {
+          this.result= '';
+          this.error= '';
+          this.vendorresponse= '';
+          this.displayCompletedButton= false;
+          this.$emit('completeTask');
         },
         async onInit (promise) {
             try {
@@ -69,7 +98,9 @@ Documentation: https://gruhn.github.io/vue-qrcode-reader/api/QrcodeStream.html
       <p class="error">{{ error }}</p>
       <qrcode-stream id="readerwindow" @decode="onDecode" @init="onInit" />
       <p class="decode-result"> <b>{{ result }}</b> </p>
-      <p class="vendorresponse">{{vendorresponse}}</p>
+      <p class="decode-result"> {{ vendorresponse }}</p>
+      <sui-button v-if="displayCompletedButton" color="green" @click="completeTask" content="Complete Task!" />
+
   </div>
 </template>
 
