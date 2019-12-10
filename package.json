@@ -1,9 +1,9 @@
 {
-  "name": "blue-tiger-project",
+  "name": "Ithaca Farmers Market",
   "version": "0.1.0",
   "engines": {
     "npm": "6.x",
-    "node": "12.x"
+    "node": "10.x"
   },
   "private": true,
   "scripts": {
