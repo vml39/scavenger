@@ -1,9 +1,11 @@
 <template>
   <div class="vendors" :style="{top: top+'px', position: position}">
     <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :id="vendorInfo.id" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="updateFavoriteVendor" :openAgain="openAgain" @closeVendorInfo="closeVendorInfo"/>
+    <div id="top">
     <h2>Vendor Directory</h2>
     <div class="search">
       <autocomplete :getResultValue="getResultValue" :search="searchVendor" @submit="searchResult" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
+    </div>
     </div>
     <div id="vendoroverlay">
       <div v-if="this.searching">
@@ -180,16 +182,26 @@ export default {
 <style scoped>
   .vendors {
     width: 100%;
-    padding-bottom: 15%;
+    height: 100%;
+    /* padding-bottom: 15%; */
+    overflow-y: scroll;
+  }
+
+  #top {
+    width: 100%;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
   h2 {
-    margin-top: 20px !important;
+    padding-top: 20px;
   }
 
   .search {
-    width: 95%;
-    margin: 0 auto 20px auto;
+    margin: 0 2.5% 20px 2.5%;
+    background: white;
   }
 
   ul {
