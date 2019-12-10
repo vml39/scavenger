@@ -1,51 +1,51 @@
 <template>
-  <div class="vendors">
-    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="this.updateFavoriteVendor" :openAgain="openAgain"/>
-      <h2>Vendor Directory</h2>
-      <div class="search">
-        <autocomplete :getResultValue="getResultValue" :search="searchVendor" @submit="searchResult" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
+  <div class="vendors" :style="{top: top+'px', position: position}">
+    <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :id="vendorInfo.id" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="updateFavoriteVendor" :openAgain="openAgain" @closeVendorInfo="closeVendorInfo"/>
+    <h2>Vendor Directory</h2>
+    <div class="search">
+      <autocomplete :getResultValue="getResultValue" :search="searchVendor" @submit="searchResult" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
+    </div>
+    <div id="vendoroverlay">
+      <div v-if="this.searching">
+        <h3>{{ this.searchInput }}</h3>
+        <ul>
+          <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
+            <div>
+              <div class="imgContainer">
+                <img :src="vendor.logo" alt="vendor logo" />
+              </div>
+              <h4>{{ vendor.name }}</h4>
+            </div>
+          </li>
+        </ul>
+        <p v-if="this.vendors.length == 0">No vendors match your search.</p>
       </div>
-      <div id="vendoroverlay">
-        <div v-if="this.searching">
-          <h3>{{ this.searchInput }}</h3>
-          <ul>
-            <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
-              <div>
-                <div class="imgContainer">
-                  <img :src="vendor.logo" alt="vendor logo" />
-                </div>
-                <h4>{{ vendor.name }}</h4>
+      <div v-if="!this.searching">
+        <h3>Favorite Vendors</h3>
+        <ul>
+          <li :key="vendor.name" v-for="vendor in favVendors" @click="updateVendor(vendor)">
+            <div>
+              <div class="imgContainer">
+                <img :src="vendor.logo" alt="vendor logo" />
               </div>
-            </li>
-          </ul>
-          <p v-if="this.vendors.length == 0">No vendors match your search.</p>
-        </div>
-        <div v-if="!this.searching">
-          <h3>Favorite Vendors</h3>
-          <ul>
-            <li :key="vendor.name" v-for="vendor in favVendors" @click="updateVendor(vendor)">
-              <div>
-                <div class="imgContainer">
-                  <img :src="vendor.logo" alt="vendor logo" />
-                </div>
-                <h4>{{ vendor.name }}</h4>
+              <h4>{{ vendor.name }}</h4>
+            </div>
+          </li>
+        </ul>
+        <p v-if="this.favVendors.length == 0">No favorite vendors.</p>
+        <h3>All Vendors</h3>
+        <ul>
+          <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
+            <div>
+              <div class="imgContainer">
+                <img :src="vendor.logo" alt="vendor logo" />
               </div>
-            </li>
-          </ul>
-          <p v-if="this.favVendors.length == 0">No favorite vendors.</p>
-          <h3>All Vendors</h3>
-          <ul>
-            <li :key="vendor.name" v-for="vendor in vendors" @click="updateVendor(vendor)">
-              <div>
-                <div class="imgContainer">
-                  <img :src="vendor.logo" alt="vendor logo" />
-                </div>
-                <h4>{{ vendor.name }}</h4>
-              </div>
-            </li>
-          </ul>
-        </div>
+              <h4>{{ vendor.name }}</h4>
+            </div>
+          </li>
+        </ul>
       </div>
+    </div>
   </div>
 </template>
 
@@ -67,6 +67,7 @@ export default {
       searching: false,
       searchInput: "",
       vendorInfo: {
+        id: 1,
         name: "Apple Farms",
         phone: "1234567890",
         email: "applefarms@ithaca.com",
@@ -79,7 +80,10 @@ export default {
       },
       vendors: this.sortVendors(vendorsList.default),
       favVendors: this.sortVendors(this.getFavoriteVendors(vendorsList.default)),
-      openAgain: false
+      openAgain: false,
+      scrolled: 0,
+      top: 0,
+      position: ""
     }
   },
   methods: {
@@ -96,7 +100,14 @@ export default {
       return vendors.sort(compareFunction);
     },
     getFavoriteVendors (vendors) {
-      return vendors.filter(vendor => vendor.favorite);
+      let favVendorsId = JSON.parse(localStorage.getItem("favorited"));
+      let favVendors = [];
+      for (let vendor of vendors) {
+        if (favVendorsId.includes(vendor.id)) {
+          favVendors.push(vendor);
+        }
+      }
+      return favVendors;
     },
     searchResult (result) {
       if (result) {
@@ -125,59 +136,47 @@ export default {
       return result.name;
     },
     updateVendor (vendor) {
-      document.getElementById("vendoroverlay").classList.add("vendorinfooverlay");
-      this.vendorInfo = vendor;
-      this.vendorInfo.opened = true;
-      this.openAgain = !this.openAgain;
-    },
-    deleteFromFav (vendorname) {
-      let newFavVendors = [];
-      for (let vendor of this.favVendors) {
-        if (vendor.name != vendorname) {
-          newFavVendors.push(vendor);
-        }
+      if (!this.vendorInfo.opened) {
+        this.top = -this.scrolled;
+        this.position = "fixed";
+        window.scroll(0, this.scrolled);
+        document.getElementById("vendoroverlay").classList.add("vendorinfooverlay");
+        this.vendorInfo = vendor;
+        this.vendorInfo.favorite = JSON.parse(localStorage.getItem("favorited")).includes(vendor.id);
+        this.vendorInfo.opened = true;
+        this.openAgain = !this.openAgain;
       }
-      return newFavVendors;
     },
-    updateVendorFavorite (vendorname) {
-      let newVendors = [];
-      for (let vendor of this.vendors) {
-        if (vendor.name == vendorname) {
-          let newVendor = {
-            name: vendor.name,
-            phone: vendor.phone,
-            email: vendor.email,
-            site: vendor.site,
-            cash: vendor.cash,
-            credit: vendor.credit,
-            logo: vendor.logo,
-            favorite: !vendor.favorite
-          }
-          newVendors.push(newVendor);
-          if (newVendor.favorite) {
-            this.favVendors.push(newVendor);
-            this.favVendors = this.sortVendors(this.favVendors);
-          } else {
-            this.favVendors = this.deleteFromFav(vendorname);
-          }
-        } else {
-          newVendors.push(vendor);
-        }
+    closeVendorInfo () {
+      this.vendorInfo.opened = false;
+      this.position = "";
+    },
+    updateFavoriteVendor (vendorid) {
+      let favVendorsId = JSON.parse(localStorage.getItem("favorited"));
+      if (!favVendorsId.includes(vendorid)) {
+        favVendorsId.push(vendorid);
+      } else {
+        favVendorsId.splice(favVendorsId.indexOf(vendorid), 1);
       }
-      return newVendors;
+      localStorage.setItem("favorited", JSON.stringify(favVendorsId));
+      this.favVendors = this.sortVendors(this.getFavoriteVendors(vendorsList.default));
     },
-    updateFavoriteVendor (vendorname) {
-      this.vendors = this.updateVendorFavorite(vendorname);
+    handleScroll () {
+      this.scrolled = window.scrollY;
     }
+  },
+  created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 }
 </script>
 
 <style scoped>
-  .vendors {
-    height: 100%;
-    width: 100%;
-    overflow-y: scroll 
+  nav {
+    position: fixed;
   }
 
   h2 {
@@ -236,12 +235,11 @@ export default {
   .vendorinfooverlay {
     filter: blur(3px);
     -webkit-filter: blur(3px);
-    position: fixed;
   }
 
   .vendorinfo {
     width: 80%;
-    position: absolute;
+    position: fixed;
     top: 20%;
     left: 10%;
     z-index: 5;

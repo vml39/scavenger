@@ -5,8 +5,6 @@ body {
 }
 
 #app {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -17,20 +15,21 @@ body {
 }
 
 #main-container {
-  height: 92%;
+  position: absolute;
+  top: 0;
+  height: 90%;
   width: 100%;
 }
 
 nav {
-  display: flex;
-  flex: 0 0 8%;
-  justify-content: space-between;
-  align-items: center;
+  height: 10%;
   width: 100%;
   box-sizing: border-box;
   padding: 0;
   background: white;
   z-index: 1000;
+  bottom: 0;
+  position: fixed;
 
   a {
     display: inline-flex;
@@ -41,21 +40,32 @@ nav {
     font-weight: bold;
     text-decoration: none;
     transition: all 0.3s;
-    
-    .nav-button {
-      transition: all 0.3s;
-    }
-
-    &:active {
-      background: transparent;
-    }
 
     &:visited {
       color: #363636;
     }
+    
+    .nav-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s;
+      opacity: 0.3;
+
+      svg {
+        width: 36px;
+        height: 36px;
+        fill: #363636;
+      }
+
+      div {
+        font-size: 12px;
+      }
+    }
 
     &.router-link-exact-active .nav-button{
-      opacity: 0.5;
+      opacity: 1;
     }
   }
 }
