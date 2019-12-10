@@ -127,10 +127,10 @@ export default {
 	},
 	closeModalAndCollectPoint() {
 		this.modalOpen = false;
-		this.selectedModal = null;
+		// this.selectedModal = null;
 		setTimeout(()=>{
 			this.add()
-		}, 800)
+		}, 500)
 	},
     add() {
 			this.tokens++
