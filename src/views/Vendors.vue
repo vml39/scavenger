@@ -111,7 +111,6 @@ export default {
     },
     searchResult (result) {
       if (result) {
-        console.log("result");
         this.position = "";
         this.searching = true;
         this.vendors = [result];
@@ -182,7 +181,7 @@ export default {
   .vendors {
     width: 100%;
   }
-  
+
   h2 {
     margin-top: 20px !important;
   }
