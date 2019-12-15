@@ -1,4 +1,4 @@
-User 1: Kevin Sarmiento- Master's student in CEE
+User 2: Kevin Sarmiento- Master's student in CEE
 
 ## Round 1
 

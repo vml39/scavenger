@@ -1,4 +1,4 @@
-User 1: - Miranda Debruyne freshman in HumEc
+User 4: - Miranda Debruyne freshman in HumEc
 
 ## Round 1
 
