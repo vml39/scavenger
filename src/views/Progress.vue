@@ -46,7 +46,11 @@
 				</svg>
 			</div>
       <div class="action-button"  @click="openModal('Referral')"> <!-- v-on:click="add()"> -->
+<<<<<<< HEAD
 				<div>Referral</div>
+=======
+				<div>Refer</div>
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
 				<svg width="60.5px" height="46.13px" viewBox="0 0 60.5 46.13" style="enable-background:new 0 0 60.5 46.13;" xml:space="preserve">
 					<circle cx="20.12" cy="12" r="12"/>
 					<path d="M37.98,46L37.98,46c-1.16,0-2.1-0.88-2.25-2.04c-1-7.72-7.62-13.69-15.6-13.69s-14.6,5.98-15.6,13.69
@@ -60,6 +64,7 @@
 			</div>
     </div>
 		<Modal v-show="modalOpen" v-bind:selectedModal="selectedModal" @closeandcollectpoints="closeModalAndCollectPoint" @close="closeModal"/>
+<<<<<<< HEAD
 		<transition name="rain">
 		<div v-if="rain" id="congrats">
 			<svg x="0px" y="0px" width="450.12px" height="512px" viewBox="0 0 450.12 512">
@@ -87,6 +92,8 @@
 			<div>Level {{tokens}}</div>
 		</div>
 		</transition>
+=======
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
 		<EmojiRain v-if="rain" />
   </div>
 </template>
@@ -123,6 +130,7 @@ export default {
 	},
 	closeModal() {
 		this.modalOpen = false;
+<<<<<<< HEAD
 		// this.selectedModal = null;
 	},
 	closeModalAndCollectPoint() {
@@ -131,6 +139,16 @@ export default {
 		setTimeout(()=>{
 			this.add()
 		}, 500)
+=======
+		this.selectedModal = null;
+	},
+	closeModalAndCollectPoint() {
+		this.modalOpen = false;
+		this.selectedModal = null;
+		setTimeout(()=>{
+			this.add()
+		}, 800)
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
 	},
     add() {
 			this.tokens++
@@ -138,7 +156,11 @@ export default {
 				this.rain = true
 				setTimeout(() => {
 					this.rain = false
+<<<<<<< HEAD
 				}, 3000)
+=======
+				}, 2000)
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
 			}
 			this.tokenArray.forEach((elem,index)=> {
 				if(elem.number==this.tokens) {

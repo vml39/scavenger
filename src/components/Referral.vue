@@ -18,23 +18,40 @@
                 <!-- </slot>
             </div> -->
 
+<<<<<<< HEAD
             <div class="modal-body">
+=======
+            <!-- <div class="modal-body"> -->
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
                
                     <label> Vendor Name: </label>
                     <select class="vendorsDropDown" id="selectedVendor">
                       <option> </option>
+<<<<<<< HEAD
                       <option> Apple Farms </option>
                       <option> Abe Farms </option>
+=======
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
                       <option :key="vendor.name" v-for="vendor in visitedVendors"> {{vendor.name}} </option>
                     </select>
                     <label> Friend's Email: </label>
                     <input id= "friendsEmail">
                 
+<<<<<<< HEAD
             </div>
 
             <!-- <div class="modal-footer">
                 <slot name="footer"> -->
                   
+=======
+            <!-- </div> -->
+
+            <!-- <div class="modal-footer">
+                <slot name="footer"> -->
+                  <button class="button" id="doneButton" @click="$emit('close')">
+                      Done
+                  </button>
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
                   <button class="button" id="sendButton" @click="store">
                     <a :href="'mailto:' + this.email + '?subject=Ithaca%20Farmers%20Market%20Vendor%20Referral&body=Hey!%20I%20just%20visited%20out%20'+ this.vendorName + '%20and%20they%20are%20awesome!%20Check%20them%20out%20next%20time%20you%20go%20to%20the%20farmers%20market!'">Send referral email</a>
                   </button>
@@ -84,6 +101,7 @@
                 this.theVendor = document.getElementByID("selectedVendor");
                 this.vendorName = theVendor.options[theVendor.selectedIndex].text;
             },
+<<<<<<< HEAD
             // close() {
             //     this.$emit('close');
             //     this.email = "";
@@ -94,6 +112,15 @@
               this.email = "";
               this.theVendor = "";
               this.vendorName = "";
+=======
+            close() {
+                this.$emit('close');
+                this.email = "";
+                this.theVendor = "",
+                this.vendorName = ""
+            },
+          completeTask() {
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
               this.$emit('completeTask');
           }
         }
@@ -132,8 +159,11 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+<<<<<<< HEAD
   height: 28px;
   margin-top: 0;
+=======
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
 }
 
 #doneButton {

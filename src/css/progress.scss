@@ -1,7 +1,13 @@
 #progress {
+<<<<<<< HEAD
   position: absolute;
   width: 100vw;
   height: 90%;
+=======
+  position: relative;
+  width: 100%;
+  height: 100%;
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
   box-sizing: border-box;
   overflow: hidden;
 
@@ -20,7 +26,11 @@
       align-items: center;
       flex: 0 0 18%;
       margin-top: 16px;
+<<<<<<< HEAD
       padding: 12px 18px;
+=======
+      padding: 6px 18px;
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
       background: rgba(255,255,255, 0.6);
       border-radius: 24px;
       box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.2);
@@ -191,6 +201,7 @@
   .rain-enter-active, .rain-leave-active {
     transition: opacity .5s;
   }
+<<<<<<< HEAD
   .rain-enter, .rain-leave-to {
     opacity: 0;
   }
@@ -234,4 +245,9 @@
       }
     }
   }
+=======
+  .rain-enter, .rain-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
 }

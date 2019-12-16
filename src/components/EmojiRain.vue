@@ -20,7 +20,11 @@
       addEmoji() {
         this.emojiArray.push({
           x: Math.random()*window.innerWidth,
+<<<<<<< HEAD
           emoji: ["🥕", "🥳", "🥕", "🥕", "😃", "🥕"][Math.round(Math.random()*5)]
+=======
+          emoji: ["🥕", "🥳", "🥑", "🍆", "😃", "🌽"][Math.round(Math.random()*5)]
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
         })
       }
     },
@@ -49,7 +53,11 @@
     &.rain-enter-active {
     transition: opacity .5s;
     }
+<<<<<<< HEAD
     &.rain-enter {
+=======
+    &.rain-enter /* .fade-leave-active below version 2.1.8 */ {
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
       opacity: 0;
     }
 

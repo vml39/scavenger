@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "ithaca-farmers-market",
+=======
+  "name": "Ithaca Farmers Market",
+>>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
   "version": "0.1.0",
   "engines": {
     "npm": "6.x",
