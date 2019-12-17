@@ -14,31 +14,34 @@
 
             <div class="modal-header">
                 <slot name="header"> -->
-                <h1 id="popupheader">Check in at a Vendor Booth</h1>
+                <h1 id="popupheader">Refer a Vendor to a Friend!</h1>
                 <!-- </slot>
             </div> -->
 
             <!-- <div class="modal-body"> -->
-               
+              
+                <div> 
                     <label> Vendor Name: </label>
                     <select class="vendorsDropDown" id="selectedVendor">
                       <option> </option>
                       <option :key="vendor.name" v-for="vendor in visitedVendors"> {{vendor.name}} </option>
                     </select>
+                </div>
+                <div>
                     <label> Friend's Email: </label>
                     <input id= "friendsEmail">
+                </div>
                 
             <!-- </div> -->
 
             <!-- <div class="modal-footer">
                 <slot name="footer"> -->
-                  <button class="button" id="doneButton" @click="$emit('close')">
-                      Done
-                  </button>
+                <div>
                   <button class="button" id="sendButton" @click="store">
-                    <a :href="'mailto:' + this.email + '?subject=Ithaca%20Farmers%20Market%20Vendor%20Referral&body=Hey!%20I%20just%20visited%20out%20'+ this.vendorName + '%20and%20they%20are%20awesome!%20Check%20them%20out%20next%20time%20you%20go%20to%20the%20farmers%20market!'">Send referral email</a>
+                    <a :href="'mailto:' + this.email + '?subject=Ithaca%20Farmers%20Market%20Vendor%20Referral&body=Hey!%20I%20just%20visited%20out%20'+ this.vendorName + '%20and%20they%20are%20awesome!%20Check%20them%20out%20next%20time%20you%20go%20to%20the%20farmers%20market!'">Send Referral Email</a>
                   </button>
                   <sui-button color="green" @click="completeTask" content="Complete Task!" />
+                </div>
 
                 <!-- </slot>
             </div>
@@ -84,13 +87,10 @@
                 this.theVendor = document.getElementByID("selectedVendor");
                 this.vendorName = theVendor.options[theVendor.selectedIndex].text;
             },
-            close() {
-                this.$emit('close');
-                this.email = "";
-                this.theVendor = "",
-                this.vendorName = ""
-            },
-          completeTask() {
+            completeTask() {
+              this.email = "";
+              this.theVendor = "",
+              this.vendorName = ""
               this.$emit('completeTask');
           }
         }
@@ -140,16 +140,21 @@
 }
 
 #sendButton a {
-  color: white;
+  color: #2274A5;
 }
 
 #sendButton {
-  background-color: #2C3E50; /* Green */
-  border: 1px solid white ;
-  color: white;
+  background-color: #FFFFFF; /* Green */
+  border: 1px solid #2274A5 ;
+  color: #2274A5;
   margin-left: 10px;
+  padding: 2px 4px;
+  
 }
 
+.vendorsDropDown {
+  margin-left: 1px;
+}
 
 .modal-mask {
   position: fixed;
