@@ -1,18 +1,12 @@
 <template>
   <div class="vendors" :style="{top: top+'px', position: position}">
     <VendorInfo class="vendorinfo" :opened="vendorInfo.opened" :logo="vendorInfo.logo" :id="vendorInfo.id" :name="vendorInfo.name" :cash="vendorInfo.cash" :credit="vendorInfo.credit" :phone="vendorInfo.phone" :email="vendorInfo.email" :site="vendorInfo.site" :favorite="vendorInfo.favorite" @updateFavoriteVendor="updateFavoriteVendor" :openAgain="openAgain" @closeVendorInfo="closeVendorInfo"/>
-<<<<<<< HEAD
     <div id="top">
-=======
->>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
     <h2>Vendor Directory</h2>
     <div class="search">
       <autocomplete :getResultValue="getResultValue" :search="searchVendor" @submit="searchResult" placeholder="Search for a vendor" aria-label="Search for a vendor"></autocomplete>
     </div>
-<<<<<<< HEAD
     </div>
-=======
->>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
     <div id="vendoroverlay">
       <div v-if="this.searching">
         <h3>{{ this.searchInput }}</h3>
@@ -188,7 +182,6 @@ export default {
 <style scoped>
   .vendors {
     width: 100%;
-<<<<<<< HEAD
     padding-bottom: 10vh;
   }
 
@@ -207,18 +200,6 @@ export default {
   .search {
     margin: 0 2.5% 20px 2.5%;
     background: white;
-=======
-    padding-bottom: 15%;
-  }
-
-  h2 {
-    margin-top: 20px !important;
-  }
-
-  .search {
-    width: 95%;
-    margin: 0 auto 20px auto;
->>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
   }
 
   ul {

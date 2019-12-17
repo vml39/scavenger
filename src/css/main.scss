@@ -1,19 +1,11 @@
 body {
   margin: 0;
   width: 100vw;
-<<<<<<< HEAD
   height: 100%;
 }
 
 #app {
   width: 100vw;
-=======
-  height: 100vh;
-}
-
-#app {
-  width: 100%;
->>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
   height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -23,16 +15,9 @@ body {
 }
 
 #main-container {
-<<<<<<< HEAD
   top: 0;
   width: 100%;
   // height: 90%;
-=======
-  position: absolute;
-  top: 0;
-  height: 90%;
-  width: 100%;
->>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
 }
 
 nav {
@@ -69,11 +54,7 @@ nav {
 
       svg {
         width: 36px;
-<<<<<<< HEAD
         height: 30px;
-=======
-        height: 36px;
->>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
         fill: #363636;
       }
 

@@ -47,10 +47,6 @@ export default {
       <!-- Source: https://www.iconfinder.com/icons/317723/social_social_media_tweet_twitter_icon -->
     </ul>
     <sui-button color="green" @click="completeTask" content="Complete Task!" />
-<<<<<<< HEAD
-=======
-
->>>>>>> 0b0541f04b04916d46caa6c847bfaa1fdbb02ff1
   </div>
 </template>
 
