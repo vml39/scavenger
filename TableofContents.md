@@ -62,11 +62,11 @@
 
 ## Evaluation
   - Evaluations
-    - [User Evalulation 1](documents/evaluations/user1eval.md)
-    - [User Evalulation 2](documents/evaluations/user1eval.md)
-    - [User Evalulation 3](documents/evaluations/user1eval.md)
-    - [User Evalulation 4](documents/evaluations/user1eval.md)
-    - [User Evalulation 5](documents/evaluations/user1eval.md)
+    - [User Evaluation 1](documents/evaluations/user1eval.md)
+    - [User Evaluation 2](documents/evaluations/user1eval.md)
+    - [User Evaluation 3](documents/evaluations/user1eval.md)
+    - [User Evaluation 4](documents/evaluations/user1eval.md)
+    - [User Evaluation 5](documents/evaluations/user1eval.md)
   - [Process Summary](documents/evaluations/process_summary.md)
   - [Issues Discovered](documents/evaluations/issues_discovered.md)
 
