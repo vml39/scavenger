@@ -200,7 +200,7 @@ export default {
   .search {
     margin: 0 2.5% 20px 2.5%;
     background: white;
-tot  }
+  }
 
   ul {
     display: flex;
