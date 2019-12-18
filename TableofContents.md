@@ -68,3 +68,5 @@
   - User Testing: conducted user testing on our new paper prototypes and scenarios
   - Wireframes: redid wireframes to reflect our new app design and user testing feedback (can be found under "Final Wireframes" in Design Phase section)
   - [Rationale](documents/rationale.md): added a rationale to explain our app
+
+
