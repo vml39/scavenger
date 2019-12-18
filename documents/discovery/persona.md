@@ -1,4 +1,4 @@
-Persona
+# Persona
 
 Our persona's name is Ben.  He is a Small Business Owner (not a food related business) who lives in Ithaca and is 34 years old.  Ben lives with his wife, his 5 year old child, and his dog.
 
