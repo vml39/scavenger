@@ -14,3 +14,5 @@ Michele
 Vivian 
 * vendor page
 * social media tags 
+
+@all: work on separate components then come together for integration! 
