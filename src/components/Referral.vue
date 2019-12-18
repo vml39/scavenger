@@ -7,7 +7,6 @@
             friendsEmail:'',
             selectedVendor:'',
             allVendors: vendorsList.default,
-            // visitedVendors: allVendors.default.filter(vendor => vendor.visited)
           }      
         },
         methods: {
@@ -53,10 +52,12 @@
                 </div>
 
                 <!-- IMPORTANT NOTE: The goal was to have the email that pops up when the user clicks the "Send Referral Email" button 
-                be populated with the name of the name of the selected vendor and the friend's email (which are both filled out in the form on the referral modal)  
-                in the body of the message and the address box respectively. Our team deemed this to be the most usable solution for the referral portion of our app.
-                The population of the selected vendor works in the body, but for some reason the email address won't populate and I cannot figure out why it isn't working
-                (even though I have tried numerous tactics and even replicated what worked with the vendors) -->
+                be populated with the name of the name of the selected vendor and the friend's email (which are both filled out in the form on 
+                the referral modal) in the body of the message and the address box respectively. Our team deemed this to be the most usable 
+                solution for the referral portion of our app. The population of the selected vendor works in the body, but for some reason the 
+                email address won't populate and I cannot figure out why it isn't working (even though I have tried numerous tactics and even 
+                replicated what worked with the vendors). So for now, the user will just have to type in their friends address in the email 
+                window that pops up -->
   </div>
 </template>
 

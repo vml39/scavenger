@@ -42,12 +42,13 @@
   - [User2](documents/user_testing/user2.md)
   - [User3](documents/user_testing/user3.md)
   - [User4](documents/user_testing/user4.md)
-- Final Sketches/Wireframes
+- Initial Sketches/Wireframes
   - [Home Page](documents/wireframes/home.md)
   - [Inventory](documents/wireframes/inventory.md)
   - [Vendors](documents/wireframes/vendors.md)
   - [Notes](documents/wireframes/notes.md)
   - [Update Inventory](documents/wireframes/updateinventory.md)
+
 
   ### Implementation
 
