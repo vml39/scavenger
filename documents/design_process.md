@@ -1,6 +1,6 @@
 # Discovery & Design Process
 
-Note: Since the beginning of the project, we've modified our app to focus in on one specific need (vendor relations) and have modified our design journey accordingly. Certain parts from our discovery and design phases still have remnants from the first version of our app. 
+Note: Since the beginning of the project, we've modified our app to focus in on one specific need (vendor relations) and have modified our design journey accordingly. Certain parts from our discovery and design phases still have remnants from the first version of our app. Our design revision brainstorm can be found [here](design_revision.md).
 
 ## Step 1: User Interviews
 The first step in our design process was to interview users so that we could figure out what issues they faced regarding the farmers market. We heavily emphasized this step because we were aware that there existed people in the target audience that we normally wouldn't have access to (community members as opposed to Cornell students) and wanted to gather information on their experience at the market. We conducted over 12 user interviews both at the market and outside of the market. The notes we took during these interviews were essential to the rest of our design process in informing the type of app we hoped to create.

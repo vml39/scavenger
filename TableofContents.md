@@ -48,6 +48,7 @@
   - [Vendors](documents/wireframes/vendors.md)
   - [Notes](documents/wireframes/notes.md)
   - [Update Inventory](documents/wireframes/updateinventory.md)
+- [Rationale](documents/rationale.md)
 
 
   ### Implementation
