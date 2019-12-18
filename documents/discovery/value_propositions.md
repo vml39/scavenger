@@ -1,4 +1,6 @@
-Common issues:
+# Value Propositions
+
+## Common issues:
 - communication: word of mouth
 - credit/cash: cash preferred by vendors and certain customers (more community-oriented), others (e.g. college students) prefer paying in credit
 - budget: most have no budget, within reason 
@@ -17,13 +19,12 @@ Common issues:
   - more eco-friendly
   ** inventory & information ** 
 
-Key problems:
-Vendor relations: 
-Talking to the frequent and infrequent visitors of the farmers market taught us that there's a huge emphasis on the community aspect of the farmer's market. Frequent visitors tend to have a few close relationships with vendors whereas infrequent visitor said that they wished they could keep in contact with certain vendors, especially after the farmers market season is over. Currently, there isn't a great way for patrons to remember which vendors they visited or to keep in contact with them after their visit. In addition, frequent visitors of the market claimed that they would frequently return to the same vendors but would be missing out on a lot of different ones, especially since a couple of them cycle through every week. From the vendor's perspective, vendors don't have much success with different strategies of attracting customers and instead, expressed that word of mouth was the most effective form of communication. This falls into how we might want our app to achieve its persuasive design goal – how might we facilitate patrons to share their favorite vendors with their friends?
+## Key problems:
+Vendor relations: Talking to the frequent and infrequent visitors of the farmers market taught us that there's a huge emphasis on the community aspect of the farmer's market. Frequent visitors tend to have a few close relationships with vendors whereas infrequent visitor said that they wished they could keep in contact with certain vendors, especially after the farmers market season is over. Currently, there isn't a great way for patrons to remember which vendors they visited or to keep in contact with them after their visit. In addition, frequent visitors of the market claimed that they would frequently return to the same vendors but would be missing out on a lot of different ones, especially since a couple of them cycle through every week. From the vendor's perspective, vendors don't have much success with different strategies of attracting customers and instead, expressed that word of mouth was the most effective form of communication. This falls into how we might want our app to achieve its persuasive design goal – how might we facilitate patrons to share their favorite vendors with their friends?
 
-Value propositions (v1): 
+## Value propositions (v1): 
 1. Having inventory lists allows vendors to highlight specialized items and users to pre-plan their visits.
 2. Many interviewees expressed interest in continuing relations with vendors beyond the market season and emphasizing vendor information will help facilitate and develop these relations. It will also allow users to provide feedback to the vendors.
 
-Updated value propositions (v2):
+## Updated value propositions (v2):
 1. Many interviewees expressed interest in continuing relations with vendors beyond the market season and emphasizing vendor information will help facilitate and develop these relations. Patrons should also be given a way to explore different vendors in order to extend their reach in the Ithaca farmers market community.

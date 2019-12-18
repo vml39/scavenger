@@ -1,9 +1,6 @@
-# Table of Contents
-
-- [Team Contract](documents/team_contract.md)
-
-## Discovery Phase
+### Discovery Phase
 - [Discovery Phase](documents/discovery)
+- [Discovery & Design Process](documents/design_process.md)
 - [Interview Questions](documents/interviews/interview_questions.md)
 - Interviews
   - [Interview1](documents/interviews/interview1.md)
@@ -24,8 +21,8 @@
   - Image in documents/discovery/persona.jpg
 - [Scenarios](documents/discovery/scenarios.md)
 
-## Design Phase
-- [Design Process](documents/design_process.md)
+### Design Phase
+- [Discovery & Design Process](documents/design_process.md)
 - [Persuasive Design](documents/user_behaviors.md)
 - [Brainstorm](documents/brainstorm.md)
 - Initial Sketches
@@ -51,3 +48,20 @@
   - [Vendors](documents/wireframes/vendors.md)
   - [Notes](documents/wireframes/notes.md)
   - [Update Inventory](documents/wireframes/updateinventory.md)
+
+  ### Implementation
+
+  #### Modifications to Previous Milestones:
+  - [Design Revision](documents/design_revision.md): explains how we modified our app to be more like an app and less like a site, and how we reevaluated our app to solve only one problem (facilitating vendor relations).
+  - [Key Problem](documents/discovery//needs_goals.md): redefined the problem our app was hoping to solve
+  - [Value Propositions](documents/discovery/value_propositions.md): redefined our value propositions based on the key problem identified, identified costs and barriers to adopting the app, identified alternatives
+  - [Scenarios](documents/discovery/scenarios.md): rewrote scenarios to reflect new value propositions
+  - [Persona](documents/discovery/persona.md): modified persona to be more specific to our users' key problem
+  - [Brainstorm](documents/brainstorm.md): modified brainstorm based on our discussion about our new app design
+  - [Persuasive Design](documents/user_behaviors.md): identified how we would use persuasive design to influence our users' behavior and factors that may prevent target behavior
+  - [Solution Space](documents/solution_space): added to our previous solution space to include designs that are similar to our new design
+  - Sketches: redid sketches to reflect our new app design
+  - Paper Prototypes: redid paper prototypes to reflect our new app design
+  - User Testing: conducted user testing on our new paper prototypes and scenarios
+  - Wireframes: redid wireframes to reflect our new app design and user testing feedback
+  - [Rationale](documents/rationale.md): added a rationale to explain our app
