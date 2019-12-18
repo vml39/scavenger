@@ -40,6 +40,11 @@
   - [Inventory](documents/paper_prototype/inventory.md)
   - [Vendors](documents/paper_prototype/vendors.md)
   - [Notes](documents/paper_prototype/notes.md)
+- Final Paper Prototypes
+  - [Final Vendors Pages](documents/paper_prototype/newvendors.md)
+  - [Final Progress Page](documents/paper_prototype/inventory.md)
+  - [Final Tasks](documents/paper_prototype/newtasks.md)
+  - [Badges](documents/paper_prototype/badges.md)
 - User Testing
   - [Tasks](documents/user_testing/tasks.md)
   - [User1](documents/user_testing/user1.md)
