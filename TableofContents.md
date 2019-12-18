@@ -35,6 +35,7 @@
   - [Vendors](documents/initial_sketches/vendors.md)
   - [Notes](documents/initial_sketches/notes.md)
   - [Update Inventory](documents/initial_sketches/updateinventory.md)
+  - [Progress](documents/initial_sketches/map.md)
 - Prototypes
   - [Home Page](documents/paper_prototype/home.md)
   - [Inventory](documents/paper_prototype/inventory.md)
