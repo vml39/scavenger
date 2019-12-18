@@ -60,6 +60,7 @@
 ## Implementation
 - [Initial file architecture](documents/file_architecture.md)
 - [Implementation tasks](documents/implementation_strategy.md)
+- [Deployment](https://ithaca-farmers-market.herokuapp.com/)
 
 ## Evaluation
   - Evaluations
