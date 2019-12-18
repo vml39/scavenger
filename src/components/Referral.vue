@@ -1,129 +1,71 @@
-<template>
-   <div class="referral_modal">
-    <!-- <h2>Refer a vendor to a friend!</h2>
-    <p>Refer a favorite vendor to a friend!</p>
-    <label> Vendor Name: </label>
-    <input>
-    <label> Friend's Number: </label>
-    <input>
-    <button>Send<button> onclick would close the modal and send a text -->
-    <!-- <transition name="modal">
-        <div class="modal-mask">
-        <div class="modal-wrapper">
-            <div class="modal-container">
-
-            <div class="modal-header">
-                <slot name="header"> -->
-                <h1 id="popupheader">Check in at a Vendor Booth</h1>
-                <!-- </slot>
-            </div> -->
-
-            <div class="modal-body">
-               
-                    <label> Vendor Name: </label>
-                    <select class="vendorsDropDown" id="selectedVendor">
-                      <option> </option>
-                      <option> Apple Farms </option>
-                      <option> Abe Farms </option>
-                      <option :key="vendor.name" v-for="vendor in visitedVendors"> {{vendor.name}} </option>
-                    </select>
-                    <label> Friend's Email: </label>
-                    <input id= "friendsEmail">
-                
-            </div>
-
-            <!-- <div class="modal-footer">
-                <slot name="footer"> -->
-                  
-                  <button class="button" id="sendButton" @click="store">
-                    <a :href="'mailto:' + this.email + '?subject=Ithaca%20Farmers%20Market%20Vendor%20Referral&body=Hey!%20I%20just%20visited%20out%20'+ this.vendorName + '%20and%20they%20are%20awesome!%20Check%20them%20out%20next%20time%20you%20go%20to%20the%20farmers%20market!'">Send referral email</a>
-                  </button>
-                  <sui-button color="green" @click="completeTask" content="Complete Task!" />
-
-                <!-- </slot>
-            </div>
-            </div>
-        </div>
-        </div>
-    </transition> -->
-
-
-    <!-- <div id="app">
-        <button id="show-modal" @click="showModal = true">Show Modal</button>
-         use the modal component, pass in the prop 
-        <modal v-if="showModal" @close="showModal = false">
-            
-            you can use custom content here to overwrite
-            default content
-            
-            <h3 slot="header">custom header</h3>
-        </modal>
-    </div> -->
-  </div>
-
-<!-- app -->
-
-</template>
-
 <script>
     import * as vendorsList from '../assets/js/vendorsList.js'
     export default {
-        data: function () {
-                return {
-                    email: '',
-                    theVendor: '',
-                    vendorName:'',
-                    allVendors: vendorsList.default,
-                    visitedVendors: allVendors.default.filter(vendor => vendor.visited)
-                }
-                
+        name: 'Referral',
+        data  () {
+          return {
+            friendsEmail:'',
+            selectedVendor:'',
+            allVendors: vendorsList.default,
+          }      
         },
         methods: {
             store() {
-                this.email = document.getElementById("friendsEmail");
-                this.theVendor = document.getElementByID("selectedVendor");
-                this.vendorName = theVendor.options[theVendor.selectedIndex].text;
+                this.friendsEmail = document.getElementById("friendsEmail");
+                this.selectedVendor = document.getElementByID("selectedVendor");
+               
             },
-            // close() {
-            //     this.$emit('close');
-            //     this.email = "";
-            //     this.theVendor = "",
-            //     this.vendorName = ""
-            // },
-          completeTask() {
-              this.email = "";
-              this.theVendor = "";
-              this.vendorName = "";
+            completeTask() {
+              this.friendsEmail = '',
+              this.selectedVendor = '',
               this.$emit('completeTask');
           }
         }
     };
-
-
-
-
-
-// register modal component
-// Vue.component('modal', {
-//   template: '#modal-template'
-// })
-// // start app
-// new Vue({
-//   el: '#app',
-//   data: {
-//     showModal: false
-//   }
-// })
-// export default {
-  
-// }
 </script>
+
+
+<template>
+   <div class="referral_modal">
+   
+    
+                <h1 id="popupheader">Refer a Vendor to a Friend!</h1>
+               
+              
+                <div> 
+                    <label> Vendor Name: </label>
+                    <select v-model="selectedVendor" class="vendorsDropDown" id="selectedVendor">
+                      <option v-for="vendor in allVendors" :key="vendor.name" > {{vendor.name}} </option>
+                    </select>
+                </div>
+                <div>
+                    <label> Friend's Email: </label>
+                    <input v-model="friendsEmail" id= "friendsEmail">
+                </div>
+                
+           
+                <div>
+                  <button class="button" id="sendButton" @click="store">
+                    <a :href="`mailto:${this.friendsEmail}?subject=Ithaca%20Farmers%20Market%20Vendor%20Referral&body=Hey!%20I%20just%20visited%20${this.selectedVendor}%20at%20the%20Ithaca%20Farmers%20Market%20and%20they%20are%20awesome.%20Check%20them%20out%20next%20time%20you%20go%20to%20the%20Farmers%20Market!`"> Send Referral Email </a>
+                  </button>
+                  <sui-button color="green" @click="completeTask" content="Complete Task!" />
+                </div>
+
+                <!-- IMPORTANT NOTE: The goal was to have the email that pops up when the user clicks the "Send Referral Email" button 
+                be populated with the name of the name of the selected vendor and the friend's email (which are both filled out in the form on 
+                the referral modal) in the body of the message and the address box respectively. Our team deemed this to be the most usable 
+                solution for the referral portion of our app. The population of the selected vendor works in the body, but for some reason the 
+                email address won't populate and I cannot figure out why it isn't working (even though I have tried numerous tactics and even 
+                replicated what worked with the vendors). So for now, the user will just have to type in their friends address in the email 
+                window that pops up -->
+  </div>
+</template>
+
 
 <style scoped>
   #app {
   text-align: left;
 }
-
 .button {
   margin-left: 10px;
   border-radius: 3px;
@@ -135,7 +77,6 @@
   height: 28px;
   margin-top: 0;
 }
-
 #doneButton {
   background-color: White; /* Green */
   border: 0px solid #2C3E50 ;
@@ -143,59 +84,19 @@
   margin-left: 38px;
   
 }
-
 #sendButton a {
-  color: white;
+  color: #2274A5;
 }
-
 #sendButton {
-  background-color: #2C3E50; /* Green */
-  border: 1px solid white ;
-  color: white;
+  background-color: #FFFFFF; /* Green */
+  border: 1px solid #2274A5 ;
+  color: #2274A5;
   margin-left: 10px;
-}
-
-
-.modal-mask {
-  position: fixed;
-  /* z-index: 9998; */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .5);
-  display: table;
-  transition: opacity .3s ease;
-}
-.modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
-}
-.modal-container {
-  width: 300px;
-  margin: 0px auto;
-  padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-  transition: all .3s ease;
-  font-family: Helvetica, Arial, sans-serif;
-}
-.modal-header h3 {
-  margin-top: 0;
-  text-align: center;
+  padding: 2px 4px;
   
 }
-.modal-body {
-  margin: 20px 0;
-  justify-content: left;
-  margin-bottom: 7px;
-}
-.modal-footer {
-  height: 20px;
-}
-.modal-default-button {
-  float: right;
+.vendorsDropDown {
+  margin-left: 1px;
 }
 input {
   margin-bottom: 10px;
@@ -205,25 +106,5 @@ select {
   margin-bottom: 10px;
   width: 240px;
   height: 23px;
-}
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
-/* .modal-enter {
-  opacity: 0;
-}
-.modal-leave-active {
-  opacity: 0;
-}
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-} */
- 
+} 
 </style>

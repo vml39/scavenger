@@ -1,9 +1,10 @@
 # Table of Contents
 
-- [Team Contract](documents/team_contract.md)
+[Team Contract](documents/team_contract.md)
 
 ## Discovery Phase
 - [Discovery Phase](documents/discovery)
+- [Discovery & Design Process](documents/design_process.md)
 - [Interview Questions](documents/interviews/interview_questions.md)
 - Interviews
   - [Interview1](documents/interviews/interview1.md)
@@ -25,7 +26,7 @@
 - [Scenarios](documents/discovery/scenarios.md)
 
 ## Design Phase
-- [Design Process](documents/design_process.md)
+- [Discovery & Design Process](documents/design_process.md)
 - [Persuasive Design](documents/user_behaviors.md)
 - [Brainstorm](documents/brainstorm.md)
 - Initial Sketches
@@ -34,20 +35,62 @@
   - [Vendors](documents/initial_sketches/vendors.md)
   - [Notes](documents/initial_sketches/notes.md)
   - [Update Inventory](documents/initial_sketches/updateinventory.md)
+  - [Progress](documents/initial_sketches/map.md)
 - Prototypes
   - [Home Page](documents/paper_prototype/home.md)
   - [Inventory](documents/paper_prototype/inventory.md)
   - [Vendors](documents/paper_prototype/vendors.md)
   - [Notes](documents/paper_prototype/notes.md)
+- Final Paper Prototypes
+  - [Final Vendors Pages](documents/paper_prototype/newvendors.md)
+  - [Final Progress Page](documents/paper_prototype/inventory.md)
+  - [Final Tasks](documents/paper_prototype/newtasks.md)
+  - [Badges](documents/paper_prototype/badges.md)
 - User Testing
   - [Tasks](documents/user_testing/tasks.md)
   - [User1](documents/user_testing/user1.md)
   - [User2](documents/user_testing/user2.md)
   - [User3](documents/user_testing/user3.md)
   - [User4](documents/user_testing/user4.md)
-- Final Sketches/Wireframes
+- Initial Wireframes
   - [Home Page](documents/wireframes/home.md)
   - [Inventory](documents/wireframes/inventory.md)
   - [Vendors](documents/wireframes/vendors.md)
   - [Notes](documents/wireframes/notes.md)
   - [Update Inventory](documents/wireframes/updateinventory.md)
+- Final Wireframes
+  - [Progress Page](documents/wireframes/progresspage.md)
+  - [Vendors](documents/wireframes/NewVendorsWireframes.md)
+
+## Implementation
+- [Initial file architecture](documents/file_architecture.md)
+- [Implementation tasks](documents/implementation_strategy.md)
+- [Deployment](https://ithaca-farmers-market.herokuapp.com/)
+
+## Evaluation
+  - Evaluations
+    - [User Evaluation 1](documents/evaluations/user1eval.md)
+    - [User Evaluation 2](documents/evaluations/user2eval.md)
+    - [User Evaluation 3](documents/evaluations/user3eval.md)
+    - [User Evaluation 4](documents/evaluations/user4eval.md)
+    - [User Evaluation 5](documents/evaluations/user5eval.md)
+  - [Evaluation Plan](documents/evaluations/evaluation_plan.md)
+  - [Process Summary](documents/evaluations/process_summary.md)
+  - [Issues Discovered](documents/evaluations/issues_discovered.md)
+
+## Modifications to Previous Milestones:
+  - [Design Revision](documents/design_revision.md): explains how we modified our app to be more like an app and less like a site, and how we reevaluated our app to solve only one problem (facilitating vendor relations).
+  - [Key Problem](documents/discovery//needs_goals.md): redefined the problem our app was hoping to solve
+  - [Value Propositions](documents/discovery/value_propositions.md): redefined our value propositions based on the key problem identified, identified costs and barriers to adopting the app, identified alternatives
+  - [Scenarios](documents/discovery/scenarios.md): rewrote scenarios to reflect new value propositions
+  - [Persona](documents/discovery/persona.md): modified persona to be more specific to our users' key problem
+  - [Brainstorm](documents/brainstorm.md): modified brainstorm based on our discussion about our new app design
+  - [Persuasive Design](documents/user_behaviors.md): identified how we would use persuasive design to influence our users' behavior and factors that may prevent target behavior
+  - [Solution Space](documents/solution_space): added to our previous solution space to include designs that are similar to our new design
+  - Sketches: redid sketches to reflect our new app design
+  - Paper Prototypes: redid paper prototypes to reflect our new app design
+  - User Testing: conducted user testing on our new paper prototypes and scenarios
+  - Wireframes: redid wireframes to reflect our new app design and user testing feedback (can be found under "Final Wireframes" in Design Phase section)
+  - [Rationale](documents/rationale.md): added a rationale to explain our app
+
+[Team Member Contributions](documents/contributions.md)
