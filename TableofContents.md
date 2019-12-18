@@ -68,6 +68,7 @@
     - [User Evaluation 3](documents/evaluations/user1eval.md)
     - [User Evaluation 4](documents/evaluations/user1eval.md)
     - [User Evaluation 5](documents/evaluations/user1eval.md)
+  - [Evaluation Plan](documents/evaluations/evaluation_plan.md)
   - [Process Summary](documents/evaluations/process_summary.md)
   - [Issues Discovered](documents/evaluations/issues_discovered.md)
 
