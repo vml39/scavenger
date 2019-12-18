@@ -42,14 +42,15 @@
   - [User2](documents/user_testing/user2.md)
   - [User3](documents/user_testing/user3.md)
   - [User4](documents/user_testing/user4.md)
-- Initial Sketches/Wireframes
+- Initial Wireframes
   - [Home Page](documents/wireframes/home.md)
   - [Inventory](documents/wireframes/inventory.md)
   - [Vendors](documents/wireframes/vendors.md)
   - [Notes](documents/wireframes/notes.md)
   - [Update Inventory](documents/wireframes/updateinventory.md)
-- [Rationale](documents/rationale.md)
-
+- Final Wireframes
+  - [Progress Page](documents/wireframes/progresspage.md)
+  - [Vendors](documents/wireframes/NewVendorsWireframes.md)
 
   ### Implementation
 
@@ -65,5 +66,5 @@
   - Sketches: redid sketches to reflect our new app design
   - Paper Prototypes: redid paper prototypes to reflect our new app design
   - User Testing: conducted user testing on our new paper prototypes and scenarios
-  - Wireframes: redid wireframes to reflect our new app design and user testing feedback
+  - Wireframes: redid wireframes to reflect our new app design and user testing feedback (can be found under "Final Wireframes" in Design Phase section)
   - [Rationale](documents/rationale.md): added a rationale to explain our app
