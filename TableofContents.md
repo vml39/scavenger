@@ -56,9 +56,11 @@
   - [Progress Page](documents/wireframes/progresspage.md)
   - [Vendors](documents/wireframes/NewVendorsWireframes.md)
 
-  ## Implementation
+## Implementation
+- [Initial file architecture](documents/file_architecture.md)
+- [Implementation tasks](documents/implementation_strategy.md)
 
-  ## Evaluation
+## Evaluation
   - Evaluations
     - [User Evalulation 1](documents/evaluations/user1eval.md)
     - [User Evalulation 2](documents/evaluations/user1eval.md)
@@ -68,7 +70,7 @@
   - [Process Summary](documents/evaluations/process_summary.md)
   - [Issues Discovered](documents/evaluations/issues_discovered.md)
 
-  ## Modifications to Previous Milestones:
+## Modifications to Previous Milestones:
   - [Design Revision](documents/design_revision.md): explains how we modified our app to be more like an app and less like a site, and how we reevaluated our app to solve only one problem (facilitating vendor relations).
   - [Key Problem](documents/discovery//needs_goals.md): redefined the problem our app was hoping to solve
   - [Value Propositions](documents/discovery/value_propositions.md): redefined our value propositions based on the key problem identified, identified costs and barriers to adopting the app, identified alternatives
@@ -83,4 +85,4 @@
   - Wireframes: redid wireframes to reflect our new app design and user testing feedback (can be found under "Final Wireframes" in Design Phase section)
   - [Rationale](documents/rationale.md): added a rationale to explain our app
 
-  [Team Member Contributions](documents/contributions.md)
+[Team Member Contributions](documents/contributions.md)
