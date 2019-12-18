@@ -19,3 +19,5 @@ Post-Tasks Questions/Discussion:
 - How do you level up on this app?
 - Do you believe the tasks are engaging and meaningful?
 - What did you get out of this app by using it?
+
+Note: We were unable to access all members of our target audience so we only tested a subset of them, specifically, students at Cornell University who attend the Ithaca Farmer's Market.

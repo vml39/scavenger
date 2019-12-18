@@ -35,6 +35,7 @@
   - [Vendors](documents/initial_sketches/vendors.md)
   - [Notes](documents/initial_sketches/notes.md)
   - [Update Inventory](documents/initial_sketches/updateinventory.md)
+  - [Progress](documents/initial_sketches/map.md)
 - Prototypes
   - [Home Page](documents/paper_prototype/home.md)
   - [Inventory](documents/paper_prototype/inventory.md)
@@ -64,14 +65,15 @@
 ## Implementation
 - [Initial file architecture](documents/file_architecture.md)
 - [Implementation tasks](documents/implementation_strategy.md)
+- [Deployment](https://ithaca-farmers-market.herokuapp.com/)
 
 ## Evaluation
   - Evaluations
     - [User Evaluation 1](documents/evaluations/user1eval.md)
-    - [User Evaluation 2](documents/evaluations/user1eval.md)
-    - [User Evaluation 3](documents/evaluations/user1eval.md)
-    - [User Evaluation 4](documents/evaluations/user1eval.md)
-    - [User Evaluation 5](documents/evaluations/user1eval.md)
+    - [User Evaluation 2](documents/evaluations/user2eval.md)
+    - [User Evaluation 3](documents/evaluations/user3eval.md)
+    - [User Evaluation 4](documents/evaluations/user4eval.md)
+    - [User Evaluation 5](documents/evaluations/user5eval.md)
   - [Evaluation Plan](documents/evaluations/evaluation_plan.md)
   - [Process Summary](documents/evaluations/process_summary.md)
   - [Issues Discovered](documents/evaluations/issues_discovered.md)

@@ -17,6 +17,7 @@ Team Member 2: vml39
 * Created Vendor view and VendorInfo component and integrated both together
 * Created the social media tag component
 * Set up the app for deployment
+* Compiled final submission
 
 Team Member 3: yz388
 * Conducted initial user interviews
@@ -40,3 +41,4 @@ Team Member 5: jnc83
 * Conducted user testing on prototypes
 * Created the referral component
 * Conducted user evaluations
+* Compiled final submission
