@@ -84,7 +84,6 @@ Documentation: https://gruhn.github.io/vue-qrcode-reader/api/QrcodeStream.html
                 }
             }
         },
-        // insert additional functions here
     },
   };
 </script>
