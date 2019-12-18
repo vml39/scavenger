@@ -14,8 +14,7 @@
         methods: {
             store() {
                 this.email = document.getElementById("friendsEmail");
-                // this.theVendor = document.getElementByID("selectedVendor");
-                // this.vendorName = theVendor.options[theVendor.selectedIndex].text;
+                this.theVendor = document.getElementByID("selectedVendor");
             },
             completeTask() {
               this.email = "";
@@ -37,19 +36,19 @@
               
                 <div> 
                     <label> Vendor Name: </label>
-                    <select v-model="theVendor" class="vendorsDropDown" id="selectedVendor">
+                    <select v-model="selectedVendor" class="vendorsDropDown" id="selectedVendor">
                       <option v-for="vendor in allVendors" :key="vendor.name" > {{vendor.name}} </option>
                     </select>
                 </div>
                 <div>
                     <label> Friend's Email: </label>
-                    <input v-model="email" id= "friendsEmail">
+                    <input v-model="friendsEmail" id= "friendsEmail">
                 </div>
                 
            
                 <div>
                   <button class="button" id="sendButton" @click="store">
-                    <!-- <a href="mailto:{{email}}?subject=Ithaca%20Farmers%20Market%20Vendor%20Referral&body=Hey!%20I%20just%20visited%20out%20 {{theVendor}} %20and%20they%20are%20awesome!%20Check%20them%20out%20next%20time%20you%20go%20to%20the%20farmers%20market!">Send Referral Email</a> -->
+                    <a :href="'mailto:' + this.email + '?subject=Ithaca%20Farmers%20Market%20Vendor%20Referral&body=Hey!%20I%20just%20visited%20out%20'+ this.theVendor + '%20and%20they%20are%20awesome!%20Check%20them%20out%20next%20time%20you%20go%20to%20the%20farmers%20market!'">Send referral email</a>
                   </button>
                   <sui-button color="green" @click="completeTask" content="Complete Task!" />
                 </div>
